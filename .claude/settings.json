@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"e:\\\\NumeroUno\\\\drX\\\\vDental\" -Filter \"*.html\" -Recurse)",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}
