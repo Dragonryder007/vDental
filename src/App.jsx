@@ -1,5 +1,6 @@
 ﻿import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -57,6 +58,10 @@ function AppLayout() {
     if (isAdmin) return;
     recordVisit();
   }, [isAdmin]);
+
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search });
+  }, [location.pathname, location.search]);
 
   // Global GSAP scroll reveal — premium easing, no wrapper divs needed
   useEffect(() => {
