@@ -8,6 +8,8 @@ const DentalImplantsBangalore = () => <SeoServiceRoute serviceKey="dentalImplant
 const FullMouthRehabBangalore = () => <SeoServiceRoute serviceKey="fullMouthRehabBangalore" />;
 const AllOn4ImplantsBangalore = () => <SeoServiceRoute serviceKey="allOn4ImplantsBangalore" />;
 const DentalTourismIndia = () => <SeoServiceRoute serviceKey="dentalTourismIndia" />;
+const NriOnlineConsultation = () => <SeoServiceRoute serviceKey="nriOnlineConsultation" />;
+const TravelAssistance = () => <SeoServiceRoute serviceKey="travelAssistance" />;
 const GeneralDentistry = () => <SeoServiceRoute serviceKey="generalDentistry" />;
 const LaserDentistry = () => <SeoServiceRoute serviceKey="laserDentistry" />;
 const InvisalignKids = () => <SeoServiceRoute serviceKey="invisalignKids" />;
@@ -22,6 +24,8 @@ export {
   FullMouthRehabBangalore,
   AllOn4ImplantsBangalore,
   DentalTourismIndia,
+  NriOnlineConsultation,
+  TravelAssistance,
   GeneralDentistry,
   LaserDentistry,
   InvisalignKids,

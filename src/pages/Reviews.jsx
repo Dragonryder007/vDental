@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 
 const INITIAL_REVIEWS = [
   {

@@ -1,4 +1,4 @@
-﻿export const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+﻿export const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 
 export const BLOG_CATEGORIES = [
   'Invisalign',

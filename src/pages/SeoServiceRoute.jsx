@@ -12,6 +12,8 @@ const slugToKey = {
   'full-mouth-rehabilitation-bangalore': 'fullMouthRehabBangalore',
   'all-on-4-implants-bangalore': 'allOn4ImplantsBangalore',
   'dental-tourism-india': 'dentalTourismIndia',
+  'online-consultation-nri-patients': 'nriOnlineConsultation',
+  'travel-assistance-international-patients': 'travelAssistance',
   'general-dentistry-bangalore': 'generalDentistry',
   'laser-dentistry-bangalore': 'laserDentistry',
   'invisalign-for-kids-bangalore': 'invisalignKids',

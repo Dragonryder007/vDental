@@ -31,7 +31,7 @@ const AssessmentPage = () => {
 
   const submitAssessment = async () => {
     setLoading(true);
-    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
     try {
       // 1. Get recommendation from local API
       const response = await axios.post(`${API_BASE}/api/recommend-treatment`, { answers });

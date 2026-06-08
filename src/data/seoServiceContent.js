@@ -748,6 +748,210 @@ export const seoServiceContent = {
     outstationText: 'Whether you are an NRI, expat, or international traveller from the USA, UK, Australia, UAE, Saudi Arabia, or across the Middle East — our dedicated international patient team ensures your dental trip to Bangalore is clinically excellent, logistically seamless, and significantly more affordable than equivalent treatment in your home country.',
   },
 
+  nriOnlineConsultation: {
+    slug: 'online-consultation-nri-patients',
+    bookingService: 'dental-tourism',
+    seo: {
+      title: 'NRI Patient Online Dental Consultation | V Dental Bangalore',
+      description:
+        'Free virtual dental consultations for NRI & international patients. Share X-rays, photos and scans with our specialists in Bangalore and receive a personalised treatment plan and cost estimate before you travel — from anywhere in the world.',
+      keywords:
+        'NRI dental consultation online, online dental consultation India, virtual dental consultation Bangalore, video consultation dentist India, NRI patient teleconsultation, dental treatment planning online India, remote dental consultation NRI, online dental second opinion India, dental tourism online consultation Bangalore',
+    },
+    heroImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=85',
+    beforeImg: null,
+    afterImg: null,
+    title: 'NRI Patient Online Dental Consultation',
+    subtitle:
+      'Connect with our specialists from anywhere in the world. Share your records, receive a personalised treatment plan and a transparent cost estimate — all before you ever board a flight to Bangalore.',
+    locationLine: 'Free Virtual Consultations for NRI & International Patients — V Dental & Implant Center, Indiranagar, Bangalore',
+    problem: {
+      title: 'Why Start With an Online Consultation?',
+      text: 'Planning dental treatment from overseas can feel uncertain — without a clear diagnosis, timeline, or cost estimate, it is difficult to plan leave, travel dates, or a budget with confidence. Our online consultation removes this uncertainty, giving NRI and international patients a clear, specialist-reviewed treatment roadmap before they commit to travel.',
+      points: [
+        'Specialist review of your dental concerns from anywhere in the world',
+        'Clear diagnosis and treatment roadmap before you travel',
+        'Transparent, itemised cost estimates — no surprises on arrival',
+        'Helps you plan leave, travel dates, and budget with confidence',
+        'Completely free, with no obligation to travel or commit to treatment',
+      ],
+    },
+    treatment: {
+      title: 'How Our Online Consultation Works',
+      text: 'Our international patient team has streamlined the virtual consultation process so you can get expert clinical input quickly, conveniently, and securely — entirely from your home country.',
+      points: [
+        'Share photos, X-rays, CBCT/OPG scans or prior records via WhatsApp or email',
+        'Our specialists review your case and clinical history in detail',
+        'A live video consultation is scheduled at a time convenient to your time zone',
+        'A personalised treatment plan, timeline and cost estimate is shared in writing',
+        'Ongoing follow-up Q&A support until you feel confident planning your visit',
+      ],
+    },
+    benefits: [
+      { icon: '💻', title: 'Consult From Anywhere', desc: 'Speak with our specialists over video call from the USA, UK, Australia, UAE, Saudi Arabia, or anywhere else — no travel required to get started.' },
+      { icon: '🩺', title: 'Specialist Clinical Review', desc: 'Your photographs, X-rays, and scans are personally reviewed by our senior dental specialists — not a call-centre team.' },
+      { icon: '📝', title: 'Written Treatment Plan & Estimate', desc: 'Receive a clear, itemised treatment plan and cost estimate in writing, so you know exactly what to expect before you travel.' },
+      { icon: '🌐', title: 'Time-Zone Friendly Scheduling', desc: 'Consultations are scheduled to suit your local time zone, with flexible morning, evening, and weekend slots for international patients.' },
+      { icon: '🔒', title: 'Confidential & Secure', desc: 'Your medical records, photographs, and personal information are handled with strict confidentiality and care at every step.' },
+      { icon: '🤝', title: 'Dedicated Patient Coordinator', desc: 'A single point of contact guides you from your first message through consultation, planning, travel, treatment, and aftercare.' },
+    ],
+    steps: [
+      { title: 'Share Your Case', desc: 'Send photos, X-rays, scans or prior records via WhatsApp or email — no clinic visit required.' },
+      { title: 'Specialist Review', desc: 'Our senior dental specialists assess your case and clinical history in detail.' },
+      { title: 'Video Consultation', desc: 'A live video call is scheduled at a time convenient for your time zone to discuss findings and options.' },
+      { title: 'Treatment Plan & Estimate', desc: 'Receive a personalised treatment plan, recommended timeline and itemised cost estimate in writing.' },
+      { title: 'Plan Your Visit', desc: 'When you are ready, our team helps you plan travel dates and visit duration around your treatment — with full Travel Assistance support.' },
+    ],
+    journeyTitle: 'Your Online Consultation Journey',
+    recovery: {
+      title: 'What to Expect, Step by Step',
+      items: [
+        { label: 'Initial Response Time', value: 'Within 24 hours of sharing your case' },
+        { label: 'Records Required', value: 'Photos, X-rays, CBCT/OPG scans, prior reports (if available)' },
+        { label: 'Consultation Mode', value: 'WhatsApp Video, Zoom, or Google Meet — your choice' },
+        { label: 'Consultation Duration', value: '20–40 minutes, with follow-up Q&A as needed' },
+        { label: 'Treatment Plan Delivery', value: 'Written plan and cost estimate within 24–48 hours' },
+        { label: 'Cost', value: 'Completely free, with no obligation to travel or proceed' },
+      ],
+    },
+    pricing: {
+      title: 'Free Online Consultation, Transparent Planning',
+      range: 'No cost to NRI & international patients',
+      note: 'Our online consultation is offered free of charge to NRI and international patients as the first step of their dental tourism journey. You receive a clear, written treatment plan and cost estimate — with absolutely no pressure or obligation to travel or commit to treatment.',
+      factors: [
+        'Type and complexity of treatment required',
+        'Number of teeth or arches involved',
+        'Implant systems or materials recommended',
+        'Number of clinic visits needed to complete treatment',
+        'Any additional procedures identified during review (e.g. extractions, grafting)',
+      ],
+    },
+    doctor: {
+      name: 'Dr. Jishnu Premnath',
+      title: 'International Patient Director — V Dental & Implant Center',
+      experience: '8+ Years | Internationally Trained · Bengaluru, India',
+      bio: 'Dr. Jishnu Premnath personally oversees online consultations for NRI and international patients at V Dental & Implant Center. A Senior Smile Correction & Implant Specialist with 8+ years of experience, he reviews each case in detail before preparing a tailored treatment plan — giving every patient clarity and confidence long before they board their flight to Bangalore.',
+    },
+    faqs: [
+      { q: 'Is the online consultation really free?', a: 'Yes. Online consultations for NRI and international patients are completely free, with no obligation to travel or proceed with treatment.' },
+      { q: 'What records do I need to share before my consultation?', a: 'Recent photographs of your teeth and smile, any available X-rays, OPG or CBCT scans, and reports from previous dental treatment, if you have them. If you do not, our team will guide you on simple ways to capture useful photos at home.' },
+      { q: 'How do I schedule the video consultation?', a: 'Once you share your case via WhatsApp or email, our coordinator suggests time slots based on your time zone and confirms a video call on WhatsApp, Zoom, or Google Meet — whichever you prefer.' },
+      { q: 'Will I speak directly with a dental specialist?', a: 'Yes. Your case is reviewed and discussed directly by our senior dental specialists — not a call-centre representative — so you receive accurate clinical guidance from the very first conversation.' },
+      { q: 'How soon will I receive my treatment plan and cost estimate?', a: 'You will typically receive a written treatment plan, recommended timeline, and itemised cost estimate within 24–48 hours of your video consultation.' },
+      { q: 'Is my personal and medical information kept confidential?', a: 'Absolutely. All photographs, scans, reports, and personal details you share are handled with strict confidentiality and used solely for your treatment planning.' },
+      { q: 'What happens after the online consultation?', a: 'If you decide to proceed, our team helps you plan your travel dates, visit duration, accommodation, and logistics — with full Travel Assistance support for your trip to Bangalore.' },
+      { q: 'Can I get a second opinion through an online consultation?', a: 'Yes. Many NRI patients use our online consultation to get an independent specialist opinion on a treatment plan recommended elsewhere, with no obligation to switch providers.' },
+    ],
+    reviews: [
+      { text: 'I shared my X-rays over WhatsApp from Dubai and had a video call within two days. The treatment plan and cost breakdown were so clear that I booked my flights with full confidence.', name: 'Farah N., UAE' },
+      { text: 'As an NRI in the US, I was hesitant about planning treatment from overseas. The online consultation gave me total clarity on what I needed, how long it would take, and what it would cost — no surprises on arrival.', name: 'Anand K., USA' },
+      { text: 'Dr. Jishnu personally reviewed my scans on a video call and explained every option patiently. It felt like sitting in the clinic, except I was in London.', name: 'Sandra W., UK' },
+    ],
+    outstationText: 'Whether you are an NRI in the USA, UK, Australia, UAE, Saudi Arabia, or anywhere else — your dental tourism journey begins with a simple, free online consultation. Our international patient team reviews your case, builds a personalised plan, and stays with you from your first message through treatment and beyond.',
+  },
+
+  travelAssistance: {
+    slug: 'travel-assistance-international-patients',
+    bookingService: 'dental-tourism',
+    seo: {
+      title: 'Travel Assistance for NRI & International Dental Patients | V Dental Bangalore',
+      description:
+        'Complete travel assistance for NRI & international dental patients visiting Bangalore — airport pickup, hotel coordination, personalised visit itineraries, visa support letters, local transport guidance and more. A dedicated coordinator manages your trip end to end.',
+      keywords:
+        'dental tourism travel assistance India, NRI patient travel support Bangalore, airport pickup dental patients India, hotel assistance dental tourism India, visa letter dental treatment India, international patient coordinator Bangalore, dental holiday travel planning India, dental tourism trip planning Bangalore',
+    },
+    heroImg: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=85',
+    beforeImg: null,
+    afterImg: null,
+    title: 'Travel Assistance for NRI & International Dental Patients',
+    subtitle:
+      'From airport pickup to hotel stays, visit scheduling to visa support — our dedicated international patient team manages every logistical detail of your dental trip to Bangalore, so you can focus on your treatment and recovery.',
+    locationLine: 'Complete Trip Coordination for NRI & International Patients — V Dental & Implant Center, Indiranagar, Bangalore',
+    problem: {
+      title: 'Why Travel Assistance Matters',
+      text: 'Travelling to another country for dental care involves more than the treatment itself — flights, accommodation, local transport, scheduling clinic visits, and finding your way around an unfamiliar city can all feel overwhelming. Our Travel Assistance service takes this entire burden off your shoulders, so your trip is as comfortable and stress-free as your treatment is effective.',
+      points: [
+        'Removes the stress of planning logistics in an unfamiliar city',
+        'Ensures clinic visits are scheduled efficiently around your stay',
+        'Trusted hotel and accommodation recommendations near the clinic',
+        'On-ground support for transport, scheduling, and local assistance',
+        'One dedicated coordinator managing your entire visit, start to finish',
+      ],
+    },
+    treatment: {
+      title: 'What Our Travel Assistance Includes',
+      text: 'Our international patient team coordinates every non-clinical aspect of your visit — so that from the moment you land in Bangalore to the moment you depart, everything runs smoothly and on schedule.',
+      points: [
+        'Airport pickup and drop-off coordination on arrival and departure',
+        'Partner hotel and serviced-apartment recommendations near the clinic',
+        'Personalised visit itinerary built around your treatment schedule',
+        'Local transport guidance for clinic visits, errands, and daily needs',
+        'Assistance with medical documentation for visa applications, where applicable',
+      ],
+    },
+    benefits: [
+      { icon: '🛬', title: 'Airport Pickup & Drop-Off', desc: 'On-ground assistance to receive you at Kempegowda International Airport and transfer you safely to your hotel — and back again at the end of your trip.' },
+      { icon: '🏨', title: 'Trusted Stay Recommendations', desc: 'Carefully selected partner hotels and serviced apartments close to the clinic, suited to different budgets and lengths of stay.' },
+      { icon: '🗓️', title: 'Personalised Visit Itinerary', desc: 'Your clinic appointments, rest days, and any sightseeing are planned together into one clear, efficient schedule — minimising your time away from home.' },
+      { icon: '🚗', title: 'Local Transport Guidance', desc: 'Support arranging reliable local transport for clinic visits, errands, and exploring Bangalore during your stay.' },
+      { icon: '🛂', title: 'Visa Documentation Support', desc: 'Assistance with medical letters and supporting documentation for visa applications, where required for your treatment visit.' },
+      { icon: '🤝', title: 'One Dedicated Coordinator', desc: 'A single international patient coordinator stays in touch with you before, during, and after your trip — for any question, big or small.' },
+    ],
+    steps: [
+      { title: 'Plan Your Visit', desc: 'Once your treatment plan is confirmed, we recommend ideal travel dates and visit duration based on your procedure.' },
+      { title: 'Stay & Itinerary Setup', desc: 'We share trusted hotel options and prepare a day-by-day itinerary built around your clinic appointments.' },
+      { title: 'Airport Pickup', desc: 'Our team coordinates your pickup from Kempegowda International Airport and transfer to your accommodation.' },
+      { title: 'On-Ground Support', desc: 'Throughout your stay, your coordinator helps with transport, scheduling, and any local assistance you need.' },
+      { title: 'Departure & Follow-Up', desc: 'We organise your drop-off to the airport and continue remote follow-up support after you return home.' },
+    ],
+    journeyTitle: 'Your Travel Assistance Journey in Bangalore',
+    recovery: {
+      title: 'What Your Trip Typically Looks Like',
+      items: [
+        { label: 'Airport Pickup', value: 'Arranged in advance for your arrival flight' },
+        { label: 'Accommodation', value: 'Partner hotels & serviced apartments near the clinic' },
+        { label: 'Visit Itinerary', value: 'Planned around your treatment schedule and stay duration' },
+        { label: 'Local Transport', value: 'Guidance and arrangements for clinic visits & daily needs' },
+        { label: 'Visa Support', value: 'Medical letters provided where applicable' },
+        { label: 'Departure', value: 'Airport drop-off coordinated ahead of your return flight' },
+      ],
+    },
+    pricing: {
+      title: 'Travel Assistance, Built Around Your Treatment',
+      range: 'Complimentary coordination for confirmed international patients',
+      note: 'Travel assistance and trip coordination are provided as part of our international patient care for confirmed treatment cases — at no extra coordination charge. Hotel stays and local transport are billed directly by the respective partners at transparent, pre-shared rates, so there are never any hidden costs.',
+      factors: [
+        'Length of stay required for your treatment',
+        'Choice of accommodation (hotel vs serviced apartment, location, category)',
+        'Number of people travelling with you',
+        'Local transport requirements during your visit',
+        'Any additional documentation needed for visa purposes',
+      ],
+    },
+    doctor: {
+      name: 'Dr. Jishnu Premnath',
+      title: 'International Patient Director — V Dental & Implant Center',
+      experience: '8+ Years | Internationally Trained · Bengaluru, India',
+      bio: 'Dr. Jishnu Premnath leads the international patient team at V Dental & Implant Center, overseeing both the clinical planning and on-ground travel coordination for NRI and global patients. Working alongside a dedicated patient coordinator, he ensures every visit to Bangalore — from airport arrival to final departure — is organised, comfortable, and free of avoidable stress.',
+    },
+    faqs: [
+      { q: 'Will someone receive me at the airport when I arrive in Bangalore?', a: 'Yes. Our team arranges airport pickup from Kempegowda International Airport and a safe transfer to your hotel, and coordinates your drop-off again at the end of your visit.' },
+      { q: 'Can you help me find a place to stay near the clinic?', a: 'Yes. We recommend trusted partner hotels and serviced apartments close to V Dental & Implant Center in Indiranagar, suited to different budgets and stay durations.' },
+      { q: 'How is my visit schedule planned?', a: 'Once your treatment plan is confirmed, we build a personalised itinerary that fits your clinic appointments, rest periods, and any time you would like for sightseeing — keeping your trip efficient and comfortable.' },
+      { q: 'Do you provide support for visa applications?', a: 'Yes, where applicable, we provide medical letters and supporting documentation that you can use as part of your visa application process.' },
+      { q: 'What if I need help getting around Bangalore during my stay?', a: 'Your coordinator can guide you on reliable local transport options for clinic visits, daily errands, and exploring the city during your stay.' },
+      { q: 'Is there a charge for travel assistance?', a: 'Trip coordination is provided as a complimentary part of our international patient care for confirmed treatment cases. You only pay directly for accommodation and transport at transparent, pre-shared rates — there are no hidden coordination fees.' },
+      { q: 'Can my family or a companion travel with me?', a: 'Yes. Many patients travel with a family member or companion. Let your coordinator know in advance so accommodation, transport, and itinerary planning can be arranged for everyone.' },
+      { q: 'Who do I contact if I need help during my stay?', a: 'You will have a single dedicated international patient coordinator as your point of contact throughout your visit — reachable via WhatsApp or phone for any question or assistance you need.' },
+    ],
+    reviews: [
+      { text: 'From the moment I landed, someone was there to receive me. The hotel was minutes from the clinic and my whole week was planned out so I never had to worry about logistics.', name: 'Michael T., Australia' },
+      { text: 'Travelling alone for treatment felt daunting, but my coordinator handled everything — pickup, hotel, even local transport to see a bit of Bangalore between appointments.', name: 'Reema S., Canada' },
+      { text: 'My visa support letter was ready exactly when I needed it, and the airport drop-off on my last day meant I could relax until my flight. Truly end-to-end care.', name: 'Yousef B., Saudi Arabia' },
+    ],
+    outstationText: 'Whether you are travelling from the USA, UK, Australia, UAE, Saudi Arabia, or anywhere else in the world — our international patient team takes care of every logistical detail of your trip to Bangalore, so you can arrive, recover, and return home with complete peace of mind.',
+  },
+
   // ── GENERAL & FAMILY SERVICES ─────────────────────────────────────────
 
   generalDentistry: {

@@ -140,6 +140,8 @@ const Navbar = () => {
       accent: '#7c6f5b',
       links: [
         { name: 'Dental Tourism India', path: '/dental-tourism-india' },
+        { name: 'NRI Patient Online Consultation', path: '/online-consultation-nri-patients' },
+        { name: 'Travel Assistance', path: '/travel-assistance-international-patients' },
       ],
     },
   ];

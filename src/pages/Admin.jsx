@@ -4,7 +4,7 @@ import axios from 'axios';
 import logo from '../images/logo.png';
 import AdminBlogPanel from '../components/AdminBlogPanel';
 
-const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 const TOKEN_KEY = 'adminToken';
 
 function formatDate(iso) {

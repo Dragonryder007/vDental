@@ -86,7 +86,7 @@ const Chatbot = () => {
     setMessages((prev) => [...prev, { type: 'user', text: msg }]);
     setLoading(true);
 
-    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
     try {
       const response = await axios.post(`${API_BASE}/api/chat`, { message: msg });
       if (response?.data?.chatbotVersion) {

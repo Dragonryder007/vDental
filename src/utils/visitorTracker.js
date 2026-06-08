@@ -36,7 +36,7 @@ export async function recordVisit() {
   }
 
   const sessionId = getOrCreateVisitorId();
-  const apiBase = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+  const apiBase = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 
   const payload = {
     path: window.location.pathname,

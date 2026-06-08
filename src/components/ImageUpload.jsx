@@ -85,7 +85,7 @@ const ImageUpload = () => {
   const [showThankYou, setShowThankYou] = useState(false);
 
   const apiBase = useMemo(
-    () => (window.location.hostname === 'localhost' ? 'http://localhost:6000' : ''),
+    () => (window.location.hostname === 'localhost' ? 'http://localhost:3000' : ''),
     []
   );
 

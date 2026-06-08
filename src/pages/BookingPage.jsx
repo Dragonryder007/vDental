@@ -42,7 +42,7 @@ const BookingPage = () => {
   }, []);
 
   const apiBase = useMemo(
-    () => (window.location.hostname === 'localhost' ? 'http://localhost:6000' : ''),
+    () => (window.location.hostname === 'localhost' ? 'http://localhost:3000' : ''),
     []
   );
 
@@ -88,7 +88,7 @@ const BookingPage = () => {
   const bookedTimeSet = useMemo(() => new Set(bookedTimesForDate.map(normTimeLabel)), [bookedTimesForDate]);
 
   const fetchAvailableSlots = async () => {
-    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
     try {
       const response = await axios.get(`${API_BASE}/api/available-slots`);
       setAvailableSlots(response.data.slots);
@@ -140,7 +140,7 @@ const BookingPage = () => {
     setLoading(true);
     setBookingError(null);
 
-    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
     try {
       const localResponse = await axios.post(`${API_BASE}/api/appointments`, formData);
       setEmailStatus(localResponse?.data?.emailStatus || null);
@@ -178,7 +178,7 @@ const BookingPage = () => {
     e.preventDefault();
     if (reviewData.rating === 0) return;
     setReviewLoading(true);
-    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+    const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
     try {
       await axios.post(`${API_BASE}/api/reviews`, {
         name: formData.name,

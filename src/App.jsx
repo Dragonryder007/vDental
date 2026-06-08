@@ -24,6 +24,8 @@ import {
   FullMouthRehabBangalore,
   AllOn4ImplantsBangalore,
   DentalTourismIndia,
+  NriOnlineConsultation,
+  TravelAssistance,
   GeneralDentistry,
   LaserDentistry,
   InvisalignKids,
@@ -107,6 +109,8 @@ function AppLayout() {
         <Route path="/full-mouth-rehabilitation-bangalore" element={<FullMouthRehabBangalore />} />
         <Route path="/all-on-4-implants-bangalore" element={<AllOn4ImplantsBangalore />} />
         <Route path="/dental-tourism-india" element={<DentalTourismIndia />} />
+        <Route path="/online-consultation-nri-patients" element={<NriOnlineConsultation />} />
+        <Route path="/travel-assistance-international-patients" element={<TravelAssistance />} />
         <Route path="/general-dentistry-bangalore" element={<GeneralDentistry />} />
         <Route path="/laser-dentistry-bangalore" element={<LaserDentistry />} />
         <Route path="/invisalign-for-kids-bangalore" element={<InvisalignKids />} />

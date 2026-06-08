@@ -22,7 +22,7 @@ import aboutDentalCheckup from '../images/about-dental-checkup.jpg';
 import { useLanguage } from '../contexts/LanguageContext';
 import { GOOGLE_MAPS_DIRECTIONS_URL } from '../constants/contact';
 
-const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:6000' : '';
+const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 
 const Home = () => {
   const { t } = useLanguage();
