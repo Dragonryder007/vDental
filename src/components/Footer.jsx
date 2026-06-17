@@ -251,10 +251,10 @@ const Footer = () => {
           {openSection === 6 && (
             <div className="pb-4 space-y-2">
               <p className="text-[13px] text-white/50 leading-snug">531, 2nd Main Road, Indiranagar 2nd Stage, Bangalore</p>
-              <a href={GOOGLE_MAPS_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer"
-                className="text-[11px] text-[color:var(--gold)] hover:text-white transition-colors inline-block">Get Directions →</a>
               <p className="text-[13px] text-white/50">+91 90371 51894</p>
               <p className="text-[12px] text-white/50 break-all">{CLINIC_EMAIL}</p>
+              <a href={GOOGLE_MAPS_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer"
+                className="text-[11px] text-[color:var(--gold)] hover:text-white transition-colors inline-block">Get Directions →</a>
             </div>
           )}
         </div>

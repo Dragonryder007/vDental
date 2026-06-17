@@ -682,25 +682,7 @@ const Home = () => {
               {t('home.contact.desc')}
             </p>
             <div className="mt-8 sm:mt-10 flex-1 flex flex-col justify-center bg-white rounded-sharp border border-black/5 shadow-sm divide-y divide-black/5">
-              <div className="flex gap-4 items-start p-6 sm:p-8">
-                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📞</div>
-                <div>
-                  <a href="tel:+919037151894" className="font-bold text-[color:var(--charcoal)] hover:text-[color:var(--green)] no-underline">+91 90371 51894</a>
-                  <div className="text-sm text-[color:var(--warm-gray)]">{t('home.contact.phone')}</div>
-                </div>
-              </div>
-              <div className="flex gap-4 items-start p-6 sm:p-8">
-                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📧</div>
-                <div>
-                  <a
-                    href={`mailto:${t('home.contact.emailAddress')}`}
-                    className="font-bold text-[color:var(--charcoal)] hover:text-[color:var(--green)] no-underline"
-                  >
-                    {t('home.contact.emailAddress')}
-                  </a>
-                  <div className="text-sm text-[color:var(--warm-gray)]">{t('home.contact.email')}</div>
-                </div>
-              </div>
+              {/* NAP: Address first */}
               <div className="flex gap-4 items-start p-6 sm:p-8">
                 <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📍</div>
                 <div>
@@ -714,6 +696,27 @@ const Home = () => {
                   >
                     {t('home.contact.getDirections')}
                   </a>
+                </div>
+              </div>
+              {/* NAP: Phone second */}
+              <div className="flex gap-4 items-start p-6 sm:p-8">
+                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📞</div>
+                <div>
+                  <a href="tel:+919037151894" className="font-bold text-[color:var(--charcoal)] hover:text-[color:var(--green)] no-underline">+91 90371 51894</a>
+                  <div className="text-sm text-[color:var(--warm-gray)]">{t('home.contact.phone')}</div>
+                </div>
+              </div>
+              {/* Email last */}
+              <div className="flex gap-4 items-start p-6 sm:p-8">
+                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📧</div>
+                <div>
+                  <a
+                    href={`mailto:${t('home.contact.emailAddress')}`}
+                    className="font-bold text-[color:var(--charcoal)] hover:text-[color:var(--green)] no-underline"
+                  >
+                    {t('home.contact.emailAddress')}
+                  </a>
+                  <div className="text-sm text-[color:var(--warm-gray)]">{t('home.contact.email')}</div>
                 </div>
               </div>
             </div>
