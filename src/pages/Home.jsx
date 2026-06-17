@@ -586,10 +586,10 @@ const Home = () => {
                       {item.q}
                     </span>
                   </div>
-                  <span className={`flex-shrink-0 w-7 h-7 rounded-full border border-white/15 flex items-center justify-center transition-all duration-300 ${openFaq === i ? 'bg-[color:var(--gold)] border-[color:var(--gold)] rotate-45' : 'bg-white/5 group-hover:border-[color:var(--gold)]/50'}`}>
-                    <svg className="w-3.5 h-3.5 text-[color:var(--cream)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 5v14M5 12h14" />
-                    </svg>
+                  <span className={`flex-shrink-0 w-7 h-7 rounded-full border border-white/15 flex items-center justify-center transition-all duration-300 ${openFaq === i ? 'bg-[color:var(--gold)] border-[color:var(--gold)]' : 'bg-white/5 group-hover:border-[color:var(--gold)]/50'}`}>
+                    <span className={`ms text-[18px] text-[color:var(--cream)] transition-all duration-300 ${openFaq === i ? 'ms-fill' : ''}`} aria-hidden="true">
+                      {openFaq === i ? 'remove' : 'add'}
+                    </span>
                   </span>
                 </button>
                 {openFaq === i && (
@@ -603,9 +603,7 @@ const Home = () => {
           <div className="mt-10 text-center">
             <Link to="/faq" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--gold)] hover:text-[color:var(--cream)] transition-colors">
               {t('home.faq.viewAll')}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <span className="ms text-[18px]" aria-hidden="true">arrow_forward</span>
             </Link>
           </div>
         </div>
@@ -684,7 +682,9 @@ const Home = () => {
             <div className="mt-8 sm:mt-10 flex-1 flex flex-col justify-center bg-white rounded-sharp border border-black/5 shadow-sm divide-y divide-black/5">
               {/* NAP: Address first */}
               <div className="flex gap-4 items-start p-6 sm:p-8">
-                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📍</div>
+                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center flex-shrink-0">
+                  <span className="ms ms-fill text-[22px] text-[color:var(--teal)]" aria-hidden="true">location_on</span>
+                </div>
                 <div>
                   <div className="font-bold text-[color:var(--charcoal)]">{t('home.contact.locName')}</div>
                   <div className="text-sm text-[color:var(--warm-gray)]">{t('home.contact.location')}</div>
@@ -700,7 +700,9 @@ const Home = () => {
               </div>
               {/* NAP: Phone second */}
               <div className="flex gap-4 items-start p-6 sm:p-8">
-                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📞</div>
+                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center flex-shrink-0">
+                  <span className="ms ms-fill text-[22px] text-[color:var(--teal)]" aria-hidden="true">call</span>
+                </div>
                 <div>
                   <a href="tel:+919037151894" className="font-bold text-[color:var(--charcoal)] hover:text-[color:var(--green)] no-underline">+91 90371 51894</a>
                   <div className="text-sm text-[color:var(--warm-gray)]">{t('home.contact.phone')}</div>
@@ -708,7 +710,9 @@ const Home = () => {
               </div>
               {/* Email last */}
               <div className="flex gap-4 items-start p-6 sm:p-8">
-                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center text-base flex-shrink-0">📧</div>
+                <div className="w-11 h-11 rounded-full bg-[color:var(--green-light)] border border-[rgb(var(--green-rgb)/20%)] flex items-center justify-center flex-shrink-0">
+                  <span className="ms ms-fill text-[22px] text-[color:var(--teal)]" aria-hidden="true">mail</span>
+                </div>
                 <div>
                   <a
                     href={`mailto:${t('home.contact.emailAddress')}`}

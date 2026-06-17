@@ -202,15 +202,10 @@ const Navbar = () => {
                 onClick={() => setServicesOpen((open) => !open)}
               >
                 {t('nav.services')}
-                <svg
-                  className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                <span
+                  className={`ms text-[18px] shrink-0 transition-transform duration-200 ${servicesOpen ? 'rotate-180 ms-fill' : ''}`}
+                  aria-hidden="true"
+                >keyboard_arrow_down</span>
               </button>
 
               {/* Mega-menu panel — full width, fixed below navbar */}
