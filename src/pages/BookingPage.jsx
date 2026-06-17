@@ -94,7 +94,7 @@ const BookingPage = () => {
       setAvailableSlots(response.data.slots);
     } catch (error) {
       console.log('Using default slots');
-      setAvailableSlots(['10:00 AM', '11:00 AM', '2:00 PM', '3:00 PM']);
+      setAvailableSlots(['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM']);
     }
   };
 
@@ -425,7 +425,7 @@ const BookingPage = () => {
                 {formData.date && bookedSlotsLoading ? (
                   <p className="text-sm text-[color:var(--muted)] mb-3">{t('booking.loadingAvailability')}</p>
                 ) : null}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3">
                   {availableSlots.map((slot) => {
                     const isBooked =
                       Boolean(formData.date) && bookedTimeSet.has(normTimeLabel(slot));

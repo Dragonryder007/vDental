@@ -33,6 +33,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { GOOGLE_MAPS_DIRECTIONS_URL } from '../constants/contact';
 import { ImplantIcon, FullMouthIcon, CosmeticIcon, VeneerIcon } from '../components/icons/TreatmentIcons';
 import { GoogleIcon } from '../components/icons/PlatformIcons';
+import practoLogo from '../images/platforms/practo-logo.png';
 
 const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 
@@ -235,8 +236,8 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--charcoal-deep)] via-transparent to-[color:var(--charcoal-deep)]/40" />
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <div className="max-w-2xl text-[color:var(--cream)]">
-            <h1 className="hero-title text-4xl sm:text-6xl md:text-7xl font-momo-trust font-extrabold leading-[1.05] mb-6 text-[color:var(--cream)]">
+          <div className="text-[color:var(--cream)]">
+            <h1 className="hero-title text-4xl sm:text-6xl md:text-7xl font-momo-trust font-extrabold leading-[1.05] mb-6 text-[color:var(--cream)] max-w-2xl">
               {t('home.wherePerfect')}
             </h1>
             <p className="hero-subtitle text-base sm:text-lg text-[rgb(var(--cream-rgb)/65%)] mb-10 max-w-xl leading-relaxed">
@@ -256,54 +257,71 @@ const Home = () => {
               >
                 {t('home.bookConsultation')}
               </Link>
-              <div className="flex items-stretch divide-x divide-[rgb(var(--cream-rgb)/15%)]">
-                <div className="flex items-center gap-2 sm:gap-4 pr-3 sm:pr-6">
+              <div className="flex items-stretch divide-x divide-[rgb(var(--cream-rgb)/15%)] overflow-x-auto no-scrollbar">
+                {/* 25K+ Happy Patients */}
+                <div className="flex items-center gap-2 sm:gap-4 pr-2 sm:pr-6 flex-shrink-0">
                   <div className="hidden sm:flex -space-x-3">
                     {[
                       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80',
                       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces&q=80',
                       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80',
                     ].map((src, i) => (
-                      <img
-                        key={i}
-                        src={src}
-                        alt=""
-                        className="w-11 h-11 rounded-full object-cover border-2 border-[color:var(--charcoal-deep)]"
-                      />
+                      <img key={i} src={src} alt="" className="w-11 h-11 rounded-full object-cover border-2 border-[color:var(--charcoal-deep)]" />
                     ))}
                   </div>
                   <div>
-                    <div className="font-sans text-base sm:text-xl font-extrabold leading-none">
+                    <div className="font-sans text-sm sm:text-xl font-extrabold leading-none">
                       <CountUp end={25} suffix="K+" decimals={0} duration={2.2} />
                     </div>
-                    <div className="text-[11px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
+                    <div className="text-[10px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
                       {t('home.happyPatients')}
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6">
-                  <GoogleIcon className="w-5 h-5 sm:w-7 sm:h-7 flex-shrink-0" />
+                {/* Google Rating */}
+                <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-6 flex-shrink-0">
+                  <GoogleIcon className="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0" />
                   <div>
-                    <div className="flex items-center gap-1">
-                      <span className="font-sans text-base sm:text-xl font-extrabold leading-none">4.8</span>
+                    <div className="flex items-center gap-0.5 sm:gap-1">
+                      <span className="font-sans text-sm sm:text-xl font-extrabold leading-none">4.8</span>
                       <div className="flex gap-0.5 text-[color:var(--gold)]">
                         {[...Array(5)].map((_, i) => (
-                          <svg key={i} viewBox="0 0 20 20" fill="currentColor" className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5">
+                          <svg key={i} viewBox="0 0 20 20" fill="currentColor" className="w-2 h-2 sm:w-3.5 sm:h-3.5">
                             <path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8L1.5 7.6l5.9-.8L10 1.5Z" />
                           </svg>
                         ))}
                       </div>
                     </div>
-                    <div className="text-[11px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
+                    <div className="text-[10px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
                       {t('home.rating')}
                     </div>
                   </div>
                 </div>
 
-                <div className="pl-3 sm:pl-6">
-                  <div className="font-sans text-base sm:text-xl font-extrabold leading-none">1994</div>
-                  <div className="text-[11px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
+                {/* Practo Rating */}
+                <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-6 flex-shrink-0">
+                  <img src={practoLogo} alt="Practo" className="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 object-contain" />
+                  <div>
+                    <div className="flex items-center gap-0.5 sm:gap-1">
+                      <span className="font-sans text-sm sm:text-xl font-extrabold leading-none">5.0</span>
+                      <div className="flex gap-0.5 text-[color:var(--gold)]">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} viewBox="0 0 20 20" fill="currentColor" className="w-2 h-2 sm:w-3.5 sm:h-3.5">
+                            <path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8L1.5 7.6l5.9-.8L10 1.5Z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="text-[10px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
+                      Practo
+                    </div>
+                  </div>
+                </div>
+
+                <div className="px-2 sm:px-6 flex-shrink-0">
+                  <div className="font-sans text-sm sm:text-xl font-extrabold leading-none">1994</div>
+                  <div className="text-[10px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
                     {t('home.sinceLabel')}
                   </div>
                 </div>
