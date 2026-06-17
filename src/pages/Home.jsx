@@ -2,7 +2,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
-import BlogLatestSection from '../components/BlogLatestSection';
 import PlatformReviewsCarousel from '../components/PlatformReviewsCarousel';
 import SmilePlusHomePromo from '../components/SmilePlusHomePromo';
 import CountUp from '../components/CountUp';
@@ -651,8 +650,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <BlogLatestSection />
 
       {/* Testimonials */}
       <section data-reveal className="py-14 sm:py-20 md:py-28 px-5 sm:px-6 bg-[color:var(--cream-dark)] overflow-hidden">
