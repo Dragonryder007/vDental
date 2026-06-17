@@ -50,7 +50,7 @@ const SeoServicePage = ({ content, bookingService }) => {
               href={`https://wa.me/${WHATSAPP}?text=${whatsappText}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-600 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-green-700 transition-colors"
+              className="bg-[color:var(--teal)] text-white px-8 py-3.5 rounded-xl font-bold hover:bg-[color:var(--dk)] transition-colors"
             >
               {t('seoService.whatsapp')}
             </a>

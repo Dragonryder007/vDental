@@ -173,7 +173,7 @@ const SmilePlusMarathahalli = () => {
                 href={smilePlusWhatsAppUrl(WHATSAPP_MSG)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-7 sm:px-8 py-3.5 rounded-xl font-bold hover:bg-green-700 transition active:scale-[0.98] w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 bg-[color:var(--teal)] text-white px-7 sm:px-8 py-3.5 rounded-xl font-bold hover:bg-[color:var(--dk)] transition active:scale-[0.98] w-full sm:w-auto"
               >
                 <span>💬</span> WhatsApp Now
               </a>
@@ -456,7 +456,7 @@ const SmilePlusMarathahalli = () => {
             href={smilePlusWhatsAppUrl(WHATSAPP_MSG)}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-green-700 transition shadow-lg"
+            className="bg-[color:var(--teal)] text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-[color:var(--dk)] transition shadow-lg"
           >
             WhatsApp Now
           </a>

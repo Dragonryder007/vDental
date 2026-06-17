@@ -10,7 +10,10 @@ function FloatingWhatsApp() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-24 right-3 z-30 rounded-full bg-green-500 p-4 text-white shadow-lg transition-all hover:scale-110 hover:bg-green-600"
+      className="fixed bottom-24 right-3 z-30 rounded-full p-4 text-white shadow-lg transition-all hover:scale-110"
+      style={{ backgroundColor: '#25D366' }}
+      onMouseEnter={e => e.currentTarget.style.backgroundColor = '#1da851'}
+      onMouseLeave={e => e.currentTarget.style.backgroundColor = '#25D366'}
       title="Chat on WhatsApp"
       aria-label="Chat on WhatsApp"
     >

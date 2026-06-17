@@ -3,14 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --teal: #028A0F;
-  --dk: #01630b;
-  --deep: #004207;
+  --teal: #3A6347;
+  --dk: #2A4F35;
+  --deep: #1E3D28;
   --bg: #f8f7f4;
   --soft: #f1f5f0;
   --txt: #1f2937;
   --muted: #6b7280;
   --accent: #c9a24a;
+
+  --cream: #FAF6F0;
+  --cream-dark: #F0E9DC;
+  --green: #4A7C59;
+  --green-light: #E8F0EB;
+  --green-mid: #6B9E7A;
+  --gold: #C9963A;
+  --gold-light: #F5E9D3;
+  --charcoal: #2C2C2C;
+  --charcoal-deep: #0D0D0D;
+  --ink: #111111;
+  --warm-gray: #6E6860;
+  --warm-gray-2: #9C9188;
+
+  /* RGB triplets — for Tailwind arbitrary-value opacity, e.g. text-[rgb(var(--cream-rgb)/70%)] */
+  --cream-rgb: 250 246 240;
+  --gold-rgb: 201 150 58;
+  --charcoal-rgb: 44 44 44;
+  --charcoal-deep-rgb: 13 13 13;
+  --green-rgb: 74 124 89;
 }
 
 html {
@@ -82,7 +102,56 @@ a, button {
 }
 
 .font-serif {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Gold-line eyebrow label — homepage premium sections */
+.eyebrow-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.eyebrow-gold::before {
+  content: '';
+  display: inline-block;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* Centered variant — line on both sides of the label */
+.eyebrow-gold--center {
+  justify-content: center;
+}
+
+.eyebrow-gold--center::after {
+  content: '';
+  display: inline-block;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* Hairline divider grid — shows a 1px background "seam" between cells */
+.hairline-grid {
+  display: grid;
+  gap: 1px;
+}
+
+/* Hide scrollbar while keeping native scroll/swipe — used by carousels */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Premium Animations & Utilities */
@@ -263,16 +332,19 @@ a, button {
 
 /* Site navbar — consistent height + mobile panel */
 :root {
+  --top-bar-height: 2.25rem;
   --site-nav-height: 3.75rem;
 }
 
 @media (min-width: 640px) {
   :root {
+    --top-bar-height: 2.25rem;
     --site-nav-height: 4rem;
   }
 }
 
 .site-nav {
+  top: var(--top-bar-height) !important;
   padding-top: env(safe-area-inset-top, 0px);
   overflow: visible;
 }
@@ -282,7 +354,7 @@ a, button {
 }
 
 .site-nav-mobile-panel {
-  max-height: calc(100dvh - var(--site-nav-height) - env(safe-area-inset-top, 0px));
+  max-height: calc(100dvh - var(--top-bar-height) - var(--site-nav-height) - env(safe-area-inset-top, 0px));
 }
 
 .site-nav-menu-btn {

@@ -15,7 +15,7 @@ const LeadPopup = () => {
     const timer = setTimeout(() => {
       setShow(true);
       sessionStorage.setItem('hasShownLeadPopup', 'true');
-    }, 5000);
+    }, 12000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -95,17 +95,17 @@ const LeadPopup = () => {
         {submitted ? (
           <div style={{ textAlign: 'center', padding: '2rem 0' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.5rem', fontWeight: 700, color: '#01630b', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.5rem', fontWeight: 700, color: '#4A7C59', marginBottom: '0.5rem' }}>
               Thank You!
             </h3>
             <p style={{ color: '#6b7280' }}>We'll call you back shortly.</p>
           </div>
         ) : (
           <>
-            <p style={{ color: '#028A0F', fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+            <p style={{ color: '#4A7C59', fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
               Limited Time Offer
             </p>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', fontWeight: 700, color: '#01630b', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', fontWeight: 700, color: '#4A7C59', marginBottom: '0.5rem' }}>
               Get a Free Consultation
             </h3>
             <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: 1.6 }}>
@@ -163,7 +163,7 @@ const LeadPopup = () => {
                 style={{
                   width: '100%',
                   padding: '1rem',
-                  backgroundColor: loading ? '#6b7280' : '#028A0F',
+                  backgroundColor: loading ? '#6b7280' : '#4A7C59',
                   color: '#fff',
                   border: 'none',
                   borderRadius: '0.75rem',

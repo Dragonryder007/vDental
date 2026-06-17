@@ -24,6 +24,7 @@ async function build() {
       '.png': 'file',
       '.svg': 'file',
       '.jpg': 'file',
+      '.mp4': 'file',
       '.css': 'css'
     },
     define: {

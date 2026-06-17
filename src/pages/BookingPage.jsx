@@ -252,7 +252,7 @@ const BookingPage = () => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
+                className="bg-[color:var(--teal)] text-white px-8 py-3 rounded-xl font-bold hover:bg-[color:var(--dk)] transition flex items-center justify-center gap-2"
               >
                 <span>{t('booking.whatsappBtn')}</span>
                 <span className="text-xl">💬</span>

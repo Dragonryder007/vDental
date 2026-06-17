@@ -72,7 +72,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('nav.home'), path: '/' },
-    { name: t('nav.aboutUs'), path: '/#about' },
+    { name: t('nav.aboutUs'), path: '/#legacy' },
     { name: t('nav.ourWork'), path: '/#our-work' },
     { name: t('nav.results'), path: '/results' },
     { name: t('nav.aiPreview'), path: '/ai-preview' },
@@ -161,7 +161,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt={t('nav.logoAlt')}
-            className="h-14 w-auto object-contain sm:h-16 lg:h-16 xl:h-[4.5rem]"
+            className="h-20 w-auto object-contain sm:h-20 lg:h-20 xl:h-24"
             width={160}
             height={48}
           />
@@ -208,7 +208,7 @@ const Navbar = () => {
                 <div
                   id="mega-menu-panel"
                   className="fixed left-0 right-0 z-[100] border-t border-black/5 bg-white shadow-2xl"
-                  style={{ top: 'var(--site-nav-height)' }}
+                  style={{ top: 'calc(var(--top-bar-height) + var(--site-nav-height))' }}
                 >
                   <div className="mx-auto max-w-7xl px-6 py-0">
                     {/* Top label bar */}
@@ -365,7 +365,7 @@ const Navbar = () => {
           <div
             id="mobile-nav-panel"
             className="site-nav-mobile-panel fixed left-0 right-0 z-50 overflow-y-auto overscroll-contain border-b border-black/5 bg-white shadow-2xl lg:hidden"
-            style={{ top: 'var(--site-nav-height)' }}
+            style={{ top: 'calc(var(--top-bar-height) + var(--site-nav-height))' }}
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               {navLinks.map((link) => (

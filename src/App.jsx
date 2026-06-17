@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga4';
 import Navbar from './components/Navbar';
+import TopBar from './components/TopBar';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import { recordVisit } from './utils/visitorTracker';
@@ -98,6 +99,7 @@ function AppLayout() {
     <>
       {!isAdmin && <Preloader />}
       {!isAdmin && <LeadPopup />}
+      {!isAdmin && <TopBar />}
       {!isAdmin && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
