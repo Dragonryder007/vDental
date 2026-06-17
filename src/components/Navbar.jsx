@@ -9,12 +9,22 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef(null);
+  const closeTimerRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
 
   const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
-  const closeServicesMenu = useCallback(() => setServicesOpen(false), []);
+  const closeServicesMenu = useCallback(() => {
+    closeTimerRef.current = setTimeout(() => setServicesOpen(false), 180);
+  }, []);
+  const cancelCloseServicesMenu = useCallback(() => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+  }, []);
+  const closeServicesMenuNow = useCallback(() => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setServicesOpen(false);
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -26,17 +36,17 @@ const Navbar = () => {
 
   useEffect(() => {
     closeMobileMenu();
-    closeServicesMenu();
-  }, [location.pathname, location.hash, closeMobileMenu, closeServicesMenu]);
+    closeServicesMenuNow();
+  }, [location.pathname, location.hash, closeMobileMenu, closeServicesMenuNow]);
 
   useEffect(() => {
     if (!servicesOpen) return undefined;
     const onKey = (e) => {
-      if (e.key === 'Escape') closeServicesMenu();
+      if (e.key === 'Escape') closeServicesMenuNow();
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [servicesOpen, closeServicesMenu]);
+  }, [servicesOpen, closeServicesMenuNow]);
 
   useEffect(() => {
     const onPointerDown = (e) => {
@@ -209,6 +219,8 @@ const Navbar = () => {
                   id="mega-menu-panel"
                   className="fixed left-0 right-0 z-[100] border-t border-black/5 bg-white shadow-2xl"
                   style={{ top: 'calc(var(--top-bar-height) + var(--site-nav-height))' }}
+                  onMouseEnter={cancelCloseServicesMenu}
+                  onMouseLeave={closeServicesMenu}
                 >
                   <div className="mx-auto max-w-7xl px-6 py-0">
                     {/* Top label bar */}
@@ -243,7 +255,7 @@ const Navbar = () => {
                               <Link
                                 key={link.path}
                                 to={link.path}
-                                onClick={closeServicesMenu}
+                                onClick={closeServicesMenuNow}
                                 className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm font-medium text-[color:var(--txt)]/70 transition-all hover:bg-[color:var(--soft)] hover:text-[color:var(--teal)] group/item"
                               >
                                 <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--teal)]/25 group-hover/item:bg-[color:var(--teal)] transition-colors shrink-0" />
@@ -260,7 +272,7 @@ const Navbar = () => {
                       <span className="text-xs text-[color:var(--muted)]">Not sure which treatment? Our specialists will guide you.</span>
                       <Link
                         to="/booking"
-                        onClick={closeServicesMenu}
+                        onClick={closeServicesMenuNow}
                         className="inline-flex items-center gap-1.5 rounded-lg bg-[color:var(--teal)] px-4 py-2 text-xs font-bold text-white hover:bg-[color:var(--dk)] transition-colors"
                       >
                         Book Free Consultation &rarr;
