@@ -64,6 +64,13 @@ async function build() {
     // Copy hero poster to a fixed path AFTER build so index.html can preload it
     const posterFile = fs.readdirSync(distDir).find(f => f.startsWith('hero-poster') && f.endsWith('.webp'));
     if (posterFile) fs.copyFileSync(path.join(distDir, posterFile), path.join(distDir, 'poster.webp'));
+    // Copy all public/ files to dist/ (sitemap.xml, robots.txt, etc.)
+    const publicDir = path.resolve('public');
+    if (fs.existsSync(publicDir)) {
+      for (const file of fs.readdirSync(publicDir)) {
+        fs.copyFileSync(path.join(publicDir, file), path.join(distDir, file));
+      }
+    }
     await ctx.dispose();
     console.log('Build complete.');
   }
