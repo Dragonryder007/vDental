@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block internal/admin pages from indexing
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /ai-preview
+Disallow: /design
+Disallow: /results
+Disallow: /assessment
+
+Sitemap: https://vdentalandimplantcenter.com/sitemap.xml
