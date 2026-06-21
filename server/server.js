@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import compression from 'compression';
 import bodyParser from 'body-parser';
 import cron from 'node-cron';
 import jwt from 'jsonwebtoken';
@@ -2155,8 +2156,33 @@ cron.schedule('0 9 * * *', async () => {
 // ============================================
 // SERVE FRONTEND (React)
 // ============================================
+app.use(compression());
+
 const distPath = path.join(__dirname, '..', 'dist');
-app.use(express.static(distPath));
+
+// robots.txt served from project root
+app.get('/robots.txt', (_req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'robots.txt'));
+});
+
+app.use(express.static(distPath, {
+  setHeaders(res, filePath) {
+    // Only immutable-cache content-hashed assets (chunks/* and hashed images).
+    // main.js and index.css are unhashed entry points — give them a short cache
+    // so browsers always pick up fresh builds.
+    const basename = path.basename(filePath);
+    if (/^chunks[\\/]/.test(path.relative(distPath, filePath))) {
+      // Hashed chunk files — safe to cache forever
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (/\.(webp|png|jpg|gif|svg|ico|woff2?|mp4)$/.test(basename)) {
+      // Images/fonts — hashed by esbuild, safe to cache forever
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (/\.(js|css)$/.test(basename)) {
+      // Unhashed entry points (main.js, index.css) — revalidate every time
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+  }
+}));
 
 // API health check
 app.get('/api/health', (req, res) => {
@@ -2258,9 +2284,28 @@ app.get('/api/db-status', async (req, res) => {
   }
 });
 
+// Build modulepreload hints once at startup — tells browser to fetch vendor chunks early
+function buildModulePreloadTags() {
+  try {
+    const mainJs = fs.readFileSync(path.join(distPath, 'main.js'), 'utf-8');
+    // Match both `import"/..."` and `import{...}from"/..."` in minified ESM output
+    const matches = [...mainJs.matchAll(/(?:^import|from)\s*["'](\/chunks\/[^"']+)["']/gm)];
+    const unique = [...new Set(matches.map(m => m[1]))];
+    return unique.map(p => `<link rel="modulepreload" href="${p}">`).join('');
+  } catch {
+    return '';
+  }
+}
+const modulePreloadTags = buildModulePreloadTags();
+const indexHtmlPath = path.join(__dirname, '..', 'index.html');
+
 // Catch-all route to serve React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  if (!modulePreloadTags) return res.sendFile(indexHtmlPath);
+  const html = fs.readFileSync(indexHtmlPath, 'utf-8')
+    .replace('</head>', `${modulePreloadTags}</head>`);
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
 });
 
 async function startServer() {

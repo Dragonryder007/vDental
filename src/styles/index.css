@@ -37,6 +37,12 @@ html {
   overflow-x: clip;
   max-width: 100%;
   scroll-behavior: smooth;
+  /* Anchor links land below fixed nav */
+  scroll-padding-top: 72px;
+}
+
+@media (min-width: 640px) {
+  html { scroll-padding-top: 80px; }
 }
 
 body {
@@ -47,6 +53,8 @@ body {
   min-width: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent browser pull-to-refresh on mobile — looks cheap */
+  overscroll-behavior-y: none;
 }
 
 /* ── Premium link & button transitions */
@@ -54,6 +62,9 @@ a, button {
   transition-property: color, background-color, border-color, opacity, transform, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
+  /* Remove 300ms tap delay on Android; kill tap highlight globally */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* GSAP initial hidden state — prevents flash before animation */
@@ -101,8 +112,21 @@ a, button {
   right: max(0.75rem, env(safe-area-inset-right, 0px));
 }
 
+@media (max-width: 767px) {
+  .chatbot-fab {
+    top: 58% !important;
+    bottom: auto !important;
+    right: 0.75rem !important;
+  }
+  .chatbot-panel {
+    top: auto !important;
+    bottom: calc(64px + env(safe-area-inset-bottom, 0px) + 0.5rem) !important;
+    height: min(20rem, calc(100dvh - 10rem - env(safe-area-inset-bottom, 0px)));
+  }
+}
+
 .font-serif {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 /* Gold-line eyebrow label — homepage premium sections */
@@ -332,13 +356,13 @@ a, button {
 
 /* Site navbar — consistent height + mobile panel */
 :root {
-  --top-bar-height: 2.25rem;
+  --top-bar-height: 0rem;
   --site-nav-height: 3.75rem;
 }
 
 @media (min-width: 640px) {
   :root {
-    --top-bar-height: 2.25rem;
+    --top-bar-height: 0rem;
     --site-nav-height: 4rem;
   }
 }
@@ -429,6 +453,68 @@ a:hover .ms, button:hover .ms {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
+/* ── Gold shimmer animation ───────────────────────────────────────── */
+@keyframes gold-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.btn-gold-shimmer {
+  background: linear-gradient(
+    105deg,
+    #C9A24A 0%,
+    #C9A24A 35%,
+    #f0d080 50%,
+    #C9A24A 65%,
+    #C9A24A 100%
+  );
+  background-size: 200% auto;
+  animation: gold-shimmer 3s linear infinite;
+}
+
+/* ── No scrollbar utility ─────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Page fade-in transition ──────────────────────────────────────── */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Gold eyebrow line draw animation ────────────────────────────── */
+@keyframes lineGrow {
+  from { width: 0; opacity: 0; }
+  to   { width: 2rem; opacity: 1; }
+}
+.eyebrow-line {
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: #C9A24A;
+  animation: lineGrow 0.6s ease forwards;
+}
+
+/* ── Word reveal animation ────────────────────────────────────────── */
+@keyframes wordSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.word-reveal span {
+  display: inline-block;
+  opacity: 0;
+  animation: wordSlideUp 0.5s ease forwards;
+}
+
+/* ── Magnetic button base ─────────────────────────────────────────── */
+.btn-magnetic {
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+.btn-magnetic:hover {
+  transform: scale(1.04);
+}
+
 /* Blog article typography */
 .blog-article {
   color: var(--txt);
@@ -489,4 +575,42 @@ a:hover .ms, button:hover .ms {
   margin: 1.5rem 0;
   font-style: italic;
   color: var(--dk);
+}
+
+/* ── Premium Mobile / Touch UX ──────────────────────────────────── */
+
+/* Spring-scale tap feedback for interactive cards */
+.tap-spring {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.tap-spring:active {
+  transform: scale(0.97);
+}
+
+/* Horizontal carousel — momentum + overscroll containment */
+.carousel-x {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/* On touch devices, convert hover effects to active/tap equivalents */
+@media (hover: none) {
+  .hover-lift:active {
+    transform: translateY(-4px);
+  }
+  .img-zoom:active img {
+    transform: scale(1.04);
+  }
+  .premium-shadow-hover:active {
+    box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.08),
+                0 30px 50px -20px rgba(62, 122, 82, 0.1);
+  }
+  .btn-magnetic:active {
+    transform: scale(1.04);
+  }
+  /* Shimmer btn active state */
+  .btn-glow:active {
+    transform: scale(0.97) translateY(0);
+  }
 }

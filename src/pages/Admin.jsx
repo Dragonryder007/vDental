@@ -1,7 +1,7 @@
 ﻿import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import logo from '../images/logo.png';
+import logo from '../images/logo.webp';
 import AdminBlogPanel from '../components/AdminBlogPanel';
 
 const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';

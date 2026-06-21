@@ -1,13 +1,36 @@
-﻿import alignersBg from '../images/braces and aligners background.jpg';
-import invisalignBeforeAfter from '../images/invisalign-before-after.png';
-import smileDesignBg from '../images/smile desighning background.png';
-import smileMakeoverBeforeAfter from '../images/smile-makeover-before-after.png';
-import smileDesignBefore from '../images/smile design before.png';
-import smileDesignAfter from '../images/smile design after.png';
-import implantsBg from '../images/dental implant background.jpg';
-import dentalImplantsBeforeAfter from '../images/dental-implants-before-after.png';
-import allOn4BeforeAfter from '../images/all-on-4-before-after.png';
-import fullMouthRehabBeforeAfter from '../images/full-mouth-rehab-before-after.png';
+﻿import doctorVathsala from '../images/doctor-vathsala.webp';
+import doctorNoel from '../images/doctor-noel.webp';
+import doctorJishnu from '../images/doctor-jishnu.webp';
+import doctorAkhil from '../images/doctor-akhil.webp';
+import doctorSarah from '../images/doctor-sarah.webp';
+import doctorSonika from '../images/doctor-sonika.webp';
+import invisalignBeforeAfter from '../images/invisalign-before-after.webp';
+import smileMakeoverBeforeAfter from '../images/smile-makeover-before-after.webp';
+import smileDesignBefore from '../images/smile design before.webp';
+import smileDesignAfter from '../images/smile design after.webp';
+import dentalImplantsBeforeAfter from '../images/dental-implants-before-after.webp';
+import allOn4BeforeAfter from '../images/all-on-4-before-after.webp';
+import fullMouthRehabBeforeAfter from '../images/full-mouth-rehab-before-after.webp';
+
+// AI-generated service hero images
+import heroSmileDesigning   from '../images/hero-smile-designing.webp';
+import heroInvisalign        from '../images/hero-invisalign.webp';
+import heroVeneers           from '../images/hero-veneers.webp';
+import heroSmileMakeover     from '../images/hero-smile-makeover.webp';
+import heroAlignersBraces    from '../images/hero-aligners-braces.webp';
+import heroDentalImplants    from '../images/hero-dental-implants.webp';
+import heroFullMouthRehab    from '../images/hero-full-mouth-rehab.webp';
+import heroAllOn4            from '../images/hero-all-on-4.webp';
+import heroGeneralDentistry  from '../images/hero-general-dentistry.webp';
+import heroFamilyDentistry   from '../images/hero-family-dentistry.webp';
+import heroPediatricDentistry from '../images/hero-pediatric-dentistry.webp';
+import heroLaserDentistry    from '../images/hero-laser-dentistry.webp';
+import heroInvisalignKids    from '../images/hero-invisalign-kids.webp';
+import heroDentalTourism     from '../images/hero-dental-tourism.webp';
+import heroNriConsultation   from '../images/hero-nri-consultation.webp';
+import heroTravelAssistance  from '../images/hero-travel-assistance.webp';
+import heroRootCanal        from '../images/hero-root-canal.webp';
+import heroCrownsBridge     from '../images/hero-crowns-bridge.webp';
 
 export const seoServiceContent = {
   invisalignBangalore: {
@@ -20,7 +43,7 @@ export const seoServiceContent = {
       keywords:
         'Invisalign Bangalore, clear aligners Bangalore, invisible braces Bangalore, Invisalign cost Bangalore, best Invisalign dentist Bangalore, Indiranagar orthodontist',
     },
-    heroImg: alignersBg,
+    heroImg: heroInvisalign,
     beforeImg: null,
     afterImg: invisalignBeforeAfter,
     title: 'Invisalign in Bangalore',
@@ -81,30 +104,39 @@ export const seoServiceContent = {
       note: 'Final cost depends on case complexity, number of aligners, bite correction needs, and any preparatory treatments. We provide a transparent quote after your clinical assessment.',
       factors: ['Severity of misalignment', 'Number of aligner trays', 'Refinement trays if needed', 'Retainers and follow-up care'],
     },
-    doctor: {
-      name: 'Dr. Jishnu Premnath',
-      title: 'Invisalign Provider — Senior Smile Correction & Implant Specialist',
-      experience: '8+ Years | Internationally Trained · Bengaluru, India',
-      bio: 'Dr. Jishnu Premnath is our lead Invisalign provider, combining advanced digital smile planning with precise aligner protocols for natural, confident outcomes. Supported by our specialist orthodontic team for comprehensive clear aligner care.',
-    },
     doctors: [
       {
         name: 'Dr. Jishnu Premnath',
-        title: 'Invisalign Provider · Senior Smile Correction & Implant Specialist',
-        experience: '8+ Years | Internationally Trained',
+        title: 'Senior Smile & Implant Specialist',
+        specialization: 'Lead Invisalign Provider | Internationally Trained | 8+ Years Experience',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu is our lead Invisalign provider, combining advanced digital smile planning with precise aligner protocols for natural, confident outcomes.',
+        specialties: ['Invisalign & Clear Aligners', 'Digital Smile Planning', 'Smile Makeovers'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
         tag: 'Lead Provider',
       },
       {
         name: 'Dr. Sonika',
-        title: 'Orthodontist · Invisalign & Clear Aligners Specialist',
-        experience: '12+ Years | MDS Orthodontics',
+        title: 'Orthodontist',
+        specialization: 'Invisalign & Clear Aligners Specialist | 12+ Years Experience',
+        experience: '12+ Years',
+        bio: 'Dr. Sonika is a certified orthodontics specialist with extensive training in modern aligner systems and advanced braces technology, helping patients achieve perfectly aligned smiles.',
+        specialties: ['Invisalign / Clear Aligners', 'Braces', 'Smile Alignment'],
+        image: doctorSonika,
+        photoPosition: '50% 0%',
         tag: 'Orthodontic Specialist',
       },
       {
         name: 'Dr. Sarah Shaik',
-        title: 'Orthodontist · Aligner & Braces Specialist',
-        experience: '5+ Years | MDS Orthodontics, VS Dental College',
-        tag: '300+ Aligner Cases',
+        title: 'Orthodontist',
+        specialization: 'MDS Orthodontics | Aligner & Braces Specialist | 5+ Years Experience',
+        experience: '5+ Years',
+        bio: 'Dr. Sarah has transformed smiles through 300+ completed braces cases and 350+ aligner treatments, with expertise in precise diagnosis and strategic treatment planning.',
+        specialties: ['Invisalign & Clear Aligners', 'Ceramic & Metal Braces', 'Growth Modulation'],
+        image: doctorSarah,
+        photoPosition: '50% 0%',
+        tag: 'Aligner Specialist',
       },
     ],
     faqs: [
@@ -135,7 +167,7 @@ export const seoServiceContent = {
       keywords:
         'veneers Bangalore, dental veneers cost Bangalore, porcelain veneers Bangalore, E-max veneers, cosmetic dentist Bangalore, smile veneers Indiranagar',
     },
-    heroImg: smileDesignBg,
+    heroImg: heroVeneers,
     beforeImg: smileDesignBefore,
     afterImg: smileDesignAfter,
     title: 'Dental Veneers in Bangalore',
@@ -196,12 +228,19 @@ export const seoServiceContent = {
       note: 'Pricing varies by material (E-max, zirconia), number of teeth treated, and any preparatory work required. A detailed quote is provided after your smile assessment.',
       factors: ['Number of veneers needed', 'Material selection', 'Smile design complexity', 'Gum or bite adjustments if required'],
     },
-    doctor: {
-      name: 'Dr. Jishnu Premnath',
-      title: 'Senior Smile Correction & Implant Specialist — Veneers & Cosmetic Dentistry',
-      experience: '8+ Years | Internationally Trained',
-      bio: 'Dr. Jishnu Premnath brings 8+ years of experience in cosmetic and restorative dentistry, with specialist expertise in veneers, aligners, and digital smile planning. Internationally trained and focused on natural, balanced aesthetics, he helps patients achieve refined, confidence-building results through precision-led veneer treatment.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'Senior Smile Correction & Implant Specialist',
+        specialization: 'Veneers & Cosmetic Dentistry | Internationally Trained | 8+ Years Experience',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu brings 8+ years of expertise in veneers, aligners, and digital smile planning — delivering refined, confidence-building results through precision cosmetic dentistry.',
+        specialties: ['Dental Veneers', 'Digital Smile Design', 'Smile Makeovers'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+        tag: 'Lead Specialist',
+      },
+    ],
     faqs: [
       { q: 'How long do veneers last?', a: 'With good oral hygiene and regular check-ups, premium veneers often last 10–15 years or longer depending on material and habits.' },
       { q: 'Do veneers look natural?', a: 'Yes. We customize shape, shade, and translucency so veneers blend with your facial features rather than appearing artificial.' },
@@ -230,7 +269,7 @@ export const seoServiceContent = {
       keywords:
         'smile makeover Bangalore, full smile transformation Bangalore, cosmetic dentistry Bangalore, Hollywood smile Bangalore, digital smile design Bangalore',
     },
-    heroImg: smileDesignBg,
+    heroImg: heroSmileMakeover,
     beforeImg: null,
     afterImg: smileMakeoverBeforeAfter,
     title: 'Smile Makeover in Bangalore',
@@ -291,12 +330,18 @@ export const seoServiceContent = {
       note: 'Smile makeover pricing depends on the number of procedures, materials, and clinical complexity. Comprehensive packages are quoted after your personalized assessment.',
       factors: ['Scope of cosmetic and restorative work', 'Veneer or crown material choice', 'Need for aligners or implants', 'Digital design and lab fees'],
     },
-    doctor: {
-      name: 'Dr. Jishnu Premnath',
-      title: 'Senior Smile Correction & Implant Specialist — Smile Makeovers',
-      experience: '8+ Years | Internationally Trained',
-      bio: 'With 8+ years in cosmetic and restorative dentistry, Dr. Jishnu Premnath specializes in comprehensive smile makeovers — combining aligners, veneers, implants, and digital planning for harmonious, long-lasting transformations tailored to each patient.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'Senior Smile Correction & Implant Specialist',
+        experience: '8+ Years',
+        specialization: 'International Patient Director | Internationally Trained',
+        description: 'With 8+ years in cosmetic and restorative dentistry, Dr. Jishnu Premnath specializes in comprehensive smile makeovers — combining aligners, veneers, implants, and digital planning for harmonious, long-lasting transformations tailored to each patient.',
+        specialties: ['Smile Makeovers', 'Clear Aligners & Veneers', 'Dental Implants', 'Digital Dentistry'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+      },
+    ],
     faqs: [
       { q: 'What is included in a smile makeover?', a: 'It may include veneers, whitening, bonding, gum contouring, aligners, or implants — depending on what your smile needs. We build a custom plan, not a one-size package.' },
       { q: 'How long does a smile makeover take?', a: 'Simple cases may finish in under 2 weeks. Cases involving alignment or implants can take longer. Your timeline is shared upfront.' },
@@ -325,7 +370,7 @@ export const seoServiceContent = {
       keywords:
         'dental implants Bangalore, tooth implant cost Bangalore, best implant dentist Bangalore, 3D guided implants, single tooth implant Bangalore, full mouth implants Indiranagar',
     },
-    heroImg: implantsBg,
+    heroImg: heroDentalImplants,
     beforeImg: null,
     afterImg: dentalImplantsBeforeAfter,
     title: 'Dental Implants in Bangalore',
@@ -386,12 +431,41 @@ export const seoServiceContent = {
       note: 'Cost varies by implant brand, crown material, bone grafting needs, and number of teeth replaced. A detailed treatment plan and quote are provided after clinical imaging.',
       factors: ['Number of implants required', 'Need for bone graft or sinus lift', 'Crown material (zirconia, E-max)', 'Single tooth vs full-arch restoration'],
     },
-    doctor: {
-      name: 'Dr. Vathsala Naik',
-      title: 'Senior Implant Consultant — Oral Medicine & Radiology',
-      experience: '43+ Years | BDS, MDS',
-      bio: 'Dr. Vathsala brings decades of expertise in implant case planning, oral diagnosis, and radiology — ensuring safe, well-planned outcomes for even complex cases.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'Dr. Vathsala brings decades of expertise in implant case planning, oral diagnosis, and radiology — ensuring safe, well-planned outcomes for even complex cases.',
+        specialties: ['Implant Case Planning', 'Oral Diagnosis & Radiology', 'TMJ Disorders'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+        tag: 'Lead Specialist',
+      },
+      {
+        name: 'Dr. Noel Francis',
+        title: 'Senior Clinical Dentist',
+        specialization: 'Restorative & Endodontics | 10+ Years Experience',
+        experience: '10+ Years',
+        bio: 'Dr. Noel Francis brings a decade of dedicated clinical experience in restorative and endodontic dentistry with a gentle, patient-first approach.',
+        specialties: ['Root Canal Treatment', 'Restorative Dentistry', 'Emergency Dental Care'],
+        image: doctorNoel,
+        photoPosition: '50% 35%',
+        tag: 'Clinical Specialist',
+      },
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'Senior Smile & Implant Specialist',
+        specialization: 'International Patient Director | 8+ Years Experience',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu specializes in dental implants, smile makeovers, and digital dentistry — leading care for both local and international patients.',
+        specialties: ['Dental Implants', 'Smile Makeovers', 'Digital Dentistry'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+        tag: 'Implant Specialist',
+      },
+    ],
     faqs: [
       { q: 'Are dental implants safe?', a: 'Yes. Implants are a well-established treatment with high success rates when performed by trained specialists using proper planning and sterile protocols.' },
       { q: 'How long do dental implants last?', a: 'With good care, many implants last decades or a lifetime. Crown components may need replacement over time.' },
@@ -420,7 +494,7 @@ export const seoServiceContent = {
       keywords:
         'full mouth rehabilitation Bangalore, full mouth reconstruction Bangalore, complete dental rehab India, prosthodontist Bangalore, worn teeth restoration Bangalore',
     },
-    heroImg: implantsBg,
+    heroImg: heroFullMouthRehab,
     beforeImg: null,
     afterImg: fullMouthRehabBeforeAfter,
     title: 'Full Mouth Rehabilitation in Bangalore',
@@ -481,12 +555,28 @@ export const seoServiceContent = {
       note: 'Rehabilitation cost depends on the number of implants, crowns, veneers, extractions, and preparatory procedures required. A comprehensive quote follows your full clinical assessment.',
       factors: ['Extent of tooth loss and wear', 'Implant vs crown-only solutions', 'Material choices (zirconia, E-max)', 'Bone grafting or sinus procedures', 'Number of treatment phases'],
     },
-    doctor: {
-      name: 'Dr. N. Reddy Akhil',
-      title: 'Prosthodontist — Full Mouth Rehabilitation & Implant Prosthetics',
-      experience: '15+ Years | MDS Prosthodontics',
-      bio: 'Dr. Akhil specializes in complex full-mouth rehabilitations, combining prosthetic excellence with implant dentistry for comprehensive smile reconstruction and functional bite restoration.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'With over 43 years of clinical excellence, Dr. Vathsala Naik leads complex implant case planning and assessment for full mouth rehabilitation, ensuring every patient receives the most precise diagnosis and treatment roadmap.',
+        specialties: ['Implant Case Planning', 'Full Mouth Assessment', 'Oral Radiology'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+      },
+      {
+        name: 'Dr. N. Reddy Akhil',
+        title: 'Prosthodontist',
+        specialization: 'Maxillofacial Prosthetics | Certified Implantologist | 15+ Years',
+        experience: '15+ Years',
+        bio: 'Dr. Akhil specializes in complex full-mouth rehabilitations — combining prosthetic excellence with implant dentistry for comprehensive smile reconstruction and functional bite restoration.',
+        specialties: ['Full Mouth Rehabilitation', 'Dental Implants & Prosthesis', 'Veneers & Crowns'],
+        image: doctorAkhil,
+        photoPosition: '50% 20%',
+      },
+    ],
     faqs: [
       { q: 'What is full mouth rehabilitation?', a: 'It is a complete treatment plan that restores all or most teeth in both jaws — addressing function, bite, and aesthetics together rather than treating one tooth at a time.' },
       { q: 'How long does full mouth rehab take?', a: 'Timelines vary from a few weeks for restorative-only cases to several months when implants and healing phases are involved. Your plan is shared upfront.' },
@@ -515,7 +605,7 @@ export const seoServiceContent = {
       keywords:
         'All-on-4 Bangalore, All-on-6 Bangalore, All on 4 dental implants Bangalore, All on 6 implants Bangalore, full arch implants Bangalore, same day teeth Bangalore, implant supported dentures Bangalore',
     },
-    heroImg: implantsBg,
+    heroImg: heroAllOn4,
     beforeImg: null,
     afterImg: allOn4BeforeAfter,
     title: 'All-on-4 / All-on-6 Implants in Bangalore',
@@ -576,12 +666,52 @@ export const seoServiceContent = {
       note: 'All-on-4 pricing depends on arch (upper/lower/both), provisional vs final prosthesis material, extractions, and any preparatory procedures. Exact quote provided after CBCT and clinical evaluation.',
       factors: ['Single arch vs both arches', 'Provisional and final prosthesis type', 'Extractions or bone procedures needed', 'Implant system selected', 'Complexity of bite and aesthetics'],
     },
-    doctor: {
-      name: 'Dr. Vathsala Naik',
-      title: 'Senior Implant Consultant — Full-Arch Implant Planning',
-      experience: '43+ Years | BDS, MDS Oral Medicine & Radiology',
-      bio: 'Dr. Vathsala provides expert implant case planning and radiological assessment for complex full-arch cases, ensuring safe surgical pathways and predictable prosthetic outcomes.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'Dr. Vathsala provides expert implant case planning and radiological assessment for complex full-arch cases, ensuring safe surgical pathways and predictable prosthetic outcomes.',
+        specialties: ['Implant Case Planning', 'Oral Radiology', 'TMJ Disorders'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+        tag: 'Lead Specialist',
+      },
+      {
+        name: 'Dr. N. Reddy Akhil',
+        title: 'Prosthodontist',
+        specialization: 'Maxillofacial Prosthetics | 15+ Years Experience',
+        experience: '15+ Years',
+        bio: 'Dr. Akhil specializes in complex full-mouth rehabilitations and implant prosthetics, delivering high-aesthetic full-arch restorations with precision and detail.',
+        specialties: ['Full Mouth Rehabilitation', 'Implant Prosthetics', 'Smile Reconstruction'],
+        image: doctorAkhil,
+        photoPosition: '50% 20%',
+        tag: 'Prosthodontist',
+      },
+      {
+        name: 'Dr. Noel Francis',
+        title: 'Senior Clinical Dentist',
+        specialization: 'Restorative & Endodontics | 10+ Years Experience',
+        experience: '10+ Years',
+        bio: 'Dr. Noel brings a decade of clinical experience in restorative dentistry, supporting comprehensive full-arch preparation and post-surgical care.',
+        specialties: ['Restorative Dentistry', 'Root Canal Treatment', 'Emergency Dental Care'],
+        image: doctorNoel,
+        photoPosition: '50% 35%',
+        tag: 'Clinical Specialist',
+      },
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'Senior Smile & Implant Specialist',
+        specialization: 'International Patient Director | 8+ Years Experience',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu leads international patient coordination and implant treatment planning, specializing in full-arch digital smile design and all-on-4 protocols.',
+        specialties: ['Dental Implants', 'Digital Smile Design', 'International Patient Care'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+        tag: 'Implant Specialist',
+      },
+    ],
     faqs: [
       { q: 'What is All-on-4?', a: 'All-on-4 is a technique where a full fixed arch of teeth is supported by four strategically placed dental implants, often reducing the need for bone grafting.' },
       { q: 'Can I get teeth on the same day?', a: 'In selected cases, a fixed provisional bridge is placed shortly after implant surgery. Suitability is determined after scans and clinical assessment.' },
@@ -610,7 +740,7 @@ export const seoServiceContent = {
       keywords:
         'dental tourism India, dental tourism Bangalore, NRI dental care India, affordable dental implants India, Invisalign Bangalore, smile makeover India, full mouth rehabilitation Bangalore, dental treatment UAE vs India, dental holiday Bangalore, international dental patients India, dental implants cost India USA UK Australia, cheap dental implants India, dental implants Dubai vs India, dental treatment Saudi Arabia vs India',
     },
-    heroImg: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?w=1400&q=85',
+    heroImg: heroDentalTourism,
     beforeImg: smileDesignBefore,
     afterImg: smileDesignAfter,
     title: 'Dental Tourism in Bangalore, India',
@@ -719,13 +849,29 @@ export const seoServiceContent = {
       'Veneers & Aesthetic Dentistry',
       'Full Mouth Rehabilitation',
     ],
-    servedAreas: ['Marathahalli', 'Whitefield', 'Brookefield', 'Bellandur', 'Varthur', 'Kundalahalli', 'Mahadevapura', 'Bangalore East'],
-    doctor: {
-      name: 'Dr. Jishnu Premnath',
-      title: 'International Patient Director — V Dental & Implant Center',
-      experience: '8+ Years | Internationally Trained · Bengaluru, India',
-      bio: 'Dr. Jishnu Premnath leads international patient coordination at V Dental & Implant Center, overseeing dental tourism services for NRIs and global visitors. A Senior Smile Correction & Implant Specialist with 8+ years of experience, he combines deep clinical expertise in aligners, veneers, and implants with seamless end-to-end international patient support. Our wider clinical team brings over 80+ years of combined experience, with senior specialists holding 43+ years of individual expertise in implants, cosmetic dentistry, and full mouth rehabilitation.',
-    },
+    servedAreas: ['USA', 'UK', 'Australia', 'UAE', 'Saudi Arabia', 'Oman', 'Kuwait', 'Bahrain', 'Qatar', 'Canada', 'Singapore', 'New Zealand'],
+    doctors: [
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'International Patient Director',
+        specialization: 'Senior Smile Correction & Implant Specialist | Internationally Trained | 8+ Years',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu Premnath leads international patient coordination at V Dental, combining deep clinical expertise in aligners, veneers, and implants with seamless end-to-end support for NRI and global visitors to Bangalore.',
+        specialties: ['International Patient Care', 'Smile Makeovers', 'Dental Implants'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+      },
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'With 43+ years of clinical excellence, Dr. Vathsala Naik provides comprehensive implant case planning and oral medicine expertise for international patients seeking complex dental treatments in Bangalore.',
+        specialties: ['Implant Planning', 'Complex Case Diagnosis', 'Oral Radiology'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+      },
+    ],
     faqs: [
       { q: 'Is dental treatment in India safe for international patients?', a: 'Yes. V Dental & Implant Center follows strict international sterilization protocols, uses globally recognized implant systems and premium materials, and is staffed by experienced specialists with advanced clinical training.' },
       { q: 'How much can I save with dental tourism in India?', a: 'Patients typically save 40–70% compared to equivalent treatment in the USA, UK, Australia, UAE, or Saudi Arabia — depending on the procedure type and clinical complexity.' },
@@ -758,7 +904,7 @@ export const seoServiceContent = {
       keywords:
         'NRI dental consultation online, online dental consultation India, virtual dental consultation Bangalore, video consultation dentist India, NRI patient teleconsultation, dental treatment planning online India, remote dental consultation NRI, online dental second opinion India, dental tourism online consultation Bangalore',
     },
-    heroImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=85',
+    heroImg: heroNriConsultation,
     beforeImg: null,
     afterImg: null,
     title: 'NRI Patient Online Dental Consultation',
@@ -826,12 +972,18 @@ export const seoServiceContent = {
         'Any additional procedures identified during review (e.g. extractions, grafting)',
       ],
     },
-    doctor: {
-      name: 'Dr. Jishnu Premnath',
-      title: 'International Patient Director — V Dental & Implant Center',
-      experience: '8+ Years | Internationally Trained · Bengaluru, India',
-      bio: 'Dr. Jishnu Premnath personally oversees online consultations for NRI and international patients at V Dental & Implant Center. A Senior Smile Correction & Implant Specialist with 8+ years of experience, he reviews each case in detail before preparing a tailored treatment plan — giving every patient clarity and confidence long before they board their flight to Bangalore.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'International Patient Director',
+        specialization: 'Senior Smile Correction & Implant Specialist | Internationally Trained | 8+ Years',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu Premnath personally oversees online consultations for NRI and international patients — reviewing each case in detail and preparing a tailored treatment plan, giving patients full clarity before they travel to Bangalore.',
+        specialties: ['International Patient Care', 'Smile Makeovers', 'Dental Implants'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+      },
+    ],
     faqs: [
       { q: 'Is the online consultation really free?', a: 'Yes. Online consultations for NRI and international patients are completely free, with no obligation to travel or proceed with treatment.' },
       { q: 'What records do I need to share before my consultation?', a: 'Recent photographs of your teeth and smile, any available X-rays, OPG or CBCT scans, and reports from previous dental treatment, if you have them. If you do not, our team will guide you on simple ways to capture useful photos at home.' },
@@ -860,7 +1012,7 @@ export const seoServiceContent = {
       keywords:
         'dental tourism travel assistance India, NRI patient travel support Bangalore, airport pickup dental patients India, hotel assistance dental tourism India, visa letter dental treatment India, international patient coordinator Bangalore, dental holiday travel planning India, dental tourism trip planning Bangalore',
     },
-    heroImg: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=85',
+    heroImg: heroTravelAssistance,
     beforeImg: null,
     afterImg: null,
     title: 'Travel Assistance for NRI & International Dental Patients',
@@ -928,12 +1080,18 @@ export const seoServiceContent = {
         'Any additional documentation needed for visa purposes',
       ],
     },
-    doctor: {
-      name: 'Dr. Jishnu Premnath',
-      title: 'International Patient Director — V Dental & Implant Center',
-      experience: '8+ Years | Internationally Trained · Bengaluru, India',
-      bio: 'Dr. Jishnu Premnath leads the international patient team at V Dental & Implant Center, overseeing both the clinical planning and on-ground travel coordination for NRI and global patients. Working alongside a dedicated patient coordinator, he ensures every visit to Bangalore — from airport arrival to final departure — is organised, comfortable, and free of avoidable stress.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'International Patient Director',
+        specialization: 'Senior Smile Correction & Implant Specialist | Internationally Trained | 8+ Years',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu Premnath leads the international patient team at V Dental & Implant Center, overseeing clinical planning and on-ground travel coordination for NRI and global patients — ensuring every visit is smooth, comfortable, and clinically excellent.',
+        specialties: ['International Patient Care', 'NRI Dental Planning', 'Smile Makeovers'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+      },
+    ],
     faqs: [
       { q: 'Will someone receive me at the airport when I arrive in Bangalore?', a: 'Yes. Our team arranges airport pickup from Kempegowda International Airport and a safe transfer to your hotel, and coordinates your drop-off again at the end of your visit.' },
       { q: 'Can you help me find a place to stay near the clinic?', a: 'Yes. We recommend trusted partner hotels and serviced apartments close to V Dental & Implant Center in Indiranagar, suited to different budgets and stay durations.' },
@@ -962,7 +1120,7 @@ export const seoServiceContent = {
       description: 'Comprehensive general dentistry in Bangalore — dental checkups, root canal treatment, fillings, scaling, whitening, extractions, crowns & bridges. Book your consultation at V Dental & Implant Center, Indiranagar.',
       keywords: 'general dentistry Bangalore, dental checkup Bangalore, root canal treatment Bangalore, tooth filling Bangalore, scaling polishing Bangalore, teeth whitening Bangalore, tooth extraction Bangalore, dental crowns Bangalore',
     },
-    heroImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=85',
+    heroImg: heroGeneralDentistry,
     beforeImg: null,
     afterImg: null,
     title: 'General Dentistry in Bangalore',
@@ -1023,12 +1181,28 @@ export const seoServiceContent = {
       note: 'We provide clear, itemized treatment plans before any procedure begins. No hidden fees — you know exactly what to expect.',
       factors: ['Type and complexity of treatment', 'Number of teeth involved', 'Materials used (composite, ceramic, etc.)', 'X-rays and diagnostic records', 'Follow-up care requirements'],
     },
-    doctor: {
-      name: 'Dr. Noel Francis',
-      title: 'Senior Clinical Dentist — Restorative & General Dentistry',
-      experience: '10+ Years | BDS · Bengaluru, India',
-      bio: 'Dr. Noel Francis brings over a decade of dedicated clinical experience in restorative and general dentistry. His gentle approach and precision techniques make him a trusted specialist for routine and complex dental care at V Dental & Implant Center.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Noel Francis',
+        title: 'Senior Clinical Dentist',
+        specialization: 'Restorative & Endodontics | 10+ Years Experience',
+        experience: '10+ Years',
+        bio: 'Dr. Noel Francis brings over a decade of dedicated clinical experience in restorative and general dentistry. His gentle approach and precision techniques make him a trusted specialist for routine and complex dental care.',
+        specialties: ['Root Canal Treatment', 'Restorative Dentistry', 'Preventive Dentistry'],
+        image: doctorNoel,
+        photoPosition: '50% 35%',
+      },
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'With over 43 years of clinical excellence, Dr. Vathsala Naik provides expert oral medicine and diagnostic care — ensuring every patient receives the right diagnosis and treatment plan from the outset.',
+        specialties: ['Oral Diagnosis', 'Dental Radiology', 'Preventive Care'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+      },
+    ],
     faqs: [
       { q: 'How often should I visit the dentist?', a: 'We recommend a dental checkup every 6 months for most patients. Those with gum disease or higher cavity risk may need more frequent visits.' },
       { q: 'Is root canal treatment painful?', a: 'Modern RCT is performed under local anaesthesia and is generally no more uncomfortable than a routine filling. Most patients are surprised at how comfortable the procedure is.' },
@@ -1052,7 +1226,7 @@ export const seoServiceContent = {
       description: 'Advanced laser dentistry in Bangalore — laser gum treatment, gum contouring, teeth whitening, soft tissue procedures and infection control. Minimally invasive, comfortable, and precise. V Dental & Implant Center.',
       keywords: 'laser dentistry Bangalore, laser dental treatment Bangalore, painless dental treatment, laser gum treatment Bangalore, laser teeth whitening, advanced dental technology, laser gum contouring, modern dentistry Bangalore',
     },
-    heroImg: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1400&q=85',
+    heroImg: heroLaserDentistry,
     beforeImg: null,
     afterImg: null,
     title: 'Laser Dentistry in Bangalore',
@@ -1114,12 +1288,30 @@ export const seoServiceContent = {
       note: 'Laser dentistry costs vary based on the type and extent of treatment required. We provide transparent, itemized estimates before any procedure begins. No hidden fees.',
       factors: ['Type of laser procedure', 'Area and extent of treatment', 'Number of sessions required', 'Additional restorative work needed', 'Follow-up care'],
     },
-    doctor: {
-      name: 'Dr. Vathsala Naik',
-      title: 'Senior Implant Consultant & Oral Medicine Specialist',
-      experience: '43+ Years | BDS, MDS — Oral Medicine & Radiology',
-      bio: 'With over 43 years of clinical excellence, Dr. Vathsala Naik leads advanced dental procedures at V Dental & Implant Center. Our clinical team is experienced in laser-assisted treatments designed to deliver superior outcomes with enhanced patient comfort.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'With over 43 years of clinical excellence, Dr. Vathsala Naik leads advanced laser dental procedures at V Dental & Implant Center, delivering superior outcomes with enhanced patient comfort.',
+        specialties: ['Laser Gum Treatment', 'Oral Medicine', 'Soft Tissue Procedures'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+        tag: 'Lead Specialist',
+      },
+      {
+        name: 'Dr. Jishnu Premnath',
+        title: 'Senior Smile & Implant Specialist',
+        specialization: 'International Patient Director | 8+ Years Experience',
+        experience: '8+ Years',
+        bio: 'Dr. Jishnu combines laser-assisted techniques with digital smile planning to deliver precise, minimally invasive cosmetic and restorative treatments for local and international patients.',
+        specialties: ['Laser Smile Design', 'Gum Contouring', 'Digital Dentistry'],
+        image: doctorJishnu,
+        photoPosition: '50% 45%',
+        tag: 'Smile Specialist',
+      },
+    ],
     faqs: [
       { q: 'Is laser dentistry painful?', a: 'Most laser procedures are associated with significantly less discomfort compared to traditional techniques. Many patients find laser treatment more comfortable than conventional dental procedures.' },
       { q: 'Is laser dentistry safe?', a: 'Yes. Dental lasers are widely used in modern dentistry and are safe when performed by trained dental professionals using calibrated equipment.' },
@@ -1144,7 +1336,7 @@ export const seoServiceContent = {
       description: 'Invisalign for kids and teens in Bangalore. Clear aligners for growing smiles — comfortable, virtually invisible, and removable. Advanced digital orthodontics at V Dental & Implant Center, Indiranagar.',
       keywords: 'Invisalign for kids Bangalore, Invisalign for teens Bangalore, clear aligners children Bangalore, pediatric Invisalign, children orthodontics Bangalore, Invisalign First Bangalore, clear braces kids, teen Invisalign Bangalore',
     },
-    heroImg: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=85',
+    heroImg: heroInvisalignKids,
     beforeImg: null,
     afterImg: null,
     title: 'Invisalign for Kids & Teens in Bangalore',
@@ -1206,12 +1398,28 @@ export const seoServiceContent = {
       note: 'The cost of Invisalign for Kids and Teens depends on case complexity, number of aligners, and treatment duration. We provide a detailed, transparent cost estimate after your child\'s clinical assessment.',
       factors: ['Severity of misalignment', 'Number of aligner sets required', 'Treatment duration', 'Refinements if needed', 'Retainers post-treatment'],
     },
-    doctor: {
-      name: 'Dr. Sarah Shaik',
-      title: 'Orthodontist — Invisalign & Clear Aligners Specialist',
-      experience: '5+ Years | MDS Orthodontics, VS Dental College Bangalore',
-      bio: 'Dr. Sarah Shaik specializes in Invisalign and advanced clear aligner treatments with 350+ aligner cases completed. She combines clinical expertise with a patient-friendly approach to help children and teenagers achieve beautifully aligned smiles with confidence.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Sarah Shaik',
+        title: 'Orthodontist',
+        specialization: 'MDS Orthodontics | Aligner & Braces Specialist | 5+ Years Experience',
+        experience: '5+ Years',
+        bio: 'Dr. Sarah Shaik specializes in Invisalign and clear aligner treatments with 350+ aligner cases completed. She combines clinical expertise with a child-friendly approach to help young patients achieve beautifully aligned smiles with confidence.',
+        specialties: ['Invisalign for Kids', 'Braces & Aligners', 'Growth Modulation'],
+        image: doctorSarah,
+        photoPosition: '50% 0%',
+      },
+      {
+        name: 'Dr. Sonika',
+        title: 'Orthodontist',
+        specialization: 'Invisalign & Clear Aligners Specialist | 12+ Years Experience',
+        experience: '12+ Years',
+        bio: 'Dr. Sonika is a certified orthodontics specialist with extensive experience in modern aligner systems and advanced braces technology, providing gentle care for children and teenagers.',
+        specialties: ['Invisalign / Clear Aligners', 'Braces', 'Smile Alignment'],
+        image: doctorSonika,
+        photoPosition: '50% 0%',
+      },
+    ],
     faqs: [
       { q: 'At what age can children start Invisalign?', a: 'Invisalign First is designed for younger children (6–10 years) still growing their adult teeth. Teen Invisalign is ideal for teenagers with most or all adult teeth present. A consultation helps determine the right time to begin.' },
       { q: 'How long does my child need to wear aligners each day?', a: 'Aligners should be worn 20–22 hours per day for best results. They are removed for eating, drinking (other than water), and oral hygiene routines.' },
@@ -1236,7 +1444,7 @@ export const seoServiceContent = {
       description: 'Comprehensive family dentistry in Bangalore for children, adults, and seniors. Preventive, restorative, cosmetic dental care and tooth replacement solutions under one roof. V Dental & Implant Center, Indiranagar.',
       keywords: 'family dentistry Bangalore, family dental clinic Bangalore, family dentist Indiranagar, complete dental care Bangalore, dentist for all ages Bangalore, dental clinic for family, dentures Bangalore, family oral health Bangalore',
     },
-    heroImg: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1400&q=85',
+    heroImg: heroFamilyDentistry,
     beforeImg: null,
     afterImg: null,
     title: 'Family Dentistry in Bangalore',
@@ -1297,12 +1505,28 @@ export const seoServiceContent = {
       note: 'We provide clear, itemized treatment plans for every family member before any procedure begins. Affordable family dental care with no hidden fees.',
       factors: ['Type of treatment required', 'Number of family members', 'Materials chosen (composite, ceramic, acrylic)', 'Complexity of individual cases', 'Follow-up care requirements'],
     },
-    doctor: {
-      name: 'Dr. Vathsala Naik',
-      title: 'Senior Implant Consultant — V Dental & Implant Center',
-      experience: '43+ Years | BDS, MDS — Oral Medicine & Radiology',
-      bio: 'With over 43 years of clinical excellence, Dr. Vathsala Naik leads our multi-specialty team. V Dental & Implant Center\'s experienced specialists provide comprehensive family dental care — from children\'s first visits to advanced restorative solutions for seniors.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'With over 43 years of clinical excellence, Dr. Vathsala Naik leads our multi-specialty family dental team — from children\'s oral health screenings to advanced restorative and implant solutions for seniors.',
+        specialties: ['Oral Diagnosis', 'Family Dental Care', 'Preventive Dentistry'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+      },
+      {
+        name: 'Dr. Noel Francis',
+        title: 'Senior Clinical Dentist',
+        specialization: 'Restorative & Endodontics | 10+ Years Experience',
+        experience: '10+ Years',
+        bio: 'Dr. Noel Francis brings a decade of dedicated clinical experience in restorative and general dentistry, providing gentle, thorough care for every family member — from routine checkups to root canal treatments.',
+        specialties: ['Root Canal Treatment', 'Restorative Dentistry', 'Emergency Care'],
+        image: doctorNoel,
+        photoPosition: '50% 35%',
+      },
+    ],
     faqs: [
       { q: 'Can the whole family be seen at V Dental & Implant Center?', a: 'Yes. We provide dental care for all age groups — from children\'s first dental visits to restorative and prosthetic care for seniors. One trusted clinic for the entire family.' },
       { q: 'What age should a child first visit the dentist?', a: 'We recommend a child\'s first dental visit around age 2–3 or when their first teeth appear. Early visits help establish good habits and detect any development concerns.' },
@@ -1326,7 +1550,7 @@ export const seoServiceContent = {
       description: 'Gentle, child-friendly pediatric dentistry in Bangalore. Dental checkups, preventive care, fluoride, sealants, fillings, and early orthodontic assessment for children. V Dental & Implant Center, Indiranagar.',
       keywords: 'pediatric dentistry Bangalore, children dentist Bangalore, kids dental clinic Bangalore, child dental checkup Bangalore, fluoride treatment children, dental sealants kids, early orthodontics children Bangalore, pediatric dental care',
     },
-    heroImg: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&q=85',
+    heroImg: heroPediatricDentistry,
     beforeImg: null,
     afterImg: null,
     title: 'Pediatric Dentistry in Bangalore',
@@ -1388,12 +1612,18 @@ export const seoServiceContent = {
       note: 'We provide transparent, child-appropriate treatment plans with clear costs shared before any procedure. Affordable, high-quality pediatric dental care for every family.',
       factors: ['Age and developmental stage', 'Type of preventive or restorative treatment', 'Number of teeth involved', 'Orthodontic assessment requirements', 'Follow-up care schedule'],
     },
-    doctor: {
-      name: 'Dr. Sarah Shaik',
-      title: 'Orthodontist — Pediatric Aligner & Orthodontic Specialist',
-      experience: '5+ Years | MDS Orthodontics, VS Dental College Bangalore',
-      bio: 'Dr. Sarah Shaik specializes in pediatric orthodontic care and clear aligner treatments for children and teenagers. With a gentle, patient-centered approach and 350+ aligner cases completed, she helps young patients achieve healthy, confident smiles.',
-    },
+    doctors: [
+      {
+        name: 'Dr. Sarah Shaik',
+        title: 'Orthodontist',
+        specialization: 'MDS Orthodontics | Pediatric Aligner & Braces Specialist | 5+ Years',
+        experience: '5+ Years',
+        bio: 'Dr. Sarah Shaik specializes in pediatric orthodontic care and clear aligner treatments for children and teenagers. With a gentle, patient-centered approach and 350+ aligner cases completed, she helps young patients achieve healthy, confident smiles.',
+        specialties: ['Pediatric Orthodontics', 'Invisalign for Kids', 'Early Orthodontic Assessment'],
+        image: doctorSarah,
+        photoPosition: '50% 0%',
+      },
+    ],
     faqs: [
       { q: 'When should my child first visit the dentist?', a: 'We recommend a child\'s first dental visit around age 2–3 or when their first teeth appear. Early visits establish trust and allow us to monitor development from the start.' },
       { q: 'How often should children have dental checkups?', a: 'Every 6 months for most children. Those with higher cavity risk or developmental concerns may benefit from more frequent visits.' },
@@ -1409,6 +1639,232 @@ export const seoServiceContent = {
     ],
     outstationText: 'Families across Bangalore trust V Dental & Implant Center for gentle, expert pediatric dental care — serving Indiranagar, Marathahalli, Whitefield, Bellandur, Koramangala and surrounding areas.',
   },
+
+  rootCanalTreatmentBangalore: {
+    slug: 'root-canal-treatment-bangalore',
+    bookingService: 'root-canal-treatment',
+    seo: {
+      title: 'Painless Root Canal Treatment in Bangalore | V Dental & Implant Center',
+      description: 'Painless root canal treatment (RCT) in Bangalore at V Dental & Implant Center, Indiranagar. Advanced endodontic care using rotary instruments and digital X-rays — save your natural tooth and eliminate infection in 1–2 visits. Book your consultation today.',
+      keywords: 'root canal treatment Bangalore, painless RCT Bangalore, endodontic treatment Bangalore, root canal specialist Bangalore, RCT cost Bangalore, tooth infection treatment Bangalore, save natural tooth Bangalore, best root canal dentist Indiranagar',
+    },
+    heroImg: heroRootCanal,
+    beforeImg: null,
+    afterImg: null,
+    title: 'Painless Root Canal Treatment in Bangalore',
+    subtitle: 'Advanced endodontic care that eliminates infection, relieves pain, and saves your natural tooth — often completed in a single visit with modern rotary techniques.',
+    locationLine: 'V Dental & Implant Center — Indiranagar, Bangalore',
+    problem: {
+      title: 'When Do You Need Root Canal Treatment?',
+      text: 'Root canal treatment (RCT) becomes necessary when the soft inner tissue of a tooth — the pulp — becomes infected or inflamed due to deep decay, a cracked tooth, repeated dental procedures, or trauma. Left untreated, the infection spreads to surrounding bone and can lead to tooth loss. Modern RCT is not the painful procedure many fear — with local anaesthesia and rotary endodontic techniques, most patients experience no more discomfort than a routine filling.',
+      points: [
+        'Severe, lingering toothache or throbbing pain — especially at night',
+        'Prolonged sensitivity to hot or cold that persists after the stimulus is removed',
+        'Darkening or discolouration of a tooth',
+        'Swelling, tenderness, or a pimple-like bump on the gum near the tooth',
+        'Deep decay or a cracked tooth that has reached the pulp',
+        'Pain or discomfort when biting or applying pressure to a tooth',
+      ],
+    },
+    treatment: {
+      title: 'How Root Canal Treatment Works',
+      text: 'At V Dental & Implant Center, root canal treatment is performed by experienced endodontic specialists using advanced rotary instruments and digital X-ray imaging. The procedure is predictable, precise, and designed to be as comfortable as possible.',
+      points: [
+        'Digital X-ray and CBCT assessment to evaluate the extent of infection and root anatomy',
+        'Local anaesthesia administered for a completely comfortable procedure',
+        'Infected pulp tissue removed through a small opening in the crown of the tooth',
+        'Root canals cleaned, shaped, and disinfected using rotary nickel-titanium instruments',
+        'Canals filled with biocompatible gutta-percha material and sealed permanently',
+        'Crown placement recommended to protect and restore the treated tooth long-term',
+      ],
+    },
+    benefits: [
+      { icon: '🦷', title: 'Save Your Natural Tooth', desc: 'RCT eliminates infection while preserving your natural tooth structure — the best long-term outcome for oral health.' },
+      { icon: '💊', title: 'Eliminate Pain', desc: 'The procedure removes the infected pulp that is causing pain, providing lasting relief from toothache and sensitivity.' },
+      { icon: '🔬', title: 'Advanced Rotary Technique', desc: 'Nickel-titanium rotary instruments clean and shape canals with greater precision and comfort than traditional hand files.' },
+      { icon: '📷', title: 'Digital X-Ray Guided', desc: 'Digital radiographs provide real-time imaging to assess root anatomy and ensure thorough, complete treatment.' },
+      { icon: '⚡', title: 'Single-Visit Completion', desc: 'Most straightforward RCT cases are completed in one appointment — minimal disruption to your schedule.' },
+      { icon: '💰', title: 'Cost-Effective vs Extraction', desc: 'Saving a natural tooth with RCT is significantly more cost-effective than extraction followed by an implant or bridge.' },
+    ],
+    steps: [
+      { title: 'Consultation', desc: 'Clinical examination, digital X-rays, and diagnosis to assess the extent of infection and determine if RCT is the right treatment.' },
+      { title: 'Anaesthesia', desc: 'Local anaesthesia is administered to ensure you feel no pain during the procedure — most patients are surprised by the comfort.' },
+      { title: 'Pulp Removal', desc: 'The infected or inflamed pulp tissue is carefully removed through a small access opening in the tooth crown.' },
+      { title: 'Canal Cleaning', desc: 'Root canals are cleaned, shaped, and thoroughly disinfected using advanced rotary nickel-titanium instruments.' },
+      { title: 'Obturation', desc: 'Cleaned canals are filled with biocompatible gutta-percha and sealed to prevent reinfection.' },
+      { title: 'Crown Placement', desc: 'A custom dental crown is placed over the treated tooth for full strength, protection, and a natural appearance.' },
+    ],
+    journeyTitle: 'Your Root Canal Treatment Journey',
+    recovery: {
+      title: 'Recovery & What to Expect',
+      items: [
+        { label: 'During the procedure', value: 'Comfortable under local anaesthesia — most patients feel minimal to no pain' },
+        { label: 'After treatment', value: 'Mild soreness or sensitivity for 2–3 days, easily managed with over-the-counter pain relief' },
+        { label: 'Return to normal activity', value: 'Same day — no bed rest required after RCT' },
+        { label: 'Number of visits', value: '1 visit for most cases; 2 visits for complex multi-rooted teeth or severe infections' },
+        { label: 'Temporary restoration', value: 'A temporary filling is placed if a second visit is required; permanent crown follows' },
+        { label: 'Long-term success rate', value: 'Over 95% success rate when followed by proper crown placement and oral care' },
+      ],
+    },
+    pricing: {
+      title: 'Root Canal Treatment Cost in Bangalore',
+      range: 'Starting from ₹3,000 per tooth',
+      note: 'The cost of RCT varies based on the number of canals, severity of infection, and whether a crown is required. We provide a complete, transparent cost breakdown before treatment begins — no hidden fees.',
+      factors: ['Number of root canals (single, bi, or multi-rooted tooth)', 'Severity and extent of infection', 'Need for retreatment of a previously treated tooth', 'Type of crown material chosen for final restoration', 'Any additional preparatory procedures required'],
+    },
+    doctors: [
+      {
+        name: 'Dr. Noel Francis',
+        title: 'Senior Clinical Dentist',
+        specialization: 'Restorative & Endodontic Specialist | 10+ Years Experience',
+        experience: '10+ Years',
+        bio: 'Dr. Noel Francis is our lead endodontic specialist, known for his gentle chairside manner and precise rotary RCT technique. He has performed hundreds of root canal treatments, consistently delivering pain-free outcomes and high long-term success rates.',
+        specialties: ['Root Canal Treatment', 'Restorative Dentistry', 'Endodontics'],
+        image: doctorNoel,
+        photoPosition: '50% 35%',
+        tag: 'RCT Specialist',
+      },
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'Dr. Vathsala Naik brings four decades of diagnostic expertise to complex endodontic cases — ensuring accurate root anatomy assessment and comprehensive infection management before and during treatment.',
+        specialties: ['Oral Diagnosis', 'Dental Radiology', 'Preventive Care'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+      },
+    ],
+    faqs: [
+      { q: 'Is root canal treatment really painful?', a: 'Modern RCT is performed under effective local anaesthesia and is generally no more uncomfortable than a routine filling. The procedure relieves the pain caused by infection — most patients are surprised at how comfortable it is.' },
+      { q: 'How many visits does a root canal take?', a: 'Most straightforward root canal treatments are completed in a single visit. Complex cases with severe infection, calcified canals, or multiple roots may require two appointments. Your dentist will advise you at the consultation.' },
+      { q: 'Do I need a crown after root canal treatment?', a: 'Yes, in most cases a dental crown is strongly recommended after RCT. The treated tooth becomes more brittle over time and a crown protects it from fracturing, significantly extending its lifespan.' },
+      { q: 'What is the success rate of root canal treatment?', a: 'Root canal treatment has a success rate exceeding 95% when completed properly and followed by a quality crown. With good oral hygiene, a treated tooth can last a lifetime.' },
+      { q: 'Can a tooth that has already had RCT be retreated?', a: 'Yes. Root canal retreatment is possible in cases where the original treatment did not fully resolve the infection, or where reinfection has occurred years later. Our specialists assess each case individually.' },
+      { q: 'What happens if I delay or avoid root canal treatment?', a: 'Delaying RCT allows the infection to spread to surrounding bone and adjacent teeth, potentially leading to abscess formation, bone loss, and ultimately tooth extraction. Early treatment gives the best outcome.' },
+      { q: 'Is RCT safe during pregnancy?', a: 'Yes, with appropriate precautions. We use pregnancy-safe anaesthesia and digital X-rays with lead shielding. If you are pregnant, please inform our team before your appointment.' },
+      { q: 'How do I know if I need a root canal?', a: 'Common signs include severe toothache, prolonged sensitivity to temperature, darkening of a tooth, gum swelling near a tooth, or a bump on the gum. A clinical examination and X-ray at our clinic will confirm the diagnosis.' },
+    ],
+    reviews: [
+      { text: 'I was terrified about getting a root canal, but Dr. Noel made the entire experience completely pain-free. I barely felt anything and was back to work the same afternoon. Truly excellent care.', name: 'Ananya S., Indiranagar' },
+      { text: 'Had a severe toothache for days before visiting V Dental. They diagnosed the issue immediately, completed the RCT the same day, and the pain was gone within 24 hours. Wish I had come sooner.', name: 'Kiran M., Whitefield' },
+      { text: 'Professional, clean clinic and an extremely skilled team. My root canal was done in one sitting — no drama, no pain. The crown they placed looks completely natural.', name: 'Priya R., Koramangala' },
+    ],
+    outstationText: 'Patients from across Bangalore — Marathahalli, Whitefield, Koramangala, HSR Layout, and Bellandur — visit V Dental & Implant Center, Indiranagar for advanced, painless root canal treatment performed by experienced endodontic specialists.',
+  },
+
+  crownsAndBridgeBangalore: {
+    slug: 'crowns-and-bridge-bangalore',
+    bookingService: 'crowns-and-bridge',
+    seo: {
+      title: 'Dental Crowns & Bridges in Bangalore | V Dental & Implant Center',
+      description: 'Premium dental crowns and bridges in Bangalore at V Dental & Implant Center, Indiranagar. Zirconia and porcelain restorations that restore damaged teeth and replace missing teeth with natural-looking, long-lasting results. Book your consultation today.',
+      keywords: 'dental crowns Bangalore, dental bridge Bangalore, zirconia crown Bangalore, porcelain crown Bangalore, tooth crown cost Bangalore, missing tooth replacement Bangalore, crowns and bridges Indiranagar, ceramic crown Bangalore',
+    },
+    heroImg: heroCrownsBridge,
+    beforeImg: null,
+    afterImg: null,
+    title: 'Dental Crowns & Bridges in Bangalore',
+    subtitle: 'Custom-crafted zirconia and porcelain restorations that rebuild damaged teeth and replace missing teeth — restoring full function, strength, and a completely natural appearance.',
+    locationLine: 'V Dental & Implant Center — Indiranagar, Bangalore',
+    problem: {
+      title: 'When Do You Need a Crown or Bridge?',
+      text: 'Dental crowns and bridges are among the most versatile and commonly recommended restorations in dentistry. A crown caps and protects a damaged, weakened, or aesthetically compromised tooth. A bridge replaces one or more missing teeth by anchoring to adjacent natural teeth or implants — restoring both function and appearance without surgery. Both restorations are custom-fabricated to match your natural teeth in colour, shape, and bite.',
+      points: [
+        'Tooth severely damaged by decay, fracture, or wear — too compromised for a filling alone',
+        'Tooth that has undergone root canal treatment and needs protection',
+        'Discoloured, misshapen, or aesthetically unsatisfactory tooth',
+        'One or more missing teeth with healthy adjacent teeth for bridge support',
+        'Cracked or broken tooth that is structurally weakened',
+        'Tooth with a large old filling that needs to be replaced and reinforced',
+      ],
+    },
+    treatment: {
+      title: 'How Crowns & Bridges Work',
+      text: 'At V Dental & Implant Center, all crowns and bridges are custom-designed using digital impressions and fabricated from premium materials — zirconia, full-porcelain, or porcelain-fused-to-metal — depending on the location, aesthetic requirements, and functional demands of each case.',
+      points: [
+        'Clinical assessment, digital X-rays, and shade matching for aesthetic planning',
+        'Tooth preparation — precise reduction of the tooth to create ideal space for the restoration',
+        'Digital impression scanning — no messy putty impressions',
+        'Temporary crown or bridge placed to protect and maintain aesthetics during fabrication',
+        'Premium lab-fabricated zirconia or porcelain restoration tried in and adjusted for fit and bite',
+        'Permanent cementation with long-term adhesive — natural feel from day one',
+      ],
+    },
+    benefits: [
+      { icon: '💎', title: 'Natural-Looking Results', desc: 'Zirconia and porcelain restorations are matched to your natural tooth shade — indistinguishable from surrounding teeth.' },
+      { icon: '💪', title: 'Exceptional Strength', desc: 'Zirconia crowns are among the strongest dental materials available — withstanding biting forces without chipping or fracturing.' },
+      { icon: '🦷', title: 'Protects Damaged Teeth', desc: 'A crown caps and reinforces a weakened or cracked tooth, preventing further breakdown and eliminating sensitivity.' },
+      { icon: '✨', title: 'Replaces Missing Teeth', desc: 'A bridge closes the gap from a missing tooth without surgery — restoring your smile, speech, and chewing function immediately.' },
+      { icon: '⏳', title: 'Long-Lasting', desc: 'With proper care, high-quality dental crowns and bridges last 10–15 years or more — a durable, cost-effective restoration.' },
+      { icon: '🔬', title: 'Digital Precision', desc: 'Digital impression scanning ensures superior fit, minimal adjustment needed, and greater comfort during fitting.' },
+    ],
+    steps: [
+      { title: 'Consultation', desc: 'Comprehensive assessment including X-rays, bite analysis, and shade matching to plan your ideal restoration.' },
+      { title: 'Tooth Preparation', desc: 'The tooth is precisely reshaped under local anaesthesia to create the ideal space for the crown or bridge.' },
+      { title: 'Digital Scan', desc: 'A digital impression captures the exact dimensions of your prepared tooth and surrounding teeth — no messy putty.' },
+      { title: 'Temporary Placement', desc: 'A temporary crown or bridge is placed to protect your tooth and maintain your smile while the permanent restoration is fabricated.' },
+      { title: 'Permanent Fitting', desc: 'Your custom-crafted zirconia or porcelain restoration is tried in, adjusted for perfect fit and bite, and permanently cemented.' },
+    ],
+    journeyTitle: 'Your Crown & Bridge Journey',
+    recovery: {
+      title: 'Recovery & What to Expect',
+      items: [
+        { label: 'During preparation', value: 'Performed under local anaesthesia — comfortable throughout' },
+        { label: 'Temporary crown phase', value: '5–10 working days while your permanent restoration is fabricated' },
+        { label: 'Post-fitting sensitivity', value: 'Mild sensitivity for 1–3 days after permanent cementation — normal and temporary' },
+        { label: 'Return to normal eating', value: 'Soft foods advised for 24 hours; normal diet from day 2 onwards' },
+        { label: 'Total appointments', value: '2 visits over 1–2 weeks for standard crown or bridge' },
+        { label: 'Expected lifespan', value: '10–15+ years with proper oral hygiene and regular checkups' },
+      ],
+    },
+    pricing: {
+      title: 'Dental Crown & Bridge Cost in Bangalore',
+      range: 'Crowns from ₹5,000 | Bridges from ₹15,000',
+      note: 'Cost varies by material (zirconia, full-porcelain, or PFM), number of units, and clinical complexity. We provide a detailed, itemized cost estimate before treatment — no hidden charges.',
+      factors: ['Material chosen — zirconia, porcelain-fused-to-metal, or full ceramic', 'Number of crowns or bridge units required', 'Complexity of tooth preparation and bite correction', 'Number of missing teeth in a bridge span', 'Temporary restorations and lab fees'],
+    },
+    doctors: [
+      {
+        name: 'Dr. Noel Francis',
+        title: 'Senior Clinical Dentist',
+        specialization: 'Restorative Dentistry Specialist | 10+ Years Experience',
+        experience: '10+ Years',
+        bio: 'Dr. Noel Francis specialises in precision restorative dentistry — from single crowns to complex multi-unit bridges. His attention to detail in shade matching, occlusion, and marginal fit consistently delivers restorations that look, feel, and function like natural teeth.',
+        specialties: ['Crowns & Bridges', 'Restorative Dentistry', 'Endodontics'],
+        image: doctorNoel,
+        photoPosition: '50% 35%',
+        tag: 'Restorative Specialist',
+      },
+      {
+        name: 'Dr. Vathsala Naik',
+        title: 'Senior Implant Consultant',
+        specialization: 'Oral Medicine & Radiology | 43+ Years Experience',
+        experience: '43+ Years',
+        bio: 'Dr. Vathsala Naik brings four decades of clinical experience to restorative treatment planning — ensuring every crown and bridge case is assessed comprehensively for long-term success and patient comfort.',
+        specialties: ['Oral Diagnosis', 'Dental Radiology', 'Restorative Planning'],
+        image: doctorVathsala,
+        photoPosition: '50% 0%',
+      },
+    ],
+    faqs: [
+      { q: 'What is the difference between a crown and a bridge?', a: 'A crown covers and protects a single damaged or weakened tooth. A bridge replaces one or more missing teeth by spanning the gap — anchored to the natural teeth or implants on either side of the space.' },
+      { q: 'Which crown material is best — zirconia or porcelain?', a: 'Zirconia crowns offer superior strength and are ideal for back teeth. Full-porcelain or all-ceramic crowns provide the most natural aesthetics and are preferred for front teeth. Our specialists recommend the best material based on your specific case.' },
+      { q: 'How long does the crown or bridge procedure take?', a: 'The process typically involves two appointments over 1–2 weeks. The first visit involves tooth preparation and digital impressions; the second visit is for fitting and permanent cementation of your custom restoration.' },
+      { q: 'Is the preparation for a crown painful?', a: 'Tooth preparation is carried out under local anaesthesia — you will feel no pain during the procedure. Some mild sensitivity in the days following preparation is normal and temporary.' },
+      { q: 'How long do dental crowns and bridges last?', a: 'With proper oral hygiene and regular dental checkups, high-quality zirconia and ceramic crowns and bridges typically last 10–15 years or longer. Avoiding habits like nail-biting and ice-chewing helps extend their lifespan.' },
+      { q: 'Can a dental bridge replace multiple missing teeth?', a: 'Yes. A bridge can replace one or several consecutive missing teeth depending on the span and the condition of the supporting anchor teeth. Our specialists assess each case individually to determine the most suitable design.' },
+      { q: 'Is a crown always needed after a root canal?', a: 'In most cases, yes. After root canal treatment, a tooth becomes more brittle and is at higher risk of fracturing under biting forces. A crown provides essential protection and significantly improves the long-term success of the RCT.' },
+      { q: 'What happens to the temporary crown during the waiting period?', a: 'A temporary crown protects your prepared tooth and maintains aesthetics while your permanent restoration is being fabricated. Avoid sticky or hard foods with the temporary in place. If it comes off, contact us immediately.' },
+    ],
+    reviews: [
+      { text: 'I needed a crown after my root canal and the zirconia crown Dr. Noel placed looks exactly like my natural tooth. You cannot tell the difference at all. The whole process was smooth and professional.', name: 'Suresh T., Bangalore' },
+      { text: 'I had three missing teeth and was not ready for implants. The bridge V Dental placed has completely transformed my smile and my confidence. Very natural-looking and comfortable.', name: 'Lakshmi P., Indiranagar' },
+      { text: 'Excellent work on my crowns. The shade matching was perfect and the fit was comfortable from day one. The clinic uses the best materials and the results show it.', name: 'Rohit A., Koramangala' },
+    ],
+    outstationText: 'Patients from Marathahalli, Whitefield, Bellandur, Koramangala, and across Bangalore trust V Dental & Implant Center for premium dental crowns and bridges — crafted with precision, placed with care, and built to last.',
+  },
+
 };
 
 export const seoServiceSlugs = Object.keys(seoServiceContent);

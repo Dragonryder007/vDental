@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '../contexts/LanguageContext';
-import logo from '../images/logo.png';
+import logo from '../images/logo.webp';
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -142,6 +142,8 @@ const Navbar = () => {
         { name: 'Pediatric Dentistry', path: '/pediatric-dentistry-bangalore' },
         { name: 'Laser Dentistry', path: '/laser-dentistry-bangalore' },
         { name: 'Invisalign for Kids', path: '/invisalign-for-kids-bangalore' },
+        { name: 'Root Canal Treatment', path: '/root-canal-treatment-bangalore' },
+        { name: 'Crowns & Bridge', path: '/crowns-and-bridge-bangalore' },
       ],
     },
     {

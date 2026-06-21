@@ -1,6 +1,4 @@
-﻿import axios from 'axios';
-
-const VISITOR_ID_KEY = 'vdental_visitor_id';
+﻿const VISITOR_ID_KEY = 'vdental_visitor_id';
 const SESSION_PINGED_KEY = 'vdental_visit_pinged';
 
 function generateVisitorId() {
@@ -49,15 +47,16 @@ export async function recordVisit() {
   console.log('[VisitorTracker] Pinging /api/track-visit', { sessionId, apiBase });
 
   try {
-    const res = await axios.post(`${apiBase}/api/track-visit`, payload);
-    console.log('[VisitorTracker] Visit recorded:', res.data);
-    try {
-      sessionStorage.setItem(SESSION_PINGED_KEY, '1');
-    } catch {
-      /* ignore */
-    }
+    const res = await fetch(`${apiBase}/api/track-visit`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    console.log('[VisitorTracker] Visit recorded:', data);
+    try { sessionStorage.setItem(SESSION_PINGED_KEY, '1'); } catch { /* ignore */ }
   } catch (err) {
-    console.error('[VisitorTracker] Visit tracking failed:', err?.response?.data || err?.message || err);
+    console.error('[VisitorTracker] Visit tracking failed:', err?.message || err);
   }
 }
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import logo from '../images/logo.png';
-import { CLINIC_EMAIL, GOOGLE_MAPS_DIRECTIONS_URL } from '../constants/contact';
+import logo from '../images/logo.webp';
+import { CLINIC_EMAIL, GOOGLE_MAPS_DIRECTIONS_URL, VDENTAL_MAPS_URL } from '../constants/contact';
 
 const ChevronIcon = ({ open }) => (
   <span className={`ms text-[18px] text-white/40 transition-transform duration-300 ${open ? 'rotate-180 ms-fill' : ''}`} aria-hidden="true">keyboard_arrow_down</span>
@@ -47,6 +47,8 @@ const Footer = () => {
     { label: 'Pediatric Dentistry', href: '/pediatric-dentistry-bangalore' },
     { label: 'Laser Dentistry', href: '/laser-dentistry-bangalore' },
     { label: 'Invisalign for Kids', href: '/invisalign-for-kids-bangalore' },
+    { label: 'Root Canal Treatment', href: '/root-canal-treatment-bangalore' },
+    { label: 'Crowns & Bridge', href: '/crowns-and-bridge-bangalore' },
   ];
 
   const international = [
@@ -90,7 +92,7 @@ const Footer = () => {
   );
 
   const ColHeader = ({ title }) => (
-    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/28 mb-3">{title}</p>
+    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/55 mb-3">{title}</p>
   );
 
   return (
@@ -102,10 +104,10 @@ const Footer = () => {
 
           {/* Logo col */}
           <div className="flex flex-col gap-4">
-            <Link to="/" aria-label="V Dental Home" className="inline-flex items-center bg-white rounded-xl px-3 py-2 hover:opacity-90 transition-opacity">
-              <img src={logo} alt="V Dental" className="h-10 w-auto object-contain" />
+            <Link to="/" aria-label="V Dental Home" className="inline-flex items-center hover:opacity-80 transition-opacity">
+              <img src={logo} alt="V Dental" className="h-28 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} loading="lazy" />
             </Link>
-            <p className="text-[10px] text-white/28 leading-relaxed">World-class dentistry in Indiranagar — since 1994.</p>
+            <p className="text-[10px] text-white/55 leading-relaxed">World-class dentistry in Indiranagar — since 1994.</p>
             <div className="flex gap-1.5 mt-1">
               {socials.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
@@ -159,10 +161,10 @@ const Footer = () => {
 
         {/* Contact strip — full width below the grid */}
         <div className="mt-8 border-t border-white/[0.06] pt-5 flex flex-wrap items-center gap-x-8 gap-y-3">
-          <div className="flex items-center gap-2">
+          <a href={VDENTAL_MAPS_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
             <span className="ms text-[16px] text-white/30 flex-shrink-0" aria-hidden="true">location_on</span>
             <span className="text-[12px] text-white/45">531, 2nd Main Road, Indiranagar 2nd Stage, Bangalore — 560038</span>
-          </div>
+          </a>
           <div className="flex items-center gap-2">
             <span className="ms text-[16px] text-white/30 flex-shrink-0" aria-hidden="true">call</span>
             <span className="text-[12px] text-white/45">+91 90371 51894</span>
@@ -184,8 +186,8 @@ const Footer = () => {
 
         {/* Logo + socials row */}
         <div className="flex items-center justify-between mb-6">
-          <Link to="/" aria-label="V Dental Home" className="inline-flex items-center bg-white rounded-xl px-3 py-2 hover:opacity-90 transition-opacity">
-            <img src={logo} alt="V Dental" className="h-10 w-auto object-contain" />
+          <Link to="/" aria-label="V Dental Home" className="inline-flex items-center hover:opacity-80 transition-opacity">
+            <img src={logo} alt="V Dental" className="h-28 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} />
           </Link>
           <div className="flex gap-2">
             {socials.map((s) => (
@@ -213,7 +215,7 @@ const Footer = () => {
           <div key={sec.title} className="border-t border-white/[0.06]">
             <button type="button" onClick={() => toggle(i)}
               className="w-full flex items-center justify-between py-3.5 text-left">
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">{sec.title}</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/60">{sec.title}</span>
               <ChevronIcon open={openSection === i} />
             </button>
             {openSection === i && (
@@ -233,15 +235,15 @@ const Footer = () => {
         <div className="border-t border-white/[0.06]">
           <button type="button" onClick={() => toggle(6)}
             className="w-full flex items-center justify-between py-3.5 text-left">
-            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">Contact</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/60">Contact</span>
             <ChevronIcon open={openSection === 6} />
           </button>
           {openSection === 6 && (
             <div className="pb-4 space-y-2">
-              <p className="text-[13px] text-white/50 leading-snug">531, 2nd Main Road, Indiranagar 2nd Stage, Bangalore</p>
+              <a href={VDENTAL_MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-[13px] text-white/50 leading-snug hover:text-white/70 transition-colors">531, 2nd Main Road, Indiranagar 2nd Stage, Bangalore</a>
               <p className="text-[13px] text-white/50">+91 90371 51894</p>
               <p className="text-[12px] text-white/50 break-all">{CLINIC_EMAIL}</p>
-              <a href={GOOGLE_MAPS_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer"
+              <a href={VDENTAL_MAPS_URL} target="_blank" rel="noopener noreferrer"
                 className="text-[11px] text-[color:var(--gold)] hover:text-white transition-colors inline-block">Get Directions →</a>
             </div>
           )}
@@ -253,8 +255,8 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-[11px] text-white/22">
           <span>{t('footer.allRights')}</span>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-white/55 transition-colors">{t('footer.privacy')}</a>
-            <a href="#" className="hover:text-white/55 transition-colors">{t('footer.terms')}</a>
+            <Link to="/privacy-policy" className="hover:text-white/55 transition-colors">{t('footer.privacy')}</Link>
+            <Link to="/terms" className="hover:text-white/55 transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

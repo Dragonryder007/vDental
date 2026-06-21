@@ -197,18 +197,28 @@ const BookingPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 md:pt-32 pb-20 px-4 bg-gradient-to-b from-[color:var(--soft)] to-white">
-      <SEO 
-        title="Book Appointment" 
+    <div className="min-h-screen" style={{ background: '#FAF6F0' }}>
+      <SEO
+        title="Book Appointment"
         description="Schedule your free dental consultation at V Dental and Implant Center. Book online for smile designing, aligners, or implants in Bengaluru."
         keywords="book dentist online, dental appointment Bengaluru, free consultation, V Dental and Implant Center booking"
       />
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8 md:mb-12">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-[color:var(--dk)] mb-4">{t('booking.title')}</h1>
-          <p className="text-[color:var(--muted)] text-base md:text-lg">{t('booking.subtitle')}</p>
-        </div>
 
+      {/* Hero */}
+      <section className="relative py-24 md:py-32 px-5 text-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f1e12 0%, #0a1509 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,162,74,0.06) 0%, transparent 70%)' }} />
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
+            <p style={{ color: '#C9A24A', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase' }}>Free Consultation</p>
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
+          </div>
+          <h1 className="text-3xl md:text-5xl font-serif font-bold mb-4" style={{ color: '#FAF6F0' }}>{t('booking.title')}</h1>
+          <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgba(250,246,240,0.72)' }}>{t('booking.subtitle')}</p>
+        </div>
+      </section>
+
+      <div className="max-w-2xl mx-auto px-4 py-12 md:py-16">
         {submitted ? (
           <div className="bg-green-50 border-2 border-green-500 rounded-3xl p-6 md:p-12 text-center">
             <div className="text-5xl md:text-6xl mb-4">✅</div>
@@ -227,7 +237,7 @@ const BookingPage = () => {
                           href={emailStatus.previewUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[color:var(--teal)] font-bold hover:underline"
+                          className="font-bold hover:underline" style={{ color: '#C9A24A' }}
                         >
                           {t('booking.viewPreview')}
                         </a>
@@ -252,7 +262,8 @@ const BookingPage = () => {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[color:var(--teal)] text-white px-8 py-3 rounded-xl font-bold hover:bg-[color:var(--dk)] transition flex items-center justify-center gap-2"
+                className="btn-gold-shimmer btn-magnetic px-8 py-3 rounded-xl font-bold flex items-center justify-center gap-2"
+              style={{ color: '#0d0d0d' }}
               >
                 <span>{t('booking.whatsappBtn')}</span>
                 <span className="text-xl">💬</span>
@@ -272,7 +283,8 @@ const BookingPage = () => {
                     issue: ''
                   });
                 }} 
-                className="text-[color:var(--teal)] font-bold hover:underline"
+                className="font-bold hover:underline"
+                style={{ color: '#C9A24A' }}
               >
                 {t('booking.bookAnother')}
               </button>
@@ -322,7 +334,8 @@ const BookingPage = () => {
                     <textarea
                       value={reviewData.comment}
                       onChange={(e) => setReviewData(prev => ({ ...prev, comment: e.target.value }))}
-                      className="w-full bg-[color:var(--bg)] border border-black/10 rounded-xl px-4 py-3 h-24 resize-none focus:outline-none focus:border-[color:var(--teal)]"
+                      className="w-full rounded-xl px-4 py-3 h-24 resize-none focus:outline-none"
+                      style={{ background: '#FAF6F0', border: '1px solid rgba(201,162,74,0.25)', color: '#1C2B1E' }}
                       placeholder={t('reviews.writeCommentPlaceholder')}
                     />
                   </div>
@@ -330,7 +343,8 @@ const BookingPage = () => {
                   <button
                     type="submit"
                     disabled={reviewLoading || reviewData.rating === 0}
-                    className="bg-[color:var(--dk)] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[color:var(--teal)] transition-colors disabled:opacity-50"
+                    className="btn-gold-shimmer btn-magnetic px-6 py-3 rounded-xl font-bold text-sm disabled:opacity-50"
+                    style={{ color: '#0d0d0d' }}
                   >
                     {reviewLoading ? t('reviews.submitting') : t('reviews.submit')}
                   </button>
@@ -339,60 +353,64 @@ const BookingPage = () => {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 border border-black/5">
+          <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-xl p-6 md:p-10" style={{ border: '1px solid rgba(201,162,74,0.18)' }}>
             {/* Personal Info */}
             <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
               <div>
-                <label className="block text-[color:var(--dk)] font-bold mb-2">{t('booking.fullName')}</label>
+                <label className="block font-bold mb-2" style={{ color: '#1C2B1E' }}>{t('booking.fullName')}</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[color:var(--teal)]"
+                  className="w-full px-4 py-3 rounded-xl focus:outline-none transition"
+                  style={{ border: '1px solid rgba(201,162,74,0.25)', background: '#FAF6F0', color: '#1C2B1E' }}
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label className="block text-[color:var(--dk)] font-bold mb-2">{t('booking.phone')}</label>
+                <label className="block font-bold mb-2" style={{ color: '#1C2B1E' }}>{t('booking.phone')}</label>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[color:var(--teal)]"
-                  placeholder="+1 (555) 000-0000"
+                  className="w-full px-4 py-3 rounded-xl focus:outline-none transition"
+                  style={{ border: '1px solid rgba(201,162,74,0.25)', background: '#FAF6F0', color: '#1C2B1E' }}
+                  placeholder="+91 98765 43210"
                 />
               </div>
             </div>
 
             <div className="mb-6 md:mb-8">
-              <label className="block text-[color:var(--dk)] font-bold mb-2">{t('booking.email')}</label>
+              <label className="block font-bold mb-2" style={{ color: '#1C2B1E' }}>{t('booking.email')}</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[color:var(--teal)]"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition"
+                style={{ border: '1px solid rgba(201,162,74,0.25)', background: '#FAF6F0', color: '#1C2B1E' }}
                 placeholder="your@email.com"
               />
             </div>
 
             {/* Appointment Details */}
-            <div className="bg-[color:var(--soft)] p-4 md:p-6 rounded-2xl mb-6 md:mb-8 border border-black/5">
-              <h3 className="text-lg font-bold text-[color:var(--dk)] mb-4 md:mb-6">{t('booking.selectAppointment')}</h3>
+            <div className="p-4 md:p-6 rounded-2xl mb-6 md:mb-8" style={{ background: '#F3EDE4', border: '1px solid rgba(201,162,74,0.15)' }}>
+              <h3 className="text-lg font-bold mb-4 md:mb-6" style={{ color: '#1C2B1E' }}>{t('booking.selectAppointment')}</h3>
               <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6">
                 <div>
-                  <label className="block text-[color:var(--dk)] font-bold mb-2">{t('booking.servicePlaceholder')}</label>
+                  <label className="block font-bold mb-2" style={{ color: '#1C2B1E' }}>{t('booking.servicePlaceholder')}</label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[color:var(--teal)]"
+                    className="w-full px-4 py-3 rounded-xl focus:outline-none transition"
+                    style={{ border: '1px solid rgba(201,162,74,0.25)', background: 'white', color: '#1C2B1E' }}
                   >
                     <option value="invisalign">{t('booking.services.invisalign')}</option>
                     <option value="veneers">{t('booking.services.veneers')}</option>
@@ -407,7 +425,7 @@ const BookingPage = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[color:var(--dk)] font-bold mb-2">{t('booking.datePlaceholder')}</label>
+                  <label className="block font-bold mb-2" style={{ color: '#1C2B1E' }}>{t('booking.datePlaceholder')}</label>
                   <input
                     type="date"
                     name="date"
@@ -415,15 +433,16 @@ const BookingPage = () => {
                     onChange={handleChange}
                     required
                     min={new Date().toLocaleDateString('en-CA')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[color:var(--teal)]"
+                    className="w-full px-4 py-3 rounded-xl focus:outline-none transition"
+                    style={{ border: '1px solid rgba(201,162,74,0.25)', background: 'white', color: '#1C2B1E' }}
                   />
                 </div>
               </div>
 
               <div className="mb-4">
-                <label className="block text-[color:var(--dk)] font-bold mb-3">{t('booking.timeSlot')}</label>
+                <label className="block font-bold mb-3" style={{ color: '#1C2B1E' }}>{t('booking.timeSlot')}</label>
                 {formData.date && bookedSlotsLoading ? (
-                  <p className="text-sm text-[color:var(--muted)] mb-3">{t('booking.loadingAvailability')}</p>
+                  <p className="text-sm mb-3" style={{ color: '#5A6A5C' }}>{t('booking.loadingAvailability')}</p>
                 ) : null}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3">
                   {availableSlots.map((slot) => {
@@ -447,15 +466,13 @@ const BookingPage = () => {
                         onClick={() =>
                           disabled ? undefined : setFormData((prev) => ({ ...prev, time: slot }))
                         }
-                        className={`py-2 px-3 rounded-lg font-semibold text-sm transition ${
-                          formData.time === slot
-                            ? 'bg-[color:var(--teal)] text-white'
-                            : disabled
-                              ? `bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed opacity-60${
-                                  isBooked ? ' line-through decoration-gray-400' : ''
-                                }`
-                              : 'bg-white border border-gray-300 text-gray-700 hover:border-[color:var(--teal)]'
-                        }`}
+                        className={`py-2 px-3 rounded-lg font-semibold text-sm transition${isBooked ? ' line-through' : ''}`}
+                        style={formData.time === slot
+                          ? { background: '#C9A24A', color: '#0d0d0d' }
+                          : disabled
+                            ? { background: '#f5f5f5', color: '#bbb', border: '1px solid #e5e5e5', cursor: 'not-allowed', opacity: 0.6 }
+                            : { background: 'white', border: '1px solid rgba(201,162,74,0.3)', color: '#1C2B1E' }
+                        }
                       >
                         {slot}
                       </button>
@@ -467,19 +484,20 @@ const BookingPage = () => {
 
             {/* Issue Description */}
             <div className="mb-6 md:mb-8">
-              <label className="block text-[color:var(--dk)] font-bold mb-2">{t('booking.goalsLabel')}</label>
+              <label className="block font-bold mb-2" style={{ color: '#1C2B1E' }}>{t('booking.goalsLabel')}</label>
               <textarea
                 name="issue"
                 value={formData.issue}
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[color:var(--teal)]"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none"
+                style={{ border: '1px solid rgba(201,162,74,0.25)', background: '#FAF6F0', color: '#1C2B1E' }}
                 placeholder={t('booking.goalsPlaceholder')}
-              ></textarea>
+              />
             </div>
 
             {bookingError && (
-              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl relative mb-6" role="alert">
+              <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-xl relative mb-6" role="alert">
                 <span className="block sm:inline">{bookingError}</span>
               </div>
             )}
@@ -488,12 +506,13 @@ const BookingPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[color:var(--teal)] text-white py-4 rounded-xl font-bold text-lg hover:bg-[color:var(--dk)] transition-colors disabled:opacity-50"
+              className="btn-gold-shimmer btn-magnetic w-full py-4 rounded-xl font-bold text-lg disabled:opacity-50"
+              style={{ color: '#0d0d0d' }}
             >
               {loading ? t('booking.processing') : t('booking.confirmBtn')}
             </button>
 
-            <p className="text-[color:var(--muted)] text-sm text-center mt-4">
+            <p className="text-sm text-center mt-4" style={{ color: '#5A6A5C' }}>
               {t('booking.benefits')}
             </p>
           </form>

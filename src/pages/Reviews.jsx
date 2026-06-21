@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -36,7 +36,6 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Form State
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -45,7 +44,7 @@ export default function Reviews() {
     rating: 5,
     comment: ''
   });
-  const [formStatus, setFormStatus] = useState(null); // 'submitting', 'success', 'error'
+  const [formStatus, setFormStatus] = useState(null);
 
   useEffect(() => {
     fetchReviews();
@@ -59,8 +58,6 @@ export default function Reviews() {
         ? res.data.reviews
         : [];
 
-      // Even after admin publishes a review, only display it on the public page
-      // when rating is 4 stars or higher.
       const topPublished = apiReviews
         .filter((r) => Number(r.rating) >= 4)
         .sort((a, b) => {
@@ -72,7 +69,6 @@ export default function Reviews() {
         })
         .slice(0, 11);
 
-      // Always keep the 4 hardcoded INITIAL_REVIEWS visible alongside admin-approved ones.
       setReviews([...INITIAL_REVIEWS, ...topPublished]);
     } catch (err) {
       console.error('Failed to fetch reviews:', err);
@@ -114,51 +110,58 @@ export default function Reviews() {
     }
   };
 
-  const renderStars = (rating) => {
-    return (
-      <div className="flex gap-1 text-[color:var(--teal)]">
-        {[...Array(5)].map((_, i) => (
-          <svg key={i} className={`w-5 h-5 ${i < rating ? 'fill-current' : 'text-gray-300 fill-current'}`} viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-        ))}
-      </div>
-    );
-  };
+  const renderStars = (rating) => (
+    <div className="flex gap-1">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} className="w-4 h-4 fill-current" style={{ color: i < rating ? '#C9A24A' : '#e5e7eb' }} viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  );
 
   return (
-    <div className="min-h-screen bg-[color:var(--bg)] font-sans pt-24 lg:pt-32 pb-20">
-      
-      {/* Header Section */}
-      <section className="px-4 mb-16 max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[color:var(--dk)] mb-6 leading-tight">
-          Stories and Reviews <br className="hidden md:block" />
-          <span className="text-[color:var(--teal)] italic">from satisfied clients</span>
-        </h1>
-        <p className="text-lg md:text-xl text-[color:var(--muted)] max-w-2xl mx-auto mb-10">
-          Real experiences from our patients. Discover how we've helped transform smiles and improve oral health with our dedicated care.
-        </p>
-        <button 
-          onClick={() => setIsFormOpen(true)}
-          className="bg-[color:var(--dk)] text-white px-8 py-4 rounded-xl font-bold hover:bg-[color:var(--teal)] transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
-        >
-          {t('reviews.giveReview') || 'Write a Review'}
-        </button>
+    <div className="min-h-screen font-sans" style={{ background: '#FAF6F0' }}>
+
+      {/* Hero — dark cinematic */}
+      <section className="relative py-28 md:py-36 px-5 text-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f1e12 0%, #0a1509 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,162,74,0.07) 0%, transparent 70%)' }} />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
+            <p style={{ color: '#C9A24A', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase' }}>Patient Stories</p>
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-5 leading-tight" style={{ color: '#FAF6F0' }}>
+            Stories and Reviews <br className="hidden md:block" />
+            <span className="italic" style={{ color: '#C9A24A' }}>from satisfied clients</span>
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: 'rgba(250,246,240,0.72)' }}>
+            Real experiences from our patients. Discover how we've helped transform smiles and improve oral health with our dedicated care.
+          </p>
+          <button
+            onClick={() => setIsFormOpen(true)}
+            className="btn-gold-shimmer btn-magnetic font-bold px-8 py-4 rounded-xl"
+            style={{ color: '#0d0d0d' }}
+          >
+            {t('reviews.giveReview') || 'Write a Review'}
+          </button>
+        </div>
       </section>
 
-      {/* Write a Review Modal/Form */}
+      {/* Write a Review Modal */}
       {isFormOpen && (
         <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 relative animate-in zoom-in-95 duration-300">
-            <button 
+          <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 relative">
+            <button
               onClick={() => setIsFormOpen(false)}
               className="absolute top-6 right-6 text-gray-400 hover:text-gray-800 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
-            <h3 className="text-2xl font-serif font-bold text-[color:var(--dk)] mb-2">Share Your Experience</h3>
-            <p className="text-[color:var(--muted)] mb-6">Your feedback helps us improve and helps others make informed decisions.</p>
+            <h3 className="text-2xl font-serif font-bold mb-2" style={{ color: '#1C2B1E' }}>Share Your Experience</h3>
+            <p className="mb-6 text-sm" style={{ color: '#5A6A5C' }}>Your feedback helps us improve and helps others make informed decisions.</p>
 
             {formStatus === 'success' ? (
               <div className="bg-green-50 text-green-700 p-6 rounded-2xl text-center font-bold">
@@ -167,16 +170,11 @@ export default function Reviews() {
             ) : (
               <form onSubmit={submitReview} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wide text-[color:var(--muted)] mb-2">Rating</label>
+                  <label className="block text-xs font-bold uppercase tracking-wide mb-2" style={{ color: '#5A6A5C' }}>Rating</label>
                   <div className="flex gap-2">
                     {[1,2,3,4,5].map(star => (
-                      <button
-                        key={star}
-                        type="button"
-                        onClick={() => setFormData(prev => ({ ...prev, rating: star }))}
-                        className="focus:outline-none"
-                      >
-                        <svg className={`w-8 h-8 ${star <= formData.rating ? 'text-yellow-400 fill-current' : 'text-gray-200 fill-current'} hover:text-yellow-300 transition-colors`} viewBox="0 0 20 20">
+                      <button key={star} type="button" onClick={() => setFormData(prev => ({ ...prev, rating: star }))} className="focus:outline-none">
+                        <svg className="w-8 h-8 fill-current transition-colors" style={{ color: star <= formData.rating ? '#C9A24A' : '#e5e7eb' }} viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       </button>
@@ -185,22 +183,14 @@ export default function Reviews() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wide text-[color:var(--muted)] mb-2">Name (Optional)</label>
-                    <input name="name" value={formData.name} onChange={handleInputChange} className="w-full bg-[color:var(--bg)] border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[color:var(--teal)]" placeholder="John Doe" />
+                    <label className="block text-xs font-bold uppercase tracking-wide mb-2" style={{ color: '#5A6A5C' }}>Name (Optional)</label>
+                    <input name="name" value={formData.name} onChange={handleInputChange} className="w-full rounded-xl px-4 py-3 focus:outline-none" style={{ background: '#FAF6F0', border: '1px solid rgba(201,162,74,0.2)', color: '#1C2B1E' }} placeholder="John Doe" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wide text-[color:var(--muted)] mb-2">Phone *</label>
+                    <label className="block text-xs font-bold uppercase tracking-wide mb-2" style={{ color: '#5A6A5C' }}>Phone *</label>
                     <input
-                      name="phone"
-                      required
-                      type="tel"
-                      inputMode="numeric"
-                      pattern="\d{10}"
-                      maxLength={10}
-                      minLength={10}
-                      title="Enter a 10-digit phone number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
+                      name="phone" required type="tel" inputMode="numeric" pattern="\d{10}" maxLength={10} minLength={10}
+                      title="Enter a 10-digit phone number" value={formData.phone} onChange={handleInputChange}
                       onKeyDown={(e) => {
                         const allowed = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
                         if (allowed.includes(e.key)) return;
@@ -211,32 +201,31 @@ export default function Reviews() {
                         const text = (e.clipboardData || window.clipboardData).getData('text');
                         if (!/^\d+$/.test(text)) e.preventDefault();
                       }}
-                      className="w-full bg-[color:var(--bg)] border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[color:var(--teal)]"
+                      className="w-full rounded-xl px-4 py-3 focus:outline-none" style={{ background: '#FAF6F0', border: '1px solid rgba(201,162,74,0.2)', color: '#1C2B1E' }}
                       placeholder="10-digit phone number"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wide text-[color:var(--muted)] mb-2">Email *</label>
-                  <input type="email" required name="email" value={formData.email} onChange={handleInputChange} className="w-full bg-[color:var(--bg)] border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[color:var(--teal)]" placeholder="john@example.com" />
+                  <label className="block text-xs font-bold uppercase tracking-wide mb-2" style={{ color: '#5A6A5C' }}>Email *</label>
+                  <input type="email" required name="email" value={formData.email} onChange={handleInputChange} className="w-full rounded-xl px-4 py-3 focus:outline-none" style={{ background: '#FAF6F0', border: '1px solid rgba(201,162,74,0.2)', color: '#1C2B1E' }} placeholder="john@example.com" />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wide text-[color:var(--muted)] mb-2">Review *</label>
-                  <textarea name="comment" required value={formData.comment} onChange={handleInputChange} rows="4" className="w-full bg-[color:var(--bg)] border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[color:var(--teal)] resize-none" placeholder="Tell us about your experience..." />
+                  <label className="block text-xs font-bold uppercase tracking-wide mb-2" style={{ color: '#5A6A5C' }}>Review *</label>
+                  <textarea name="comment" required value={formData.comment} onChange={handleInputChange} rows="4" className="w-full rounded-xl px-4 py-3 focus:outline-none resize-none" style={{ background: '#FAF6F0', border: '1px solid rgba(201,162,74,0.2)', color: '#1C2B1E' }} placeholder="Tell us about your experience..." />
                 </div>
-                
+
                 {formStatus === 'error' && (
                   <div className="text-red-500 text-sm font-bold">
-                    {!/^\d{10}$/.test(formData.phone)
-                      ? 'Please enter a valid 10-digit phone number.'
-                      : 'Something went wrong. Please try again.'}
+                    {!/^\d{10}$/.test(formData.phone) ? 'Please enter a valid 10-digit phone number.' : 'Something went wrong. Please try again.'}
                   </div>
                 )}
 
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={formStatus === 'submitting'}
-                  className="w-full bg-[color:var(--teal)] text-white py-4 rounded-xl font-bold hover:bg-[color:var(--dk)] transition-all disabled:opacity-70 mt-4"
+                  className="btn-gold-shimmer btn-magnetic w-full py-4 rounded-xl font-bold disabled:opacity-70 mt-4"
+                  style={{ color: '#0d0d0d' }}
                 >
                   {formStatus === 'submitting' ? 'Submitting...' : 'Submit Review'}
                 </button>
@@ -246,58 +235,66 @@ export default function Reviews() {
         </div>
       )}
 
-      {/* Reviews Grid */}
-      <section className="px-4 max-w-7xl mx-auto">
-        {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1,2,3,4,5,6].map(i => (
-              <div key={i} className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm animate-pulse h-64"></div>
-            ))}
-          </div>
-        ) : reviews.length === 0 ? (
-          <div className="text-center py-20 text-[color:var(--muted)] bg-white rounded-3xl border border-black/5 shadow-sm">
-            <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-            <p className="text-xl font-bold">No reviews yet.</p>
-            <p className="mt-2">Be the first to share your experience!</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {reviews.map((review, idx) => (
-              <div key={idx} className="bg-white rounded-3xl p-8 border border-black/5 shadow-xl hover:shadow-2xl transition-shadow flex flex-col relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[color:var(--teal)] to-blue-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                
-                <div className="flex justify-between items-start mb-6">
-                  {renderStars(review.rating || 5)}
-                  <span className="text-sm font-bold text-gray-400">
-                    {new Date(review.createdAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
-                  </span>
-                </div>
-                
-                <p className="text-[color:var(--txt)] leading-relaxed italic mb-8 flex-grow">
-                  "{review.comment}"
-                </p>
-                
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[color:var(--teal)] to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
-                    {(review.name || "A")[0].toUpperCase()}
+      {/* Reviews Grid — cream */}
+      <section className="py-16 md:py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1,2,3,4,5,6].map(i => (
+                <div key={i} className="bg-white rounded-3xl p-8 animate-pulse h-64" style={{ border: '1px solid rgba(201,162,74,0.1)' }} />
+              ))}
+            </div>
+          ) : reviews.length === 0 ? (
+            <div className="text-center py-20 bg-white rounded-3xl" style={{ border: '1px solid rgba(201,162,74,0.15)' }}>
+              <p className="text-xl font-bold" style={{ color: '#1C2B1E' }}>No reviews yet.</p>
+              <p className="mt-2" style={{ color: '#5A6A5C' }}>Be the first to share your experience!</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {reviews.map((review, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-3xl p-7 flex flex-col relative overflow-hidden group hover:-translate-y-1 transition-all duration-300"
+                  style={{ border: '1px solid rgba(201,162,74,0.15)', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}
+                >
+                  <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-3xl" style={{ background: 'linear-gradient(to right, #C9A24A, #e8c87e)' }} />
+
+                  <div className="flex justify-between items-start mb-5">
+                    {renderStars(review.rating || 5)}
+                    <span className="text-xs font-medium" style={{ color: '#9aaa9c' }}>
+                      {new Date(review.createdAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
+                    </span>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-[color:var(--dk)]">{review.name || "Anonymous Patient"}</h4>
-                    <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--muted)]">Verified Patient</p>
+
+                  <p className="leading-relaxed italic mb-6 flex-grow text-sm" style={{ color: '#5A6A5C' }}>
+                    "{review.comment}"
+                  </p>
+
+                  <div className="flex items-center gap-3 mt-auto">
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0"
+                      style={{ background: '#0f1e12', color: '#C9A24A', fontSize: '0.875rem' }}
+                    >
+                      {(review.name || "A")[0].toUpperCase()}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm" style={{ color: '#1C2B1E' }}>{review.name || "Anonymous Patient"}</h4>
+                      <p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: '#C9A24A' }}>Verified Patient</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          )}
+
+          <div className="mt-14 text-center">
+            <p className="text-sm" style={{ color: '#5A6A5C' }}>
+              All these reviews can also be found on{' '}
+              <a href="https://www.practo.com/bangalore/clinic/v-dental-center-indiranagar/reviews?referrer=clinic_listing" target="_blank" rel="noopener noreferrer" className="font-bold hover:underline" style={{ color: '#C9A24A' }}>Practo</a>.
+            </p>
           </div>
-        )}
-        
-        <div className="mt-16 text-center">
-          <p className="text-[color:var(--muted)] text-lg">
-            Note: All these reviews can be found at <a href="https://www.practo.com/bangalore/clinic/v-dental-center-indiranagar/reviews?referrer=clinic_listing" target="_blank" rel="noopener noreferrer" className="text-[color:var(--teal)] hover:text-blue-500 font-bold underline decoration-2 underline-offset-4">Practo</a> as well.
-          </p>
         </div>
       </section>
     </div>
   );
 }
-

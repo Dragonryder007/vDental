@@ -1,28 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL3KEFSZ75"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-FL3KEFSZ75');
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T8HT2LBS');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>V Dental and Implant Center — World-Class Dentistry</title>
     <meta name="description" content="V Dental and Implant Center offers world-class dentistry including Digital Smile Designing, Aligners, Braces, and Dental Implants. Book your free consultation in Indiranagar, Bengaluru." />
     <meta name="keywords" content="dental clinic Bengaluru, smile designing, aligners, dental implants, V Dental and Implant Center, Indiranagar dentist" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vdentalandimplantcenter.com/" />
@@ -37,28 +21,70 @@
     <meta property="twitter:description" content="Advanced dentistry with precision technology. Book your free consultation for Smile Designing, Aligners, and Implants." />
     <meta property="twitter:image" content="/og-image.jpg" />
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href="https://vdentalandimplantcenter.com/" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Preconnect to font origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Afacad+Flux:wght@100..1000&family=Momo+Trust+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Hero poster preload — first paint LCP image -->
+    <link rel="preload" as="image" href="/poster.webp" fetchpriority="high">
+
+    <!-- Critical CSS inline — CSS variables + base reset so page isn't unstyled before /index.css arrives -->
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      .font-serif {
-        font-family: 'Playfair Display', serif;
-      }
+      :root{--cream:#FAF6F0;--green:#4A7C59;--gold:#C9A24A;--charcoal:#2C2C2C;--charcoal-deep:#0D0D0D;--ink:#111111;--warm-gray:#6E6860;--cream-rgb:250 246 240;--gold-rgb:201 162 74;--charcoal-rgb:44 44 44;--charcoal-deep-rgb:13 13 13;--green-rgb:74 124 89;--bg:#f8f7f4;--txt:#1f2937}
+      *,::before,::after{box-sizing:border-box}
+      html{overflow-x:clip;max-width:100%;scroll-behavior:smooth}
+      body{margin:0;background:var(--bg);color:var(--txt);font-family:'Afacad Flux',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+      #root{overflow-x:clip;max-width:100%;min-width:0}
+      .font-serif{font-family:'Cormorant Garamond',Georgia,serif}
+      @keyframes pageFadeIn{from{opacity:0}to{opacity:1}}
     </style>
+
+    <!-- Main CSS — non-render-blocking via preload trick -->
+    <link rel="preload" as="style" href="/index.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/index.css"></noscript>
+
+    <!-- Body fonts — async, non-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Afacad+Flux:wght@100..1000&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Material Symbols — async, non-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"></noscript>
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8HT2LBS"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8HT2LBS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="root"></div>
-    <script type="module" src="/bundle.js"></script>
+    <script type="module" src="/main.js"></script>
+
+    <!-- GTM + GA deferred until first user interaction or 4 s after load -->
+    <script>
+      (function(){
+        var loaded=false;
+        function loadAnalytics(){
+          if(loaded)return;loaded=true;
+          var s=document.createElement('script');
+          s.async=true;
+          s.src='https://www.googletagmanager.com/gtag/js?id=G-FL3KEFSZ75';
+          document.head.appendChild(s);
+          window.dataLayer=window.dataLayer||[];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag=gtag;
+          gtag('js',new Date());
+          gtag('config','G-FL3KEFSZ75');
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T8HT2LBS');
+        }
+        function onInteraction(){loadAnalytics();}
+        window.addEventListener('load',function(){
+          setTimeout(loadAnalytics,4000);
+          ['click','touchstart','scroll','keydown'].forEach(function(e){
+            window.addEventListener(e,onInteraction,{once:true,passive:true});
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

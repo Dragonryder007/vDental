@@ -15,6 +15,8 @@ const LaserDentistry = () => <SeoServiceRoute serviceKey="laserDentistry" />;
 const InvisalignKids = () => <SeoServiceRoute serviceKey="invisalignKids" />;
 const FamilyDentistry = () => <SeoServiceRoute serviceKey="familyDentistry" />;
 const PediatricDentistry = () => <SeoServiceRoute serviceKey="pediatricDentistry" />;
+const RootCanalTreatmentBangalore = () => <SeoServiceRoute serviceKey="rootCanalTreatmentBangalore" />;
+const CrownsAndBridgeBangalore = () => <SeoServiceRoute serviceKey="crownsAndBridgeBangalore" />;
 
 export {
   InvisalignBangalore,
@@ -31,5 +33,7 @@ export {
   InvisalignKids,
   FamilyDentistry,
   PediatricDentistry,
+  RootCanalTreatmentBangalore,
+  CrownsAndBridgeBangalore,
 };
 

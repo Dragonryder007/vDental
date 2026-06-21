@@ -10,6 +10,8 @@ const MAP_DESTINATION =
 
 export const GOOGLE_MAPS_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(MAP_DESTINATION)}`;
 
+export const VDENTAL_MAPS_URL = 'https://www.google.com/maps/place/V+DENTAL+AND+IMPLANT+CENTER/@12.9814407,77.6330642,641m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae176a383d729f:0xdd2c7397130a160!8m2!3d12.9814355!4d77.6356391!16s%2Fg%2F11h0mcc44l?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D';
+
 /** Smile Plus Dental Care – Marathahalli (branch of V Dental) */
 export const SMILE_PLUS_NAME = 'Smile Plus Dental Care – Marathahalli';
 export const SMILE_PLUS_SLUG = '/smile-plus-dental-care-marathahalli';

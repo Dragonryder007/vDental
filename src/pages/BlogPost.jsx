@@ -13,12 +13,12 @@ import {
 function TableOfContents({ headings }) {
   if (!headings.length) return null;
   return (
-    <nav className="rounded-2xl border border-black/5 bg-[color:var(--soft)] p-5 md:p-6" aria-label="Table of contents">
+    <nav className="rounded-2xl p-5 md:p-6" style={{ background: '#F3EDE4', border: '1px solid rgba(201,162,74,0.15)' }} aria-label="Table of contents">
       <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--muted)]">In this article</h2>
       <ol className="space-y-2 text-sm">
         {headings.map((h) => (
           <li key={h.id} className={h.level === 'h3' ? 'ml-4' : ''}>
-            <a href={`#${h.id}`} className="font-medium text-[color:var(--dk)] no-underline transition hover:text-[color:var(--teal)]">
+            <a href={`#${h.id}`} className="font-medium no-underline transition hover:text-[#C9A24A]" style={{ color: '#1C2B1E' }}>
               {h.text}
             </a>
           </li>
@@ -44,7 +44,7 @@ function RelatedCard({ post }) {
         <span className={`mb-2 inline-flex w-fit rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase ${style.badge}`}>
           {post.category}
         </span>
-        <h3 className="font-serif text-lg font-bold leading-snug text-[color:var(--dk)] group-hover:text-[color:var(--teal)]">
+        <h3 className="font-serif text-lg font-bold leading-snug group-hover:text-[#C9A24A]" style={{ color: '#1C2B1E' }}>
           {post.title}
         </h3>
         <p className="mt-2 line-clamp-2 text-sm text-[color:var(--muted)]">{post.excerpt}</p>
@@ -105,7 +105,7 @@ export default function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-[60vh] bg-[color:var(--bg)] pt-28">
+      <div className="min-h-[60vh] pt-28" style={{ background: '#FAF6F0' }}>
         <div className="mx-auto max-w-3xl animate-pulse space-y-6 px-6 py-16">
           <div className="h-8 w-1/3 rounded bg-black/5" />
           <div className="h-12 rounded bg-black/5" />
@@ -124,10 +124,10 @@ export default function BlogPost() {
     return (
       <>
         <SEO title="Article Not Found" canonicalPath={`/blog/${slug}`} />
-        <div className="flex min-h-[60vh] flex-col items-center justify-center bg-[color:var(--soft)] px-6 pt-24 text-center">
+        <div className="flex min-h-[60vh] flex-col items-center justify-center px-6 pt-24 text-center" style={{ background: '#FAF6F0' }}>
           <h1 className="font-serif text-4xl font-bold text-[color:var(--dk)]">Article not found</h1>
           <p className="mt-4 text-[color:var(--muted)]">This post may have been removed or unpublished.</p>
-          <Link to="/blog" className="mt-8 rounded-2xl bg-[color:var(--teal)] px-8 py-3 font-bold text-white no-underline">
+          <Link to="/blog" className="btn-gold-shimmer btn-magnetic mt-8 rounded-2xl px-8 py-3 font-bold no-underline" style={{ color: '#0d0d0d' }}>
             Back to Blog
           </Link>
         </div>
@@ -152,8 +152,8 @@ export default function BlogPost() {
         ogType="article"
       />
 
-      <article className="bg-[color:var(--bg)] pb-20 pt-24 md:pt-28">
-        <header className="relative overflow-hidden border-b border-black/5 bg-[color:var(--soft)]">
+      <article className="pb-20 pt-24 md:pt-28" style={{ background: '#FAF6F0' }}>
+        <header className="relative overflow-hidden border-b border-black/5" style={{ background: '#F3EDE4' }}>
           <div className={`absolute inset-0 opacity-[0.07] bg-gradient-to-br ${style.gradient}`} />
           <div className="relative mx-auto max-w-4xl px-6 py-12 md:py-16">
             <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-[color:var(--muted)]" aria-label="Breadcrumb">
@@ -177,7 +177,7 @@ export default function BlogPost() {
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[color:var(--muted)]">{post.excerpt}</p>
 
             <div className="mt-8 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--teal)] font-serif text-lg font-bold text-white">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full font-serif text-lg font-bold" style={{ background: '#0f1e12', color: '#C9A24A' }}>
                 {(post.author || 'V')[0]}
               </div>
               <div>
@@ -224,7 +224,7 @@ export default function BlogPost() {
             />
 
             {post.serviceLink && (
-              <div className="mt-12 overflow-hidden rounded-3xl border border-[color:var(--teal)]/20 bg-gradient-to-br from-[color:var(--soft)] to-white p-8 md:p-10">
+              <div className="mt-12 overflow-hidden rounded-3xl p-8 md:p-10" style={{ background: '#F3EDE4', border: '1px solid rgba(201,162,74,0.2)' }}>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--teal)]">Next step</p>
                 <h2 className="mt-2 font-serif text-2xl font-bold text-[color:var(--dk)] md:text-3xl">
                   Explore this treatment at our clinic
@@ -235,7 +235,8 @@ export default function BlogPost() {
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Link
                     to={post.serviceLink}
-                    className="inline-flex items-center justify-center rounded-2xl bg-[color:var(--teal)] px-6 py-3.5 font-bold text-white no-underline transition hover:bg-[color:var(--dk)]"
+                    className="btn-gold-shimmer btn-magnetic inline-flex items-center justify-center rounded-2xl px-6 py-3.5 font-bold no-underline"
+                    style={{ color: '#0d0d0d' }}
                   >
                     View treatment page
                   </Link>
@@ -250,7 +251,7 @@ export default function BlogPost() {
             )}
 
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-black/5 pt-8">
-              <Link to="/blog" className="inline-flex items-center gap-2 font-bold text-[color:var(--teal)] no-underline">
+              <Link to="/blog" className="inline-flex items-center gap-2 font-bold no-underline" style={{ color: '#C9A24A' }}>
                 ← All articles
               </Link>
               <a

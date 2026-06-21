@@ -1,6 +1,9 @@
-﻿import doctorVathsala from '../images/doctor-vathsala.png';
-import doctorNoel from '../images/doctor-noel.png';
-import doctorJishnu from '../images/doctor-jishnu.png';
+﻿import doctorVathsala from '../images/doctor-vathsala.webp';
+import doctorNoel from '../images/doctor-noel.webp';
+import doctorJishnu from '../images/doctor-jishnu.webp';
+import doctorAkhil from '../images/doctor-akhil.webp';
+import doctorSarah from '../images/doctor-sarah.webp';
+import doctorSonika from '../images/doctor-sonika.webp';
 
 /** Shared V Dental specialist panel — used on home & Smile Plus pages */
 export const V_DENTAL_DOCTORS = [
@@ -20,6 +23,7 @@ export const V_DENTAL_DOCTORS = [
     description:
       'With over 43 years of clinical excellence, Dr. Vathsala Naik is a pioneering figure in implant dentistry and oral medicine. Her specialized expertise in implant case planning and oral radiology has enabled hundreds of patients to regain their confident smiles.',
     image: doctorVathsala,
+    photoPosition: '50% 0%',
   },
   {
     id: 2,
@@ -37,6 +41,8 @@ export const V_DENTAL_DOCTORS = [
     description:
       'Dr. Noel Francis brings a decade of dedicated clinical experience in restorative and endodontic dentistry. His gentle approach and advanced techniques have made him a trusted specialist for root canal and restorative care.',
     image: doctorNoel,
+    photoSize: 'auto 145%',
+    photoPosition: '50% 48%',
   },
   {
     id: 3,
@@ -59,6 +65,7 @@ export const V_DENTAL_DOCTORS = [
     description:
       'Dr. Jishnu Premnath leads Smile Plus Dental Care in Marathahalli and serves as International Patient Director at V Dental & Implant Center. He specializes in smile makeovers, aligners, veneers, and dental implants with advanced digital dentistry protocols.',
     image: doctorJishnu,
+    photoPosition: '50% 45%',
     marathahalliLead: true,
   },
   {
@@ -81,7 +88,8 @@ export const V_DENTAL_DOCTORS = [
     ],
     description:
       'Dynamic orthodontist with 5 years of hands-on experience, Dr. Sarah Shaik has transformed smiles through 300+ completed braces cases and 350+ aligner treatments. A graduate of Bapuji Dental College (BDS) and VS Dental College Bangalore (MDS – Orthodontics), she is an expert in precise diagnosis, strategic treatment planning, and innovative management of dentofacial anomalies using state-of-the-art techniques for superior, timely results.',
-    image: 'https://via.placeholder.com/300x400?text=Dr.+Sarah+Shaik',
+    image: doctorSarah,
+    photoPosition: '50% 15%',
   },
   {
     id: 6,
@@ -97,7 +105,8 @@ export const V_DENTAL_DOCTORS = [
     ],
     description:
       'Dr. Sonika is a certified orthodontics specialist with extensive training in modern aligner systems and advanced braces technology, helping patients achieve perfectly aligned smiles.',
-    image: 'https://via.placeholder.com/300x400?text=Dr.+Sonika',
+    image: doctorSonika,
+    photoPosition: '50% 10%',
   },
   {
     id: 7,
@@ -114,7 +123,8 @@ export const V_DENTAL_DOCTORS = [
     ],
     description:
       'Dr. N. Reddy Akhil specializes in complex full-mouth rehabilitations, combining prosthetic excellence with implant dentistry for comprehensive smile reconstruction.',
-    image: 'https://via.placeholder.com/300x400?text=Dr.+N.+Reddy+Akhil',
+    image: doctorAkhil,
+    photoPosition: '50% 8%',
   },
 ];
 

@@ -274,6 +274,7 @@ const Chatbot = () => {
         className="chatbot-fab flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 p-2 text-white shadow-lg transition-all hover:scale-110 font-sans"
         title={isOpen ? 'Close assistant' : 'Open assistant'}
         aria-label={isOpen ? 'Close assistant' : 'Open assistant'}
+        style={window.innerWidth < 768 ? { top: '58%', bottom: 'auto', right: '0.75rem' } : {}}
       >
         {isOpen ? (
           <span className="text-base leading-none">✕</span>

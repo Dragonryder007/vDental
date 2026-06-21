@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import smilePlusHeroImg from '../images/smile-plus-hero.png';
+import smilePlusHeroImg from '../images/smile-plus-hero.webp';
 import {
   SMILE_PLUS_SLUG,
   smilePlusWhatsAppUrl,

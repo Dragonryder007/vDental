@@ -1,6 +1,6 @@
 import React from 'react';
-import practoLogo from '../../images/platforms/practo-logo.png';
-import justdialLogo from '../../images/platforms/justdial-logo.png';
+import practoLogo from '../../images/platforms/practo-logo.webp';
+import justdialLogo from '../../images/platforms/justdial-logo.webp';
 
 export const GoogleIcon = ({ className }) => (
   <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
@@ -12,11 +12,11 @@ export const GoogleIcon = ({ className }) => (
 );
 
 export const PractoIcon = ({ className }) => (
-  <img src={practoLogo} alt="Practo" className={`${className} object-cover`} />
+  <img src={practoLogo} alt="Practo" className={`${className} object-cover`} loading="lazy" />
 );
 
 export const JustDialIcon = ({ className }) => (
-  <img src={justdialLogo} alt="Justdial" className={`${className} object-contain bg-white`} />
+  <img src={justdialLogo} alt="Justdial" className={`${className} object-contain bg-white`} loading="lazy" />
 );
 
 export const PLATFORM_META = {

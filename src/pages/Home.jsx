@@ -5,35 +5,33 @@ import Navbar from '../components/Navbar';
 import PlatformReviewsCarousel from '../components/PlatformReviewsCarousel';
 import SmilePlusHomePromo from '../components/SmilePlusHomePromo';
 import CountUp from '../components/CountUp';
-import { gsap } from '../utils/gsap';
-import axios from 'axios';
-import smileImg from '../images/smile design after.png';
-import alignersImg from '../images/braces and aligners after.png';
-import implantsImg from '../images/dental implant after.png';
-import ourwork1 from '../images/ourwork1.png';
-import ourwork2 from '../images/ourwork2.png';
-import ourwork3 from '../images/ourwork3.png';
-import ourwork4 from '../images/ourwork4.jpg';
-import ourwork5 from '../images/ourwork5.png';
-import ourwork6 from '../images/ourwork6.jpg';
-import ourwork7 from '../images/ourwork7.jpg';
-import legacyTeamPhoto from '../images/legacy-team.jpg';
-import implantsMobile from '../images/implants-mobile.jpg';
-import implantsDesktop from '../images/implants-desktop.jpg';
-import fullmouthMobile from '../images/fullmouth-mobile.jpg';
-import fullmouthDesktop from '../images/fullmouth-desktop.jpg';
-import smileMobile from '../images/smile-mobile.jpg';
-import smileDesktop from '../images/smile-desktop.jpg';
-import veneersMobile from '../images/veneers-mobile.jpg';
-import veneersDesktop from '../images/veneers-desktop.jpg';
+import smileImg from '../images/smile design after.webp';
+import alignersImg from '../images/braces and aligners after.webp';
+import implantsImg from '../images/dental implant after.webp';
+import ourwork1 from '../images/ourwork1.webp';
+import ourwork2 from '../images/ourwork2.webp';
+import ourwork3 from '../images/ourwork3.webp';
+import ourwork4 from '../images/ourwork4.webp';
+import ourwork5 from '../images/ourwork5.webp';
+import ourwork6 from '../images/ourwork6.webp';
+import ourwork7 from '../images/ourwork7.webp';
+import legacyTeamPhoto from '../images/legacy-team.webp';
+import implantsMobile from '../images/implants-mobile.webp';
+import implantsDesktop from '../images/implants-desktop.webp';
+import fullmouthMobile from '../images/fullmouth-mobile.webp';
+import fullmouthDesktop from '../images/fullmouth-desktop.webp';
+import smileMobile from '../images/smile-mobile.webp';
+import smileDesktop from '../images/smile-desktop.webp';
+import veneersMobile from '../images/veneers-mobile.webp';
+import veneersDesktop from '../images/veneers-desktop.webp';
 import heroVideo from '../videos/hero-intro.mp4';
 import heroVideoMobile from '../videos/hero-intro-mobile.mp4';
-import heroPoster from '../images/hero-poster.jpg';
+import heroPoster from '../images/hero-poster.webp';
 import { useLanguage } from '../contexts/LanguageContext';
-import { GOOGLE_MAPS_DIRECTIONS_URL } from '../constants/contact';
+import { GOOGLE_MAPS_DIRECTIONS_URL, VDENTAL_MAPS_URL } from '../constants/contact';
 import { ImplantIcon, FullMouthIcon, CosmeticIcon, VeneerIcon } from '../components/icons/TreatmentIcons';
 import { GoogleIcon } from '../components/icons/PlatformIcons';
-import practoLogo from '../images/platforms/practo-logo.png';
+import practoLogo from '../images/platforms/practo-logo.webp';
 
 const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 
@@ -61,34 +59,28 @@ const Home = () => {
   const heroRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero entrance animation
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      tl.from('.hero-title',    { opacity: 0, y: 36, duration: 0.8 }, 0.2)
-        .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.6 }, 0.75)
-        .from('.hero-cta',      { opacity: 0, y: 20, duration: 0.6 }, 0.95)
-        .from('.hero-stats > *',{ opacity: 0, y: 20, duration: 0.5, stagger: 0.1 }, 1.1);
-
-      // Parallax — hero bg image drifts at half scroll speed
-      gsap.to('.hero-bg-img', {
-        y: '25%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.6,
-        },
-      });
-    }, heroRef);
-    return () => ctx.revert();
+    let ctx;
+    import('../utils/gsap').then(({ gsap }) => {
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        tl.from('.hero-title',    { opacity: 0, y: 36, duration: 0.8 }, 0.2)
+          .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.6 }, 0.75)
+          .from('.hero-cta',      { opacity: 0, y: 20, duration: 0.6 }, 0.95)
+          .from('.hero-stats > *',{ opacity: 0, y: 20, duration: 0.5, stagger: 0.1 }, 1.1);
+        gsap.to('.hero-bg-img', {
+          y: '25%', ease: 'none',
+          scrollTrigger: { trigger: heroRef.current, start: 'top top', end: 'bottom top', scrub: 0.6 },
+        });
+      }, heroRef);
+    });
+    return () => ctx?.revert();
   }, []);
 
   const fetchOurWorkGallery = async () => {
     try {
-      const res = await axios.get(`${API_BASE}/api/gallery`);
-      if (res.data?.success) {
-        const filtered = res.data.gallery.filter(item => item.category === 'our-work');
+      const res = await fetch(`${API_BASE}/api/gallery`).then(r => r.json());
+      if (res?.success) {
+        const filtered = res.gallery.filter(item => item.category === 'our-work');
         setOurWorkGallery(filtered);
       }
     } catch (err) {
@@ -115,10 +107,10 @@ const Home = () => {
     if (!popupData.name || !popupData.phone) return;
     setPopupLoading(true);
     try {
-      await axios.post(`${API_BASE}/api/leads`, {
-        name: popupData.name,
-        phone: popupData.phone,
-        source: 'Visitor Popup'
+      await fetch(`${API_BASE}/api/leads`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: popupData.name, phone: popupData.phone, source: 'Visitor Popup' }),
       });
       setPopupSubmitted(true);
       setTimeout(() => setShowPopup(false), 3000);
@@ -151,30 +143,34 @@ const Home = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('https://api.web3forms.com/submit', {
-        access_key: '8f11e73a-2e5f-4578-bb73-52c99d93155f',
-        subject: `Contact Inquiry: ${contactData.firstName} ${contactData.lastName}`,
-        from_name: 'V Dental and Implant Center Website',
-        confirm_email: 'true',
-        replyto: 'cursorhalesh@gmail.com',
-        name: `${contactData.firstName} ${contactData.lastName}`, 
-        email: contactData.email,
-        message: contactData.message,
-        ...contactData
-      }, {
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      // Also save to our own leads database
-      try {
-        await axios.post(`${API_BASE}/api/leads`, {
-          name: `${contactData.firstName} ${contactData.lastName}`.trim(),
-          phone: contactData.phone || 'Not Provided',
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '8f11e73a-2e5f-4578-bb73-52c99d93155f',
+          subject: `Contact Inquiry: ${contactData.firstName} ${contactData.lastName}`,
+          from_name: 'V Dental and Implant Center Website',
+          confirm_email: 'true',
+          replyto: 'cursorhalesh@gmail.com',
+          name: `${contactData.firstName} ${contactData.lastName}`,
           email: contactData.email,
           message: contactData.message,
-          source: 'Contact Form'
+          ...contactData,
+        }),
+      });
+
+      // Also save to our own leads database
+      try {
+        await fetch(`${API_BASE}/api/leads`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: `${contactData.firstName} ${contactData.lastName}`.trim(),
+            phone: contactData.phone || 'Not Provided',
+            email: contactData.email,
+            message: contactData.message,
+            source: 'Contact Form',
+          }),
         });
       } catch (err) {
         console.error('Failed to save lead to local database', err);
@@ -227,7 +223,7 @@ const Home = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
         >
           <source src={heroVideoMobile} media="(max-width: 767px)" type="video/mp4" />
           <source src={heroVideo} type="video/mp4" />
@@ -237,7 +233,7 @@ const Home = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div className="text-[color:var(--cream)]">
-            <h1 className="hero-title text-4xl sm:text-6xl md:text-7xl font-momo-trust font-extrabold leading-[1.05] mb-6 text-[color:var(--cream)] max-w-2xl">
+            <h1 className="hero-title text-4xl sm:text-6xl md:text-7xl font-serif font-normal leading-[1.08] mb-6 text-[color:var(--cream)] max-w-3xl">
               {t('home.wherePerfect')}
             </h1>
             <p className="hero-subtitle text-base sm:text-lg text-[rgb(var(--cream-rgb)/65%)] mb-10 max-w-xl leading-relaxed">
@@ -447,7 +443,7 @@ const Home = () => {
               {/* Desktop AI image background */}
               {service.desktopImg && (
                 <>
-                  <img src={service.desktopImg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-65 transition-opacity duration-500 pointer-events-none select-none" />
+                  <img src={service.desktopImg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-65 transition-opacity duration-500 pointer-events-none select-none" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--charcoal)] via-[color:var(--charcoal)]/60 to-[color:var(--charcoal)]/20 pointer-events-none" />
                 </>
               )}
@@ -481,7 +477,7 @@ const Home = () => {
                 {/* Swipeable story cards */}
                 <div
                   ref={treatmentCarouselRef}
-                  className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory"
+                  className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory carousel-x"
                   onScroll={(e) => {
                     const el = e.currentTarget;
                     let closestIdx = 0;
@@ -657,7 +653,7 @@ const Home = () => {
                       className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover/card:scale-105"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-[rgb(var(--cream-rgb)/95%)] backdrop-blur-md p-4 translate-y-full group-hover/card:translate-y-0 transition-transform duration-300 border-t border-black/5">
-                      <h4 className="text-sm font-bold text-[color:var(--charcoal)] truncate">{item.title}</h4>
+                      <h3 className="text-sm font-bold text-[color:var(--charcoal)] truncate">{item.title}</h3>
                     </div>
                   </div>
                 </div>
@@ -707,7 +703,7 @@ const Home = () => {
                   <div className="font-bold text-[color:var(--charcoal)]">{t('home.contact.locName')}</div>
                   <div className="text-sm text-[color:var(--warm-gray)]">{t('home.contact.location')}</div>
                   <a
-                    href={GOOGLE_MAPS_DIRECTIONS_URL}
+                    href={VDENTAL_MAPS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-block text-sm font-bold text-[color:var(--green)] underline hover:text-[color:var(--charcoal)]"

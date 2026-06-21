@@ -27,7 +27,7 @@ export default {
         'warm-gray': { DEFAULT: '#6E6860', 2: '#9C9188' },
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
+        serif: ['Cormorant Garamond', 'serif'],
         sans: ['Inter', 'sans-serif'],
         display: ['Cormorant Garamond', 'serif'],
         afacad: ['Afacad Flux', 'sans-serif'],

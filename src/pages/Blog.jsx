@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SEO from '../components/SEO';
@@ -16,9 +16,10 @@ function BlogCard({ post, featured = false }) {
 
   return (
     <article
-      className={`group flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[color:var(--teal)]/20 hover:shadow-xl ${
+      className={`group flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${
         featured ? 'md:col-span-2 md:flex-row' : ''
       }`}
+      style={{ borderColor: 'rgba(201,162,74,0.15)' }}
     >
       <Link
         to={`/blog/${post.slug}`}
@@ -44,7 +45,7 @@ function BlogCard({ post, featured = false }) {
       </Link>
 
       <div className={`flex flex-1 flex-col p-6 ${featured ? 'md:p-8' : ''}`}>
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wide text-[color:var(--muted)]">
+        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wide" style={{ color: '#5A6A5C' }}>
           <span className={`rounded-full px-3 py-1 ${style.badge}`}>{post.category}</span>
           <span>{formatBlogDate(post.publishedAt || post.createdAt)}</span>
           <span aria-hidden>·</span>
@@ -53,23 +54,25 @@ function BlogCard({ post, featured = false }) {
 
         <Link to={`/blog/${post.slug}`} className="no-underline">
           <h2
-            className={`font-serif font-bold leading-snug text-[color:var(--dk)] transition-colors group-hover:text-[color:var(--teal)] ${
+            className={`font-serif font-bold leading-snug transition-colors group-hover:text-[#C9A24A] ${
               featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
             }`}
+            style={{ color: '#1C2B1E' }}
           >
             {post.title}
           </h2>
         </Link>
 
-        <p className="mt-3 flex-1 text-[15px] leading-relaxed text-[color:var(--muted)] line-clamp-3">
+        <p className="mt-3 flex-1 text-[15px] leading-relaxed line-clamp-3" style={{ color: '#5A6A5C' }}>
           {post.excerpt}
         </p>
 
-        <div className="mt-5 flex items-center justify-between gap-4 border-t border-black/5 pt-5">
-          <span className="text-sm font-medium text-[color:var(--muted)]">{post.author}</span>
+        <div className="mt-5 flex items-center justify-between gap-4 border-t pt-5" style={{ borderColor: 'rgba(201,162,74,0.12)' }}>
+          <span className="text-sm font-medium" style={{ color: '#5A6A5C' }}>{post.author}</span>
           <Link
             to={`/blog/${post.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-bold text-[color:var(--teal)] no-underline transition hover:gap-3"
+            className="inline-flex items-center gap-2 text-sm font-bold no-underline transition hover:gap-3"
+            style={{ color: '#C9A24A' }}
           >
             Read article
             <span aria-hidden>→</span>
@@ -138,37 +141,40 @@ export default function Blog() {
         canonicalPath="/blog"
       />
 
-      <section className="relative overflow-hidden bg-[color:var(--soft)] pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[color:var(--teal)]/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[color:var(--gold)]/10 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-6 text-center">
-          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-black/5 bg-white px-6 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[color:var(--teal)] shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-[color:var(--teal)] shadow-[0_0_8px_rgba(0,102,102,0.5)]" />
-            {t('nav.blog') || 'Blog'}
+      {/* Hero — dark cinematic */}
+      <section className="relative py-28 md:py-36 px-5 text-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f1e12 0%, #0a1509 100%)' }}>
+        <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,162,74,0.06) 0%, transparent 70%)' }} />
+        <div className="relative mx-auto max-w-3xl z-10">
+          <div className="mb-5 inline-flex items-center gap-3">
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
+            <p style={{ color: '#C9A24A', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase' }}>
+              {t('nav.blog') || 'Blog'}
+            </p>
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
           </div>
-          <h1 className="font-serif text-4xl font-bold leading-tight text-[color:var(--dk)] md:text-6xl">
-            Expert Dental <span className="italic text-[color:var(--teal)]">Insights</span>
+          <h1 className="font-serif text-4xl font-bold leading-tight md:text-6xl" style={{ color: '#FAF6F0' }}>
+            Expert Dental <span className="italic" style={{ color: '#C9A24A' }}>Insights</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-[color:var(--muted)]">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed" style={{ color: 'rgba(250,246,240,0.7)' }}>
             Practical guides on treatments, costs, recovery, and planning your smile — written by our clinical team in Bangalore.
           </p>
         </div>
       </section>
 
-      <section className="border-b border-black/5 bg-white py-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 lg:flex-row lg:items-center lg:justify-between">
+      {/* Filter Bar — cream2 */}
+      <section style={{ background: '#F3EDE4', borderBottom: '1px solid rgba(201,162,74,0.12)' }}>
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-full px-4 py-2 text-sm font-bold transition ${
-                  activeCategory === cat
-                    ? 'bg-[color:var(--teal)] text-white shadow-md'
-                    : 'bg-[color:var(--soft)] text-[color:var(--dk)] hover:bg-[color:var(--teal)]/10'
-                }`}
+                className="rounded-full px-4 py-2 text-sm font-bold transition hover:-translate-y-0.5"
+                style={activeCategory === cat
+                  ? { background: '#C9A24A', color: '#0d0d0d', boxShadow: '0 4px 12px rgba(201,162,74,0.3)' }
+                  : { background: 'white', color: '#1C2B1E', border: '1px solid rgba(201,162,74,0.22)' }
+                }
               >
                 {cat}
               </button>
@@ -180,17 +186,19 @@ export default function Blog() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search articles…"
-              className="w-full rounded-2xl border border-black/10 bg-[color:var(--bg)] py-3 pl-4 pr-10 text-sm focus:border-[color:var(--teal)] focus:outline-none"
+              className="w-full rounded-2xl py-3 pl-4 pr-10 text-sm focus:outline-none"
+              style={{ background: 'white', border: '1px solid rgba(201,162,74,0.2)', color: '#1C2B1E' }}
               aria-label="Search blog articles"
             />
-            <svg className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[color:var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+            <svg className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2" style={{ color: '#5A6A5C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
         </div>
       </section>
 
-      <section className="bg-[color:var(--bg)] py-16 md:py-20">
+      {/* Articles Grid — cream */}
+      <section className="py-16 md:py-20" style={{ background: '#FAF6F0' }}>
         <div className="mx-auto max-w-7xl px-6">
           {loading ? (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -199,17 +207,15 @@ export default function Blog() {
               ))}
             </div>
           ) : error ? (
-            <div className="rounded-3xl border border-red-100 bg-red-50 p-8 text-center text-red-700">{error}</div>
+            <div className="rounded-3xl p-8 text-center" style={{ background: 'white', border: '1px solid rgba(201,162,74,0.15)', color: '#5A6A5C' }}>{error}</div>
           ) : filtered.length === 0 ? (
-            <div className="rounded-3xl border border-black/5 bg-white p-12 text-center">
-              <p className="text-lg font-medium text-[color:var(--muted)]">No articles match your search.</p>
+            <div className="rounded-3xl p-12 text-center bg-white" style={{ border: '1px solid rgba(201,162,74,0.12)' }}>
+              <p className="text-lg font-medium" style={{ color: '#5A6A5C' }}>No articles match your search.</p>
               <button
                 type="button"
-                onClick={() => {
-                  setSearch('');
-                  setActiveCategory('All');
-                }}
-                className="mt-4 font-bold text-[color:var(--teal)]"
+                onClick={() => { setSearch(''); setActiveCategory('All'); }}
+                className="mt-4 font-bold hover:underline"
+                style={{ color: '#C9A24A' }}
               >
                 Clear filters
               </button>
@@ -225,16 +231,24 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="border-t border-black/5 bg-[color:var(--deep)] py-16 text-white">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="font-serif text-3xl font-bold md:text-4xl">Ready for a personalised consultation?</h2>
-          <p className="mt-4 text-white/70">
+      {/* CTA — dark */}
+      <section className="py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f1e12 0%, #0a1509 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,162,74,0.07) 0%, transparent 70%)' }} />
+        <div className="relative mx-auto max-w-4xl px-6 text-center z-10">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
+            <p style={{ color: '#C9A24A', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase' }}>Get Expert Care</p>
+            <div className="h-px w-8" style={{ background: '#C9A24A' }} />
+          </div>
+          <h2 className="font-serif text-3xl font-bold md:text-4xl" style={{ color: '#FAF6F0' }}>Ready for a personalised consultation?</h2>
+          <p className="mt-4 leading-relaxed" style={{ color: 'rgba(250,246,240,0.7)' }}>
             Our team in Indiranagar can assess your case and recommend the right treatment plan.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               to="/booking"
-              className="rounded-2xl bg-[color:var(--teal)] px-8 py-4 font-bold text-white no-underline shadow-lg transition hover:bg-white hover:text-[color:var(--dk)]"
+              className="btn-gold-shimmer btn-magnetic rounded-2xl px-8 py-4 font-bold no-underline"
+              style={{ color: '#0d0d0d' }}
             >
               Book Appointment
             </Link>
@@ -242,7 +256,8 @@ export default function Blog() {
               href="https://wa.me/919037151894"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-2xl border border-white/20 px-8 py-4 font-bold text-white no-underline transition hover:bg-white/10"
+              className="rounded-2xl px-8 py-4 font-bold no-underline transition hover:-translate-y-0.5"
+              style={{ background: 'rgba(250,246,240,0.08)', border: '1px solid rgba(250,246,240,0.2)', color: '#FAF6F0' }}
             >
               WhatsApp Us
             </a>
@@ -252,4 +267,3 @@ export default function Blog() {
     </>
   );
 }
-

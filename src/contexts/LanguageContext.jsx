@@ -1,7 +1,4 @@
 ﻿import React, { createContext, useState, useContext, useCallback, useEffect } from 'react';
-import hi from './locales/hi.js';
-import kn from './locales/kn.js';
-import ar from './locales/ar.js';
 
 const SUPPORTED_LANGS = new Set(['en', 'es', 'hi', 'kn', 'ar']);
 
@@ -246,7 +243,7 @@ const translations = {
       viewResultsBtn: 'View More Results'
     },
     seoService: {
-      bookConsultation: 'Book Free Consultation',
+      bookConsultation: 'Book Consultation',
       whatsapp: 'WhatsApp Us',
       callNow: 'Call Now',
       problemLabel: 'The Problem',
@@ -522,13 +519,13 @@ const translations = {
       dentalFaqSubtitle: 'Everything you need to know about your implant journey, answered by our experts.',
       dentalFaqBodyNote: '',
       diTitle0: 'Common Patient Questions',
-      diTitle1: '1. BASICS (Curiosity + Awareness)',
-      diTitle2: '2. FEAR BREAKERS (Viral + Conversion Core)',
-      diTitle3: '3. RESULTS & CONFIDENCE (Desire + Transformation)',
-      diTitle4: '4. ELIGIBILITY (Smart Lead Qualification)',
-      diTitle5: '5. PROCEDURE & RECOVERY (Remove Uncertainty)',
-      diTitle6: '6. COST & VALUE (Decision Trigger 💰)',
-      diTitle7: '7. ADVANCED / HIGH-TICKET CASES (Authority Positioning)'
+      diTitle1: 'The Basics',
+      diTitle2: 'Addressing Common Concerns',
+      diTitle3: 'Results & Confidence',
+      diTitle4: 'Eligibility & Candidacy',
+      diTitle5: 'Procedure & Recovery',
+      diTitle6: 'Cost & Investment',
+      diTitle7: 'Advanced Cases'
     },
     reviews: {
       giveReview: 'Give Review',
@@ -548,7 +545,7 @@ const translations = {
       clinic: 'Clinic',
       allRights: '© 2026 V Dental and Implant Center. All rights reserved.',
       privacy: 'Privacy Policy',
-      terms: 'Terms',
+      terms: 'Terms & Conditions',
       accessibility: 'Accessibility',
       links: {
         smileMakeover: 'Smile Makeover',
@@ -1072,9 +1069,6 @@ const translations = {
       }
     }
   },
-  hi,
-  kn,
-  ar
 };
 
 const LanguageContext = createContext();
@@ -1100,14 +1094,29 @@ function lookupTranslation(lang, path) {
   return value;
 }
 
+const LOCALE_LOADERS = {
+  hi: () => import('./locales/hi.js').then(m => m.default),
+  kn: () => import('./locales/kn.js').then(m => m.default),
+  ar: () => import('./locales/ar.js').then(m => m.default),
+};
+
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguageState] = useState(readStoredLanguage);
+  const [, forceUpdate] = useState(0);
 
   useEffect(() => {
     const html = document.documentElement;
     const langMap = { en: 'en', es: 'es', hi: 'hi', kn: 'kn', ar: 'ar' };
     html.lang = langMap[language] || 'en';
     html.dir = language === 'ar' ? 'rtl' : 'ltr';
+  }, [language]);
+
+  useEffect(() => {
+    if (translations[language] || !LOCALE_LOADERS[language]) return;
+    LOCALE_LOADERS[language]().then(data => {
+      translations[language] = data;
+      forceUpdate(n => n + 1);
+    });
   }, [language]);
 
   const setLanguage = useCallback((code) => {
