@@ -8,13 +8,14 @@ const Navbar = () => {
   const [user, setUser] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState(null);
   const servicesRef = useRef(null);
   const closeTimerRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
 
-  const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
+  const closeMobileMenu = useCallback(() => { setIsMobileMenuOpen(false); setOpenGroup(null); }, []);
   const closeServicesMenu = useCallback(() => {
     closeTimerRef.current = setTimeout(() => setServicesOpen(false), 180);
   }, []);
@@ -377,35 +378,59 @@ const Navbar = () => {
             style={{ top: 'calc(var(--top-bar-height) + var(--site-nav-height))' }}
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => {
-                    closeMobileMenu();
-                    if (link.path === '/') window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="rounded-xl px-3 py-3 text-base font-semibold text-[color:var(--txt)]/80 transition-colors hover:bg-[color:var(--soft)] hover:text-[color:var(--teal)]"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              <div className="grid grid-cols-2 gap-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => {
+                      closeMobileMenu();
+                      if (link.path === '/') window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className={`rounded-xl px-3 py-2.5 text-sm font-semibold text-[color:var(--txt)]/80 transition-colors hover:bg-[color:var(--soft)] hover:text-[color:var(--teal)]${link.path === '/faq' ? ' col-span-2' : ''}`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
 
-              <div className="mt-2 rounded-xl bg-[color:var(--soft)]/80 px-3 py-3">
-                <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted)]">
+              <div className="mt-2 rounded-xl bg-[color:var(--soft)]/80 px-3 py-2">
+                <p className="px-1 pt-1 pb-2 text-[10px] font-bold uppercase tracking-widest text-[color:var(--muted)]">
                   {t('nav.services')}
                 </p>
                 <div className="flex flex-col gap-0.5">
-                  {serviceLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      onClick={closeMobileMenu}
-                      className="rounded-lg px-2 py-2.5 text-sm font-medium text-[color:var(--txt)]/80 transition-colors hover:bg-white hover:text-[color:var(--teal)]"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                  {serviceGroups.map((group) => {
+                    const isOpen = openGroup === group.label;
+                    return (
+                      <div key={group.label}>
+                        <button
+                          type="button"
+                          onClick={() => setOpenGroup(isOpen ? null : group.label)}
+                          className="w-full flex items-center justify-between rounded-lg px-2 py-2.5 text-sm font-semibold text-[color:var(--dk)] hover:bg-white transition-colors"
+                        >
+                          <span>{group.label}</span>
+                          <span
+                            className="ms text-[18px] text-[color:var(--muted)] transition-transform duration-200"
+                            style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', display: 'inline-block' }}
+                          >keyboard_arrow_down</span>
+                        </button>
+                        {isOpen && (
+                          <div className="flex flex-col gap-0.5 pl-2 pb-1">
+                            {group.links.map((link) => (
+                              <Link
+                                key={link.path}
+                                to={link.path}
+                                onClick={closeMobileMenu}
+                                className="rounded-lg px-3 py-2 text-sm font-medium text-[color:var(--txt)]/75 transition-colors hover:bg-white hover:text-[color:var(--teal)]"
+                              >
+                                {link.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 

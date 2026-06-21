@@ -276,7 +276,7 @@ const Home = () => {
                 </div>
 
                 {/* Google Rating */}
-                <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-6 flex-shrink-0">
+                <div className="flex items-center gap-1 sm:gap-2 px-1.5 sm:px-6 flex-shrink-0">
                   <GoogleIcon className="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0" />
                   <div>
                     <div className="flex items-center gap-0.5 sm:gap-1">
@@ -296,7 +296,7 @@ const Home = () => {
                 </div>
 
                 {/* Practo Rating */}
-                <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-6 flex-shrink-0">
+                <div className="flex items-center gap-1 sm:gap-2 px-1.5 sm:px-6 flex-shrink-0">
                   <img src={practoLogo} alt="Practo" className="w-4 h-4 sm:w-7 sm:h-7 flex-shrink-0 object-contain" />
                   <div>
                     <div className="flex items-center gap-0.5 sm:gap-1">
@@ -315,7 +315,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="px-2 sm:px-6 flex-shrink-0">
+                <div className="pl-1.5 pr-3 sm:px-6 flex-shrink-0">
                   <div className="font-sans text-sm sm:text-xl font-extrabold leading-none">1994</div>
                   <div className="text-[10px] sm:text-sm text-[rgb(var(--cream-rgb)/60%)] mt-1 whitespace-nowrap">
                     {t('home.sinceLabel')}
