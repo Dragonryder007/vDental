@@ -236,10 +236,8 @@ let chatHistory = [];
 // ----------------------------
 // Admin auth (fixed creds)
 // ----------------------------
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-console.log('[auth] ADMIN_USERNAME set:', !!ADMIN_USERNAME, 'len:', (ADMIN_USERNAME||'').length);
-console.log('[auth] ADMIN_PASSWORD set:', !!ADMIN_PASSWORD, 'len:', (ADMIN_PASSWORD||'').length);
+const ADMIN_USERNAME = (process.env.ADMIN_USERNAME || '').trim();
+const ADMIN_PASSWORD = (process.env.ADMIN_PASSWORD || '').trim();
 const JWT_SECRET = process.env.JWT_SECRET || 'smilevista-dev-secret';
 const JWT_EXPIRES_IN = '7d';
 
@@ -259,7 +257,6 @@ function requireAdmin(req, res, next) {
 
 app.post('/api/admin/login', (req, res) => {
   const { username, password } = req.body || {};
-  console.log('[login] attempt user len:', (username||'').length, 'pass len:', (password||'').length);
   if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
     return res.status(401).json({ success: false, error: 'Invalid credentials' });
   }
