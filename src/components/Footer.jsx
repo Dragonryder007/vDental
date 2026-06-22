@@ -74,9 +74,9 @@ const Footer = () => {
   ];
 
   const socials = [
-    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61589612497809', path: 'M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z' },
-    { label: 'Instagram', href: 'https://www.instagram.com/v_dental_and_implant_centre/', path: 'M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2C5.61 4 4 5.61 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8c1.99 0 3.6-1.61 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5c.69 0 1.25.56 1.25 1.25S17.84 8 17.25 8 16 7.44 16 6.75s.56-1.25 1.25-1.25M12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5m0 2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/v-dental-implant-centre/', path: 'M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z' },
+    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61589612497809', color: '#1877F2', path: 'M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z' },
+    { label: 'Instagram', href: 'https://www.instagram.com/v_dental_and_implant_centre/', color: '#E1306C', path: 'M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2m-.2 2C5.61 4 4 5.61 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8c1.99 0 3.6-1.61 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5c.69 0 1.25.56 1.25 1.25S17.84 8 17.25 8 16 7.44 16 6.75s.56-1.25 1.25-1.25M12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5m0 2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/v-dental-implant-centre/', color: '#0A66C2', path: 'M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z' },
   ];
 
   const LinkList = ({ links }) => (
@@ -112,7 +112,8 @@ const Footer = () => {
             <div className="flex gap-1.5 mt-1">
               {socials.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                  className="w-7 h-7 rounded-md bg-white/5 border border-white/10 flex items-center justify-center text-white/45 hover:bg-[color:var(--gold)] hover:text-[color:var(--charcoal-deep)] hover:border-transparent transition-all">
+                  className="w-7 h-7 rounded-md flex items-center justify-center transition-all hover:opacity-80 hover:scale-110"
+                  style={{ background: s.color + '1A', border: `1px solid ${s.color}33`, color: s.color }}>
                   <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor" aria-hidden><path d={s.path} /></svg>
                 </a>
               ))}
@@ -193,7 +194,8 @@ const Footer = () => {
           <div className="flex gap-2">
             {socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                className="w-8 h-8 rounded-md bg-white/5 border border-white/10 flex items-center justify-center text-white/45 hover:bg-[color:var(--gold)] hover:text-[color:var(--charcoal-deep)] transition-all">
+                className="w-8 h-8 rounded-md flex items-center justify-center transition-all hover:opacity-80 hover:scale-110"
+                style={{ background: s.color + '1A', border: `1px solid ${s.color}33`, color: s.color }}>
                 <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden><path d={s.path} /></svg>
               </a>
             ))}
