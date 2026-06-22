@@ -63,7 +63,7 @@ function ScrollToTop() {
 
 function AppLayout() {
   const location = useLocation();
-  const isAdmin = location.pathname.startsWith('/admin');
+  const isAdmin = location.pathname.startsWith('/vd-admin');
 
   useEffect(() => {
     if (isAdmin) return;
@@ -148,7 +148,7 @@ function AppLayout() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/smile-plus-dental-care-marathahalli" element={<SmilePlusMarathahalli />} />
             <Route path="/ai-preview" element={<ImageUpload />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/vd-admin" element={<Admin />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

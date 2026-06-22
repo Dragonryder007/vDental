@@ -236,8 +236,8 @@ let chatHistory = [];
 // ----------------------------
 // Admin auth (fixed creds)
 // ----------------------------
-const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD = 'admin123';
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const JWT_SECRET = process.env.JWT_SECRET || 'smilevista-dev-secret';
 const JWT_EXPIRES_IN = '7d';
 

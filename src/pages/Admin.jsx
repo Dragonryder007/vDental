@@ -259,7 +259,7 @@ export default function Admin() {
   const [authError, setAuthError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const [username, setUsername] = useState('admin');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const [tab, setTab] = useState(() => localStorage.getItem('adminActiveTab') || 'dashboard');
