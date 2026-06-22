@@ -186,21 +186,21 @@ const Footer = () => {
       {/* ── Mobile / tablet layout (below lg) ── */}
       <div className="lg:hidden max-w-2xl mx-auto px-5 sm:px-6 py-8">
 
-        {/* Logo + socials row */}
-        <div className="flex items-center justify-between mb-6">
+        {/* Logo + socials — stacked center */}
+        <div className="flex flex-col items-center gap-4 mb-8">
           <Link to="/" aria-label="V Dental Home" className="inline-flex items-center hover:opacity-80 transition-opacity">
-            <img src={logo} alt="V Dental" className="h-28 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} />
+            <img src={logo} alt="V Dental" className="h-16 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} />
           </Link>
-          <div className="flex gap-2">
+          <div className="flex gap-2.5">
             {socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                className="w-8 h-8 rounded-md flex items-center justify-center transition-all hover:opacity-80 hover:scale-110"
+                className="w-9 h-9 rounded-lg flex items-center justify-center transition-all hover:opacity-80 hover:scale-110"
                 style={{ background: s.color + '1A', border: `1px solid ${s.color}33`, color: s.color }}>
                 <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden><path d={s.path} /></svg>
               </a>
             ))}
             <a href="https://wa.me/919037151894" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-              className="w-8 h-8 rounded-md bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all">
+              className="w-9 h-9 rounded-lg bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center text-[#25D366] hover:opacity-80 hover:scale-110 transition-all">
               <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden><path d={WA_PATH} /></svg>
             </a>
           </div>
