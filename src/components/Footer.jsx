@@ -106,7 +106,7 @@ const Footer = () => {
           {/* Logo col */}
           <div className="flex flex-col gap-4">
             <Link to="/" aria-label="V Dental Home" className="inline-flex items-center hover:opacity-80 transition-opacity">
-              <img src={logo} alt="V Dental" className="h-28 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} loading="lazy" />
+              <img src={logo} alt="V Dental" className="h-32 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} loading="lazy" />
             </Link>
             <p className="text-[10px] text-white/55 leading-relaxed">World-class dentistry in Indiranagar — since 1994.</p>
             <div className="flex gap-1.5 mt-1">
