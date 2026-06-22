@@ -189,7 +189,7 @@ const Footer = () => {
         {/* Logo + socials — stacked center */}
         <div className="flex flex-col items-center gap-4 mb-8">
           <Link to="/" aria-label="V Dental Home" className="inline-flex items-center hover:opacity-80 transition-opacity">
-            <img src={logo} alt="V Dental" className="h-16 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} />
+            <img src={logo} alt="V Dental" className="h-24 w-auto object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} />
           </Link>
           <div className="flex gap-2.5">
             {socials.map((s) => (
