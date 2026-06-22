@@ -261,6 +261,7 @@ export default function Admin() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const [tab, setTab] = useState(() => localStorage.getItem('adminActiveTab') || 'dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -706,16 +707,26 @@ export default function Admin() {
                 <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-[0.22em] text-white/35">
                   Password
                 </label>
-                <input
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  type="password"
-                  autoComplete="current-password"
-                  className="w-full rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-all"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
-                  onFocus={e => e.target.style.border = '1px solid rgba(201,162,74,0.55)'}
-                  onBlur={e => e.target.style.border = '1px solid rgba(255,255,255,0.1)'}
-                />
+                <div className="relative">
+                  <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type={showPassword ? 'text' : 'password'}
+                    autoComplete="current-password"
+                    className="w-full rounded-xl px-4 py-3 pr-11 text-sm text-white focus:outline-none transition-all"
+                    style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+                    onFocus={e => e.target.style.border = '1px solid rgba(201,162,74,0.55)'}
+                    onBlur={e => e.target.style.border = '1px solid rgba(255,255,255,0.1)'}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(v => !v)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition-colors"
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  >
+                    <span className="ms text-[20px]">{showPassword ? 'visibility_off' : 'visibility'}</span>
+                  </button>
+                </div>
               </div>
 
               {authError && (
