@@ -412,8 +412,8 @@ const Home = () => {
       <SmilePlusHomePromo />
 
       {/* Signature Treatments */}
-      <section className="py-14 sm:py-20 md:py-28 lg:py-32 px-5 sm:px-6 bg-[color:var(--charcoal)] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20 relative z-10">
+      <section className="py-14 sm:py-20 md:py-28 lg:py-32 bg-[color:var(--charcoal)] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 text-center mb-12 sm:mb-16 lg:mb-20 relative z-10">
           <div className="eyebrow-gold eyebrow-gold--center mb-5 sm:mb-6">
             {t('home.signatureTreatments')}
           </div>
@@ -562,7 +562,7 @@ const Home = () => {
 
               {/* Desktop: original grid */}
               <div className="hidden sm:block relative z-10">
-                <div className="hairline-grid grid-cols-2 lg:grid-cols-4 bg-[rgb(var(--gold-rgb)/12%)] border border-[rgb(var(--gold-rgb)/12%)] max-w-7xl mx-auto rounded-sharp overflow-hidden">
+                <div className="hairline-grid grid-cols-2 lg:grid-cols-4 bg-[rgb(var(--gold-rgb)/12%)] border border-[rgb(var(--gold-rgb)/12%)] rounded-sharp overflow-hidden">
                   {treatments.map((service, i) => (
                     <TreatmentCard key={i} service={service} i={i} />
                   ))}

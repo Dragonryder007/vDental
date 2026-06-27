@@ -20,7 +20,7 @@ const SmilePlusHomePromo = () => {
       onClick={() => navigate(SMILE_PLUS_SLUG)}
       title="Visit Smile Plus Dental Care – Marathahalli"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 min-h-[300px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[300px] md:min-h-[420px]">
 
         {/* Image — shows on top on mobile */}
         <div className="relative block md:hidden h-48 overflow-hidden">
