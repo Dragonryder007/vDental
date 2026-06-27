@@ -68,21 +68,6 @@ function getMailer() {
   return cachedMailer;
 }
 
-let cachedTestMailerPromise = null;
-async function getTestMailer() {
-  if (cachedTestMailerPromise) return cachedTestMailerPromise;
-  cachedTestMailerPromise = (async () => {
-    const testAccount = await nodemailer.createTestAccount();
-    const transporter = nodemailer.createTransport({
-      host: testAccount.smtp.host,
-      port: testAccount.smtp.port,
-      secure: testAccount.smtp.secure,
-      auth: { user: testAccount.user, pass: testAccount.pass }
-    });
-    return { transporter, from: `V Dental and Implant Center <${testAccount.user}>`, testAccount };
-  })();
-  return cachedTestMailerPromise;
-}
 
 function normalizeEmail(value) {
   return String(value || '').trim().toLowerCase();
@@ -90,8 +75,8 @@ function normalizeEmail(value) {
 
 async function sendAppointmentConfirmationEmail({ to, appointment, confirmationNumber }) {
   const mailer = getMailer();
+  if (!mailer) return { attempted: false, sent: false, reason: 'no_smtp_configured' };
   const toEmail = normalizeEmail(to);
-  const usingTestMailer = !mailer;
   if (!toEmail) return { attempted: false, sent: false, reason: 'missing_email' };
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(toEmail)) {
     return { attempted: false, sent: false, reason: 'invalid_email' };
@@ -132,19 +117,14 @@ async function sendAppointmentConfirmationEmail({ to, appointment, confirmationN
   `;
 
   try {
-    const activeMailer = mailer || (await getTestMailer());
-    const info = await activeMailer.transporter.sendMail({
-      from: activeMailer.from,
+    const info = await mailer.transporter.sendMail({
+      from: mailer.from,
       to: toEmail,
       subject,
       text,
       html
     });
 
-    const previewUrl = nodemailer.getTestMessageUrl(info) || null;
-    if (usingTestMailer) {
-      return { attempted: true, sent: true, mode: 'ethereal', previewUrl, messageId: info?.messageId };
-    }
     return { attempted: true, sent: true, mode: 'smtp', messageId: info?.messageId };
   } catch (error) {
     console.error('Email send error:', error);
