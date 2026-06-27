@@ -624,9 +624,9 @@ const Home = () => {
       </section>
 
       {/* Our Work Section */}
-      <section id="our-work" data-reveal className="py-14 sm:py-20 md:py-28 lg:py-32 px-5 sm:px-6 bg-[color:var(--cream)] overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
+      <section id="our-work" data-reveal className="py-14 sm:py-20 md:py-28 lg:py-32 bg-[color:var(--cream)] overflow-hidden">
+        <div>
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 text-center mb-10 sm:mb-16">
             <div className="eyebrow-gold eyebrow-gold--center mb-5 sm:mb-6">
               {t('nav.ourWork')}
             </div>
@@ -664,9 +664,9 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section data-reveal className="py-14 sm:py-20 md:py-28 px-5 sm:px-6 bg-[color:var(--cream-dark)] overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
+      <section data-reveal className="py-14 sm:py-20 md:py-28 bg-[color:var(--cream-dark)] overflow-hidden">
+        <div>
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 text-center mb-10 sm:mb-16">
             <div className="eyebrow-gold eyebrow-gold--center mb-5 sm:mb-6">
               Testimonials
             </div>
